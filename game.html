@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>Pac-Man</title>
+    <!-- last updated: Sun May 14 21:10:27 PDT 2023 -->
+    <!-- Lock viewport on mobile devices. -->
+    <!--
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+
+    -->
+    <!-- Allow page to be saved as web app on iOS. -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Hide status bar -->
+    <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- icon used for iOS Web App -->
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+
+    <style>
+        body {
+            margin:0;
+            background: #000;
+        }
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+            /*
+            src: url('font/PressStart2P.ttf');
+            */
+        }
+        #canvas-warning {
+            color: #FF0;
+            font-size: 1.5em;
+        }
+        #home-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #FFD700;
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-family: 'ArcadeR', Arial, sans-serif;
+            text-decoration: none;
+            font-size: 14px;
+            z-index: 100;
+            border: 2px solid #FFF;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        }
+        #home-button:hover {
+            background-color: #FFF;
+        }
+    </style>
+
+<script src="pacman.js"></script>
+
+</head>
+
+<body>
+
+</div>
+
+    <div style='font-family: ArcadeR'> </div>
+    <canvas id='canvas'><div id="canvas-warning">Your browser does not support HTML Canvas.  Please upgrade!</div></canvas>
+    <canvas id='atlas' style="display:none"></canvas>
+
+    <a href="index.html" id="home-button">BACK TO HOME</a>
+
+</body>
+
+</html>
