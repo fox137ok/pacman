@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-3H5HVRCKP5');
+    </script>
+    
+    <title>Pac-Man - Juego Arcade Clásico</title>
+    <meta name="description" content="¡Juega gratis al clásico juego arcade Pac-Man en línea! Recorre laberintos, come puntos, esquiva fantasmas y alcanza la máxima puntuación en este juego atemporal.">
+    <link rel="canonical" href="https://pacman-arcade.com/index-es.html">
+    
+    <!-- Hreflang Tags for Multi-language Support -->
+    <link rel="alternate" hreflang="en" href="https://pacman-arcade.com/index.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://pacman-arcade.com/index-zh.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/index-zh-tw.html">
+    <link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/index-ja.html">
+    <link rel="alternate" hreflang="es" href="https://pacman-arcade.com/index-es.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/index.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Pac-Man - Juego Arcade Clásico">
+    <meta property="og:description" content="¡Juega gratis al clásico juego arcade Pac-Man en línea! Recorre laberintos, come puntos, esquiva fantasmas y alcanza la máxima puntuación en este juego atemporal.">
+    <meta property="og:image" content="https://pacman-arcade.com/images/pacman-version.jpg">
+    <meta property="og:url" content="https://pacman-arcade.com/index-es.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:site_name" content="Pac-Man Arcade">
+    <meta name="keywords" content="pac-man, juego arcade, juego online, juego clásico, juego gratis, juego laberinto, retro gaming">
+    <meta name="author" content="Pac-Man Arcade">
+    <meta http-equiv="content-language" content="es">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pac-Man - Juego Arcade Clásico">
+    <meta name="twitter:description" content="¡Juega gratis al clásico juego arcade Pac-Man en línea! Recorre laberintos, come puntos, esquiva fantasmas y alcanza la máxima puntuación en este juego atemporal.">
+    <meta name="twitter:image" content="https://pacman-arcade.com/images/pacman-version.jpg">
+    
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+        
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+            --section-bg: rgba(0, 0, 0, 0.8);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .arcade-font {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/pacman-version.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 100%);
+            z-index: 1;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0 var(--secondary-color);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: var(--accent-color);
+        }
+        
+        .play-btn {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            font-size: 1.8rem;
+            padding: 15px 60px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: 3px solid var(--text-color);
+        }
+        
+        .play-btn:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+        
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            border: 2px solid var(--accent-color);
+        }
+        
+        .feature-card h3 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .game-versions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .version-card {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            width: 320px;
+            text-align: center;
+            border: 2px solid var(--accent-color);
+            overflow: hidden;
+            padding-bottom: 15px;
+        }
+        
+        .version-img {
+            width: 100%;
+            height: 370px;
+            background-color: rgba(100, 100, 100, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            width: 90%;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        
+        .version-img p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        .version-info {
+            padding: 25px 20px;
+        }
+        
+        .version-info h3 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .special-modes {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .mode-card-wide {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            border: 2px solid var(--accent-color);
+            overflow: hidden;
+            padding-bottom: 15px;
+        }
+        
+        .mode-img-learn {
+            width: 90%;
+            margin: 0 auto;
+            height: 350px;
+            background-color: rgba(100, 100, 100, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        
+        .mode-img-practice {
+            width: 90%; 
+            margin: 0 auto;
+            height: 410px;
+            background-color: rgba(100, 100, 100, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        
+        .mode-img-learn p, .mode-img-practice p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        .mode-info {
+            padding: 25px 30px 20px;
+            text-align: center;
+        }
+        
+        .mode-info h3 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .turbo-mode {
+            margin-top: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .turbo-card {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid var(--accent-color);
+        }
+        
+        .turbo-card h3 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .control-card {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            padding: 30px;
+            width: 45%;
+            min-width: 300px;
+            border: 2px solid var(--accent-color);
+        }
+        
+        .control-card h3 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        .control-card ul {
+            list-style-position: inside;
+            margin-left: 10px;
+        }
+        
+        .control-card li {
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* 语言切换器样式 */
+        #lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        #lang-switcher select {
+            padding: 8px 12px;
+            border-radius: 5px;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: 2px solid var(--text-color);
+            font-family: 'Arial', sans-serif;
+            cursor: pointer;
+        }
+
+        #lang-switcher select:hover {
+            background-color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .play-btn {
+                font-size: 1.5rem;
+                padding: 12px 40px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .feature-card {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .control-card {
+                width: 100%;
+            }
+            
+            .version-card {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .mode-img-learn, .mode-img-practice {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .play-btn {
+                width: 80%;
+            }
+            
+            .mode-img-learn, .mode-img-practice {
+                height: 200px;
+            }
+        }
+    </style>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Pac-Man",
+        "description": "Juego clásico de arcade donde navegas por laberintos, comes puntos, evitas fantasmas y persigues altas puntuaciones",
+        "genre": ["Arcade", "Acción", "Laberinto"],
+        "gamePlatform": ["Navegador web", "HTML5"],
+        "publisher": {
+            "@type": "Organization",
+            "name": "Pac-Man Arcade"
+        },
+        "datePublished": "1980",
+        "inLanguage": "es",
+        "url": "https://pacman-arcade.com/index-es.html",
+        "image": "https://pacman-arcade.com/images/pacman-version.jpg",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+        },
+        "applicationCategory": "Juego",
+        "operatingSystem": "Cualquier sistema",
+        "browserRequirements": "Soporte HTML5 Canvas"
+    }
+    </script>
+</head>
+<body>
+    <!-- Selector de idioma -->
+    <div id="lang-switcher">
+        <select onchange="changeLang(this.value)">
+            <option value="index.html">English</option>
+            <option value="index-zh.html">简体中文</option>
+            <option value="index-zh-tw.html">繁體中文</option>
+            <option value="index-es.html" selected>Español</option>
+            <option value="index-ja.html">日本語</option>
+        </select>
+    </div>
+    <script>
+        function changeLang(url) {
+            window.location.href = url;
+        }
+    </script>
+
+    <header>
+        <div class="container">
+            <h1 class="arcade-font">PAC-MAN</h1>
+            <p class="subtitle">El icónico juego de laberinto arcade, ahora en tu navegador</p>
+            <p style="font-size: 0.9rem; opacity: 0.8; margin: 10px 0;">🇪🇸  Juego HTML5 Gratis</p>
+            <a href="game-es.html" class="play-btn">JUGAR AHORA</a>
+        </div>
+    </header>
+    
+    <section id="about">
+        <div class="container">
+            <h2>Sobre el Juego</h2>
+            <p class="intro-text">
+                Pac-Man es uno de los juegos arcade más populares jamás creados. Lanzado por primera vez en 1980, este icónico juego ha entretenido a generaciones de jugadores con su jugabilidad simple pero adictiva. Navega por laberintos, come todos los puntos, evita a los fantasmas y persigue altas puntuaciones en este clásico atemporal.
+            </p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Jugabilidad Clásica</h3>
+                    <p>Experimenta la jugabilidad original de Pac-Man con gráficos, sonidos y mecánicas auténticas como en la versión arcade.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Gratis para Jugar</h3>
+                    <p>Sin descargas, sin suscripciones y sin anuncios. Solo abre tu navegador y comienza a jugar al instante.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Múltiples Versiones y Modos</h3>
+                    <p>Experimenta múltiples versiones clásicas y modos de juego, incluyendo el Pac-Man original, Ms. Pac-Man y el innovador Cookie-Man.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="game-versions">
+        <div class="container">
+            <h2>Versiones del Juego</h2>
+            <p class="intro-text">
+                Ofrecemos varias versiones clásicas del juego Pac-Man, cada una con sus características y jugabilidad únicas. ¡Elige tu versión favorita y comienza a jugar!
+            </p>
+            
+            <div class="game-versions">
+                <div class="version-card">
+                    <div class="version-info">
+                        <h3>Pac-Man</h3>
+                        <p>El clásico arcade original de 1980 por Namco. Experimenta la jugabilidad más auténtica de Pac-Man, persigue altas puntuaciones y evita a los fantasmas.</p>
+                    </div>
+                    <div class="version-img">
+                        <img src="images/pacman-version.jpg" alt="Versión del Juego Pac-Man" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="version-card">
+                    <div class="version-info">
+                        <h3>Ms. Pac-Man</h3>
+                        <p>La modificación de 1981 por GCC/Midway. Presenta más laberintos y mecánicas de juego mejoradas, convirtiéndose en una secuela clásica.</p>
+                    </div>
+                    <div class="version-img">
+                        <img src="images/mspacman-version.jpg" alt="Versión del Juego Ms. Pac-Man" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="version-card">
+                    <div class="version-info">
+                        <h3>Cookie-Man</h3>
+                        <p>Una versión completamente nueva que presenta un sofisticado <b>generador de mapas procedural</b>. Cada nivel presenta un laberinto diferente.</p>
+                    </div>
+                    <div class="version-img">
+                        <img src="images/cookieman-version.jpg" alt="Versión del Juego Cookie-Man" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="game-modes">
+        <div class="container">
+            <h2>Modos de Juego</h2>
+            <p class="intro-text">
+                Cada versión ofrece múltiples modos de juego para satisfacer diferentes necesidades y preferencias de los jugadores. ¡Desde principiantes hasta expertos, hay un modo para todos!
+            </p>
+            
+            <div class="special-modes">
+                <div class="mode-card-wide">
+                    <div class="mode-info">
+                        <h3>Modo Aprendizaje</h3>
+                        <p>El Modo Aprendizaje te permite visualizar los comportamientos de los fantasmas. Los cuadrados de colores representan los objetivos de los fantasmas, ayudándote a entender cómo funciona la IA de los fantasmas y mejorar tu estrategia de juego.</p>
+                    </div>
+                    <div class="mode-img-learn">
+                        <img src="images/learn-mode.jpg" alt="Modo Aprendizaje" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                
+                <div class="mode-card-wide">
+                    <div class="mode-info">
+                        <h3>Modo Práctica</h3>
+                        <p>Este modo proporciona características especiales como cámara lenta, rebobinado de tiempo, invencibilidad y visualización del comportamiento de los fantasmas. Perfecto para jugadores que quieren dominar el juego, estudiar sus mecánicas y mejorar sus habilidades.</p>
+                    </div>
+                    <div class="mode-img-practice">
+                        <img src="images/practice-mode.jpg" alt="Modo Práctica" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="turbo-mode">
+                <div class="turbo-card">
+                    <h3>Modo Turbo</h3>
+                    <p>Una modificación de hardware popular que se encuentra en las máquinas arcade originales. En este modo, Pac-Man se mueve el doble de rápido (coincidiendo con la velocidad de los ojos de los fantasmas) y no se ralentiza al comer pastillas. ¡Perfecto para jugadores que buscan un mayor desafío!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="controls">
+        <div class="container">
+            <h2>Controles</h2>
+            <p class="intro-text">
+                Los controles de Pac-Man son simples e intuitivos, adecuados para jugadores de todas las edades. A continuación se muestran los controles principales y operaciones adicionales para modos especiales.
+            </p>
+            
+            <div class="controls">
+                <div class="control-card">
+                    <h3>Controles Principales</h3>
+                    <ul>
+                        <li><b>Deslizar</b>: Dirige a Pac-Man en dispositivos móviles</li>
+                        <li><b>Teclas de Flecha</b>: Controla el movimiento de Pac-Man</li>
+                        <li><b>Tecla End</b>: Pausa el juego</li>
+                        <li><b>Tecla Esc</b>: Abre el menú del juego</li>
+                    </ul>
+                </div>
+                <div class="control-card">
+                    <h3>Controles Extra del Modo Práctica</h3>
+                    <ul>
+                        <li><b>Shift</b>: Mantén presionado para rebobinar el tiempo (como en Braid)</li>
+                        <li><b>1</b>: Mantén para ralentizar la velocidad del juego a 0.5x</li>
+                        <li><b>2</b>: Mantén para ralentizar la velocidad del juego a 0.25x</li>
+                        <li><b>o</b>: Alternar el modo Turbo de Pac-Man</li>
+                        <li><b>i</b>: Alternar la invencibilidad de Pac-Man</li>
+                        <li><b>q,w,e,r,t</b>: Alternar gráficos objetivo para Blinky, Pinky, Inky, Clyde y Pac-Man</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <!-- Información de pie de página removida -->
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <title>パックマンをプレイ - クラシックアーケードゲームオンライン</title>
+    <meta name="description" content="クラシックなパックマンのアーケードゲームを無料でオンラインプレイ。1980年オリジナルの忠実な再現で迷路を進み、ドットを食べ、お化けを避けよう。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Hreflang Tags for Multi-language Support -->
+    <link rel="alternate" hreflang="en" href="https://pacman-arcade.com/game.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://pacman-arcade.com/game-zh.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/game-zh-tw.html">
+    <link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/game-ja.html">
+    <link rel="alternate" hreflang="es" href="https://pacman-arcade.com/game-es.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/game.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="パックマンをプレイ - クラシックアーケードゲームオンライン">
+    <meta property="og:description" content="クラシックなパックマンのアーケードゲームを無料でオンラインプレイ。1980年オリジナルの忠実な再現で迷路を進み、ドットを食べ、お化けを避けよう。">
+    <meta property="og:image" content="https://pacman-arcade.com/images/pacman-version.jpg">
+    <meta property="og:url" content="https://pacman-arcade.com/game-ja.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="パックマンをプレイ - クラシックアーケードゲームオンライン">
+    <meta name="twitter:description" content="クラシックなパックマンのアーケードゲームを無料でオンラインプレイ。1980年オリジナルの忠実な再現で迷路を進み、ドットを食べ、お化けを避けよう。">
+    <meta name="twitter:image" content="https://pacman-arcade.com/images/pacman-version.jpg">
+
+    <!-- Allow page to be saved as web app on iOS. -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Hide status bar -->
+    <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- icon used for iOS Web App -->
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+
+    <style>
+        body {
+            margin:0;
+            background: #000;
+        }
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+            /*
+            src: url('font/PressStart2P.ttf');
+            */
+        }
+        #canvas-warning {
+            color: #FF0;
+            font-size: 1.5em;
+        }
+        #home-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #FFD700;
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-family: 'ArcadeR', Arial, sans-serif;
+            text-decoration: none;
+            font-size: 14px;
+            z-index: 100;
+            border: 2px solid #FFF;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        }
+        #home-button:hover {
+            background-color: #FFF;
+        }
+    </style>
+
+<script src="pacman.js"></script>
+
+</head>
+
+<body>
+    <div style='font-family: ArcadeR'> </div>
+    <canvas id='canvas'><div id="canvas-warning">ご使用のブラウザはHTML Canvasをサポートしていません。ブラウザをアップグレードしてください！</div></canvas>
+    <canvas id='atlas' style="display:none"></canvas>
+
+    <a href="index-ja.html" id="home-button">ホームに戻る</a>
+
+</body>
+
+</html>

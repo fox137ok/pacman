@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-3H5HVRCKP5');
+    </script>
+    
+    <!-- Language Detection Script -->
+    <script src="language-detector.js"></script>
+    
+    <title>吃豆人 - 经典街机游戏</title>
+    <meta name="description" content="免费在线玩经典街机游戏吃豆人。在这款永恒的经典游戏中穿越迷宫、吃豆子、躲避幽灵、追求高分！">
+    <link rel="canonical" href="https://pacman-arcade.com/index-zh.html">
+    
+    <!-- Hreflang Tags for Multi-language Support -->
+    <link rel="alternate" hreflang="en" href="https://pacman-arcade.com/index.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://pacman-arcade.com/index-zh.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/index-zh-tw.html">
+    <link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/index-ja.html">
+    <link rel="alternate" hreflang="es" href="https://pacman-arcade.com/index-es.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/index.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="吃豆人 - 经典街机游戏">
+    <meta property="og:description" content="免费在线玩经典街机游戏吃豆人。在这款永恒的经典游戏中穿越迷宫、吃豆子、躲避幽灵、追求高分！">
+    <meta property="og:image" content="https://pacman-arcade.com/images/pacman-version.jpg">
+    <meta property="og:url" content="https://pacman-arcade.com/index-zh.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:site_name" content="吃豆人街机游戏">
+    <meta name="keywords" content="吃豆人, 街机游戏, 在线游戏, 经典游戏, 免费游戏, 迷宫游戏, pac-man">
+    <meta name="author" content="吃豆人街机游戏">
+    <meta http-equiv="content-language" content="zh-CN">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="吃豆人 - 经典街机游戏">
+    <meta name="twitter:description" content="免费在线玩经典街机游戏吃豆人。在这款永恒的经典游戏中穿越迷宫、吃豆子、躲避幽灵、追求高分！">
+    <meta name="twitter:image" content="https://pacman-arcade.com/images/pacman-version.jpg">
+    
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+        
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+            --section-bg: rgba(0, 0, 0, 0.8);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .arcade-font {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/pacman-version.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 100%);
+            z-index: 1;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0 var(--secondary-color);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: var(--accent-color);
+        }
+        
+        .play-btn {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            font-size: 1.8rem;
+            padding: 15px 60px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: 3px solid var(--text-color);
+        }
+        
+        .play-btn:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.05);
+        }
+        
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            border: 2px solid var(--accent-color);
+        }
+        
+        .feature-card h3 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .game-versions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .version-card {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            width: 320px;
+            text-align: center;
+            border: 2px solid var(--accent-color);
+            overflow: hidden;
+            padding-bottom: 15px;
+        }
+        
+        .version-img {
+            width: 100%;
+            height: 370px;
+            background-color: rgba(100, 100, 100, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            width: 90%;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        
+        .version-img p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        .version-info {
+            padding: 25px 20px;
+        }
+        
+        .version-info h3 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .special-modes {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .mode-card-wide {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            border: 2px solid var(--accent-color);
+            overflow: hidden;
+            padding-bottom: 15px;
+        }
+        
+        .mode-img-learn {
+            width: 90%;
+            margin: 0 auto;
+            height: 350px;
+            background-color: rgba(100, 100, 100, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        
+        .mode-img-practice {
+            width: 90%; 
+            margin: 0 auto;
+            height: 410px;
+            background-color: rgba(100, 100, 100, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        
+        .mode-img-learn p, .mode-img-practice p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        .mode-info {
+            padding: 25px 30px 20px;
+            text-align: center;
+        }
+        
+        .mode-info h3 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .turbo-mode {
+            margin-top: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .turbo-card {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid var(--accent-color);
+        }
+        
+        .turbo-card h3 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .control-card {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            padding: 30px;
+            width: 45%;
+            min-width: 300px;
+            border: 2px solid var(--accent-color);
+        }
+        
+        .control-card h3 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        .control-card ul {
+            list-style-position: inside;
+            margin-left: 10px;
+        }
+        
+        .control-card li {
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* 语言切换器样式 */
+        #lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        #lang-switcher select {
+            padding: 8px 12px;
+            border-radius: 5px;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: 2px solid var(--text-color);
+            font-family: 'Arial', sans-serif;
+            cursor: pointer;
+        }
+
+        #lang-switcher select:hover {
+            background-color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .play-btn {
+                font-size: 1.5rem;
+                padding: 12px 40px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .feature-card {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .control-card {
+                width: 100%;
+            }
+            
+            .version-card {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .mode-img-learn, .mode-img-practice {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .play-btn {
+                width: 80%;
+            }
+            
+            .mode-img-learn, .mode-img-practice {
+                height: 200px;
+            }
+        }
+    </style>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "吃豆人",
+        "alternateName": "Pac-Man",
+        "description": "经典街机迷宫追逐游戏，玩家需要在迷宫中穿行，吃掉所有豆子，躲避幽灵，追求最高分数",
+        "genre": ["街机游戏", "动作游戏", "迷宫游戏"],
+        "gamePlatform": ["网页浏览器", "HTML5"],
+        "publisher": {
+            "@type": "Organization",
+            "name": "吃豆人街机游戏"
+        },
+        "datePublished": "1980",
+        "inLanguage": "zh-CN",
+        "url": "https://pacman-arcade.com/index-zh.html",
+        "image": "https://pacman-arcade.com/images/pacman-version.jpg",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY",
+            "availability": "https://schema.org/InStock"
+        },
+        "applicationCategory": "游戏",
+        "operatingSystem": "任意系统",
+        "browserRequirements": "支持HTML5 Canvas"
+    }
+    </script>
+</head>
+<body>
+    <!-- 语言切换器 -->
+    <div id="lang-switcher">
+        <select onchange="changeLang(this.value)">
+            <option value="index.html">English</option>
+            <option value="index-zh.html" selected>简体中文</option>
+            <option value="index-zh-tw.html">繁體中文</option>
+            <option value="index-es.html">Español</option>
+            <option value="index-ja.html">日本語</option>
+        </select>
+    </div>
+    <script>
+        function changeLang(url) {
+            // 记录用户手动选择了语言
+            localStorage.setItem('manualLanguage', 'true');
+            
+            // 添加URL参数标记这是手动选择
+            const separator = url.includes('?') ? '&' : '?';
+            const finalUrl = url + separator + 'lang=manual';
+            
+            window.location.href = finalUrl;
+        }
+    </script>
+
+    <header>
+        <div class="container">
+            <h1 class="arcade-font">吃豆人</h1>
+            <p class="subtitle">经典街机迷宫追逐游戏，现在可以在浏览器中畅玩</p>
+            <p style="font-size: 0.9rem; opacity: 0.8; margin: 10px 0;">🇨🇳  免费HTML5游戏</p>
+            <a href="game-zh.html" class="play-btn">开始游戏</a>
+        </div>
+    </header>
+    
+    <section id="about">
+        <div class="container">
+            <h2>关于游戏</h2>
+            <p class="intro-text">
+                吃豆人是有史以来最受欢迎的街机游戏之一。自1980年首次发布以来，这款标志性的游戏凭借其简单而令人上瘾的玩法吸引了一代又一代的玩家。在迷宫中穿行，吃掉所有豆子，躲避幽灵，追求最高分！
+            </p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <h3>经典玩法</h3>
+                    <p>体验原汁原味的吃豆人游戏，包括街机版的原始画面、音效和游戏机制。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>免费畅玩</h3>
+                    <p>无需下载，无需订阅，无广告。只需打开浏览器即可立即开始游戏。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>多个版本和模式</h3>
+                    <p>体验多个经典版本和游戏模式，包括原版吃豆人、吃豆人夫人，以及创新的饼干人模式。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="game-versions">
+        <div class="container">
+            <h2>游戏版本</h2>
+            <p class="intro-text">
+                我们提供多个经典吃豆人游戏版本，每个版本都有其独特的特点和玩法。选择你喜欢的版本开始游戏吧！
+            </p>
+            
+            <div class="game-versions">
+                <div class="version-card">
+                    <div class="version-info">
+                        <h3>吃豆人</h3>
+                        <p>1980年南梦宫（Namco）推出的原版街机经典。体验最纯正的吃豆人游戏玩法，追求高分，躲避幽灵。</p>
+                    </div>
+                    <div class="version-img">
+                        <img src="images/pacman-version.jpg" alt="吃豆人游戏版本" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="version-card">
+                    <div class="version-info">
+                        <h3>吃豆人夫人</h3>
+                        <p>1981年GCC/Midway开发的改良版。具有更多迷宫和增强的游戏机制，成为了一个经典续作。</p>
+                    </div>
+                    <div class="version-img">
+                        <img src="images/mspacman-version.jpg" alt="吃豆人夫人游戏版本" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="version-card">
+                    <div class="version-info">
+                        <h3>饼干人</h3>
+                        <p>一个全新版本，具有先进的<b>程序化地图生成器</b>，每一关都会呈现不同的迷宫。</p>
+                    </div>
+                    <div class="version-img">
+                        <img src="images/cookieman-version.jpg" alt="饼干人游戏版本" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="game-modes">
+        <div class="container">
+            <h2>游戏模式</h2>
+            <p class="intro-text">
+                每个版本都提供多种游戏模式，以满足不同玩家的需求和偏好。从新手到专家，总有适合你的模式！
+            </p>
+            
+            <div class="special-modes">
+                <div class="mode-card-wide">
+                    <div class="mode-info">
+                        <h3>学习模式</h3>
+                        <p>学习模式让你可以直观地了解幽灵的行为。彩色方块代表幽灵的目标位置，帮助你理解幽灵AI的工作原理并提升游戏策略。</p>
+                    </div>
+                    <div class="mode-img-learn">
+                        <img src="images/learn-mode.jpg" alt="学习模式" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                
+                <div class="mode-card-wide">
+                    <div class="mode-info">
+                        <h3>练习模式</h3>
+                        <p>此模式提供慢动作、时间回溯、无敌状态和幽灵行为可视化等特殊功能。非常适合想要掌握游戏、研究游戏机制并提高技能的玩家。</p>
+                    </div>
+                    <div class="mode-img-practice">
+                        <img src="images/practice-mode.jpg" alt="练习模式" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="turbo-mode">
+                <div class="turbo-card">
+                    <h3>极速模式</h3>
+                    <p>这是在原始街机上常见的硬件改装模式。在此模式下，吃豆人的移动速度翻倍（与幽灵眼睛的速度相同），且吃豆子时不会减速。适合寻求更大挑战的玩家！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="controls">
+        <div class="container">
+            <h2>操作控制</h2>
+            <p class="intro-text">
+                吃豆人的操作简单直观，适合所有年龄段的玩家。以下是主要控制方式和特殊模式下的额外操作。
+            </p>
+            
+            <div class="controls">
+                <div class="control-card">
+                    <h3>基本操作</h3>
+                    <ul>
+                        <li><b>滑动</b>：在移动设备上控制吃豆人</li>
+                        <li><b>方向键</b>：控制吃豆人移动</li>
+                        <li><b>End键</b>：暂停游戏</li>
+                        <li><b>Esc键</b>：打开游戏菜单</li>
+                    </ul>
+                </div>
+                <div class="control-card">
+                    <h3>练习模式额外操作</h3>
+                    <ul>
+                        <li><b>Shift</b>：按住可回溯时间（类似《时空幻境》）</li>
+                        <li><b>1</b>：按住可将游戏速度降至0.5倍</li>
+                        <li><b>2</b>：按住可将游戏速度降至0.25倍</li>
+                        <li><b>o</b>：切换吃豆人极速模式</li>
+                        <li><b>i</b>：切换吃豆人无敌状态</li>
+                        <li><b>q,w,e,r,t</b>：分别切换Blinky、Pinky、Inky、Clyde和吃豆人的目标图形显示</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <!-- 版权信息已移除 -->
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+User-agent: *
+Allow: /
+
+# Multi-language pages
+Allow: /index.html
+Allow: /index-zh.html
+Allow: /index-zh-tw.html
+Allow: /index-ja.html
+Allow: /index-es.html
+Allow: /game.html
+Allow: /game-zh.html
+Allow: /game-zh-tw.html
+Allow: /game-ja.html
+Allow: /game-es.html
+
+# Static resources
+Allow: /images/
+Allow: /icon/
+Allow: /font/
+Allow: /sprites/
+Allow: /sounds/
+
+# Disallow backup files and development files
+Disallow: /*.bak
+Disallow: /debug.htm
+Disallow: /debug.html
+Disallow: /build.sh
+Disallow: /src/
+Disallow: /doc/
+Disallow: /issues/
+Disallow: /mapgen/
+Disallow: /randturn/
+Disallow: /promo/
+
+# Sitemap
+Sitemap: https://pacman-arcade.com/sitemap.xml

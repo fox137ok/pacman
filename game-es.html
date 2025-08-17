@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <title>Jugar Pac-Man - Juego Arcade Clásico Online</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Juega gratis al clásico juego arcade Pac-Man en línea. Recorre laberintos, come puntos, esquiva fantasmas en esta recreación auténtica del original de 1980.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Hreflang Tags for Multi-language Support -->
+    <link rel="alternate" hreflang="en" href="https://pacman-arcade.com/game.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://pacman-arcade.com/game-zh.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/game-zh-tw.html">
+    <link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/game-ja.html">
+    <link rel="alternate" hreflang="es" href="https://pacman-arcade.com/game-es.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/game.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Jugar Pac-Man - Juego Arcade Clásico Online">
+    <meta property="og:description" content="Juega gratis al clásico juego arcade Pac-Man en línea. Recorre laberintos, come puntos, esquiva fantasmas en esta recreación auténtica del original de 1980.">
+    <meta property="og:image" content="https://pacman-arcade.com/images/pacman-version.jpg">
+    <meta property="og:url" content="https://pacman-arcade.com/game-es.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jugar Pac-Man - Juego Arcade Clásico Online">
+    <meta name="twitter:description" content="Juega gratis al clásico juego arcade Pac-Man en línea. Recorre laberintos, come puntos, esquiva fantasmas en esta recreación auténtica del original de 1980.">
+    <meta name="twitter:image" content="https://pacman-arcade.com/images/pacman-version.jpg">
+
+    <!-- Permitir guardar como aplicación web en iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- Ocultar barra de estado -->
+    <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- Icono para aplicación web iOS -->
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+
+    <style>
+        body {
+            margin:0;
+            background: #000;
+        }
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+        #canvas-warning {
+            color: #FF0;
+            font-size: 1.5em;
+        }
+        #home-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #FFD700;
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-family: 'ArcadeR', Arial, sans-serif;
+            text-decoration: none;
+            font-size: 14px;
+            z-index: 100;
+            border: 2px solid #FFF;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        }
+        #home-button:hover {
+            background-color: #FFF;
+        }
+    </style>
+
+    <script src="pacman.js"></script>
+</head>
+
+<body>
+    <div style='font-family: ArcadeR'> </div>
+    <canvas id='canvas'><div id="canvas-warning">¡Tu navegador no soporta HTML Canvas. ¡Por favor, actualiza tu navegador!</div></canvas>
+    <canvas id='atlas' style="display:none"></canvas>
+
+    <a href="index-es.html" id="home-button">VOLVER</a>
+</body>
+</html>
