@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Detection Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        .info { background-color: #d1ecf1; border-color: #bee5eb; }
+    </style>
+</head>
+<body>
+    <h1>🌐 Language Detection Test</h1>
+    
+    <div class="test-section info">
+        <h3>📋 Test Information</h3>
+        <p>This page tests if the language detection script is working properly.</p>
+        <p>Check the browser console for detailed logs.</p>
+    </div>
+    
+    <div class="test-section" id="browser-info">
+        <h3>🔍 Browser Information</h3>
+        <p><strong>navigator.language:</strong> <span id="nav-lang"></span></p>
+        <p><strong>navigator.languages:</strong> <span id="nav-langs"></span></p>
+        <p><strong>Current URL:</strong> <span id="current-url"></span></p>
+    </div>
+    
+    <div class="test-section" id="script-status">
+        <h3>📜 Script Status</h3>
+        <p><strong>Script loaded:</strong> <span id="script-loaded">Checking...</span></p>
+        <p><strong>Functions available:</strong> <span id="functions-available">Checking...</span></p>
+    </div>
+    
+    <div class="test-section" id="detection-result">
+        <h3>🎯 Detection Result</h3>
+        <p><strong>Detected language:</strong> <span id="detected-lang">Checking...</span></p>
+        <p><strong>Target page:</strong> <span id="target-page">Checking...</span></p>
+    </div>
+    
+    <div class="test-section">
+        <h3>🧪 Manual Test</h3>
+        <button onclick="testLanguageDetection()">Test Language Detection</button>
+        <button onclick="clearStorage()">Clear Local Storage</button>
+        <button onclick="location.reload()">Reload Page</button>
+    </div>
+    
+    <script src="language-detector.js"></script>
+    <script>
+        // 显示浏览器信息
+        document.getElementById('nav-lang').textContent = navigator.language || 'Not available';
+        document.getElementById('nav-langs').textContent = navigator.languages ? navigator.languages.join(', ') : 'Not available';
+        document.getElementById('current-url').textContent = window.location.href;
+        
+        // 检查脚本状态
+        function checkScriptStatus() {
+            const scriptLoaded = typeof window.languageDetector !== 'undefined';
+            const functionsAvailable = scriptLoaded && 
+                typeof window.languageDetector.getUserLanguage === 'function' &&
+                typeof window.languageDetector.redirectToLanguage === 'function';
+            
+            document.getElementById('script-loaded').textContent = scriptLoaded ? '✅ Yes' : '❌ No';
+            document.getElementById('functions-available').textContent = functionsAvailable ? '✅ Yes' : '❌ No';
+            
+            if (scriptLoaded) {
+                document.getElementById('script-loaded').parentElement.className = 'test-section success';
+            } else {
+                document.getElementById('script-loaded').parentElement.className = 'test-section error';
+            }
+            
+            if (functionsAvailable) {
+                document.getElementById('functions-available').parentElement.className = 'test-section success';
+            } else {
+                document.getElementById('functions-available').parentElement.className = 'test-section error';
+            }
+        }
+        
+        // 测试语言检测
+        function testLanguageDetection() {
+            if (window.languageDetector) {
+                const detectedLang = window.languageDetector.getUserLanguage();
+                const targetPage = getTargetPage(detectedLang);
+                
+                document.getElementById('detected-lang').textContent = detectedLang;
+                document.getElementById('target-page').textContent = targetPage;
+                
+                document.getElementById('detection-result').className = 'test-section success';
+            } else {
+                document.getElementById('detection-result').className = 'test-section error';
+                document.getElementById('detected-lang').textContent = 'Script not available';
+                document.getElementById('target-page').textContent = 'Script not available';
+            }
+        }
+        
+        // 获取目标页面
+        function getTargetPage(lang) {
+            const languageMap = {
+                'en': 'index.html',
+                'zh-CN': 'index-zh.html',
+                'zh-TW': 'index-zh-tw.html',
+                'ja': 'index-ja.html',
+                'es': 'index-es.html'
+            };
+            return languageMap[lang] || 'Unknown';
+        }
+        
+        // 清除本地存储
+        function clearStorage() {
+            localStorage.removeItem('manualLanguage');
+            alert('Local storage cleared!');
+        }
+        
+        // 页面加载完成后检查状态
+        window.addEventListener('load', function() {
+            setTimeout(checkScriptStatus, 100);
+            setTimeout(testLanguageDetection, 200);
+        });
+        
+        // 如果脚本已经加载，立即检查
+        if (document.readyState === 'complete') {
+            setTimeout(checkScriptStatus, 100);
+            setTimeout(testLanguageDetection, 200);
+        }
+    </script>
+</body>
+</html>
