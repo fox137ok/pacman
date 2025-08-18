@@ -51,11 +51,30 @@
         const userLang = getUserLanguage();
         const targetPage = languageMap[userLang];
         
-        // 如果当前页面不是用户首选语言，且不是已经选择了特定语言
+        console.log('🔍 Checking redirect conditions:');
+        console.log('  - Current path:', currentPath);
+        console.log('  - User language:', userLang);
+        console.log('  - Target page:', targetPage);
+        
+        // 处理根目录访问 (/) 的情况
+        if (currentPath === '/' || currentPath === '/index.html') {
+            // 如果用户语言不是英语，需要重定向
+            if (userLang !== 'en') {
+                console.log('  ✅ Root path detected, redirecting to:', targetPage);
+                return targetPage;
+            } else {
+                console.log('  ✅ Root path detected, user prefers English, no redirect needed');
+                return null;
+            }
+        }
+        
+        // 处理其他index页面的情况
         if (currentPath.includes('index.html') && !currentPath.includes(targetPage.replace('index', ''))) {
+            console.log('  ✅ Index page detected, redirecting to:', targetPage);
             return targetPage;
         }
         
+        console.log('  ❌ No redirect conditions met');
         return null;
     }
     
@@ -93,6 +112,8 @@
         console.log('🔍 Language detector initialized');
         console.log('🌐 User language:', getUserLanguage());
         console.log('📍 Current path:', window.location.pathname);
+        console.log('🔗 Current URL:', window.location.href);
+        console.log('📁 Document ready state:', document.readyState);
         
         // 如果用户手动选择过语言，跳过自动重定向
         if (shouldSkipRedirect()) {
@@ -104,6 +125,7 @@
         const targetPage = shouldRedirect();
         if (targetPage) {
             console.log('🔄 Redirecting to:', targetPage);
+            console.log('⏰ Redirect will happen in 100ms...');
             redirectToLanguage();
         } else {
             console.log('✅ No redirect needed');
@@ -113,23 +135,35 @@
     // 页面加载完成后执行
     function runDetection() {
         try {
+            console.log('🚀 Running language detection...');
             initLanguageDetection();
         } catch (error) {
             console.error('❌ Language detection error:', error);
+            console.error('Error stack:', error.stack);
         }
     }
     
+    console.log('📜 Language detector script loaded, document ready state:', document.readyState);
+    
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', runDetection);
+        console.log('⏳ Document still loading, waiting for DOMContentLoaded...');
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎯 DOMContentLoaded fired, running detection...');
+            runDetection();
+        });
     } else {
+        console.log('⚡ Document already loaded, running detection immediately...');
         runDetection();
     }
     
     // 备用方案：如果DOMContentLoaded没有触发，使用window.onload
     window.addEventListener('load', function() {
+        console.log('🌅 Window load event fired');
         if (!window.languageDetector || !window.languageDetector.getUserLanguage) {
             console.log('🔄 Fallback: Running language detection on window.load');
             runDetection();
+        } else {
+            console.log('✅ Language detector already initialized');
         }
     });
     
