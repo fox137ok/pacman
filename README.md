@@ -9,7 +9,7 @@ Inspired by [The Pac-Man Dossier](http://home.comcast.net/~jpittman2/pacman/pacm
 
 - Sound
 - Cutscenes
-- 2 Player switch-off
+- 2 Player switch-off 
 
 Contact me at shaunewilliams@gmail.com
 
