@@ -90,21 +90,48 @@
     
     // 主函数
     function initLanguageDetection() {
+        console.log('🔍 Language detector initialized');
+        console.log('🌐 User language:', getUserLanguage());
+        console.log('📍 Current path:', window.location.pathname);
+        
         // 如果用户手动选择过语言，跳过自动重定向
         if (shouldSkipRedirect()) {
+            console.log('⏭️ Skipping redirect - user manually selected language');
             return;
         }
         
         // 执行语言检测和重定向
-        redirectToLanguage();
+        const targetPage = shouldRedirect();
+        if (targetPage) {
+            console.log('🔄 Redirecting to:', targetPage);
+            redirectToLanguage();
+        } else {
+            console.log('✅ No redirect needed');
+        }
     }
     
     // 页面加载完成后执行
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initLanguageDetection);
-    } else {
-        initLanguageDetection();
+    function runDetection() {
+        try {
+            initLanguageDetection();
+        } catch (error) {
+            console.error('❌ Language detection error:', error);
+        }
     }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runDetection);
+    } else {
+        runDetection();
+    }
+    
+    // 备用方案：如果DOMContentLoaded没有触发，使用window.onload
+    window.addEventListener('load', function() {
+        if (!window.languageDetector || !window.languageDetector.getUserLanguage) {
+            console.log('🔄 Fallback: Running language detection on window.load');
+            runDetection();
+        }
+    });
     
     // 暴露函数供外部调用
     window.languageDetector = {
