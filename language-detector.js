@@ -62,11 +62,7 @@
         
         console.log('🔍 Checking redirect conditions:');
         console.log('  - Current path:', currentPath);
-<<<<<<< HEAD
-        console.log('  - User language:', userLang);
-=======
         console.log('  - User preferred language:', userLang);
->>>>>>> 7242251 (新增两个小语种)
         console.log('  - Target page:', targetPage);
         
         // 处理根目录访问 (/) 的情况
