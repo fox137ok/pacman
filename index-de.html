@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,9 +17,9 @@
     <!-- Language Detection Script -->
     <script src="language-detector.js"></script>
     
-    <title>吃豆人 - 经典街机游戏</title>
-    <meta name="description" content="免费在线玩经典街机游戏吃豆人。在这款永恒的经典游戏中穿越迷宫、吃豆子、躲避幽灵、追求高分！">
-    <link rel="canonical" href="https://pacman-arcade.com/index-zh.html">
+    <title>Pac-Man - Klassisches Arcade-Spiel</title>
+    <meta name="description" content="Spielen Sie das klassische Pac-Man Arcade-Spiel kostenlos online. Navigieren Sie durch Labyrinthe, fressen Sie Punkte, vermeiden Sie Geister und jagen Sie Highscores in diesem zeitlosen Klassiker!">
+    <link rel="canonical" href="https://pacman-arcade.com/index-de.html">
     
     <!-- Hreflang Tags for Multi-language Support -->
     <link rel="alternate" hreflang="en" href="https://pacman-arcade.com/index.html">
@@ -32,25 +32,21 @@
     <link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/index.html">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="吃豆人 - 经典街机游戏">
-    <meta property="og:description" content="免费在线玩经典街机游戏吃豆人。在这款永恒的经典游戏中穿越迷宫、吃豆子、躲避幽灵、追求高分！">
+    <meta property="og:title" content="Pac-Man - Klassisches Arcade-Spiel">
+    <meta property="og:description" content="Spielen Sie das klassische Pac-Man Arcade-Spiel kostenlos online. Navigieren Sie durch Labyrinthe, fressen Sie Punkte, vermeiden Sie Geister und jagen Sie Highscores in diesem zeitlosen Klassiker!">
     <meta property="og:image" content="https://pacman-arcade.com/images/pacman-version.jpg">
-    <meta property="og:url" content="https://pacman-arcade.com/index-zh.html">
+    <meta property="og:url" content="https://pacman-arcade.com/index-de.html">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="zh_CN">
-    <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:locale:alternate" content="zh_TW">
-    <meta property="og:locale:alternate" content="ja_JP">
-    <meta property="og:locale:alternate" content="es_ES">
-    <meta property="og:site_name" content="吃豆人街机游戏">
-    <meta name="keywords" content="吃豆人, 街机游戏, 在线游戏, 经典游戏, 免费游戏, 迷宫游戏, pac-man">
-    <meta name="author" content="吃豆人街机游戏">
-    <meta http-equiv="content-language" content="zh-CN">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Pac-Man Arcade">
+    <meta name="keywords" content="pac-man, arcade-spiel, online-spiel, klassisches spiel, kostenloses spiel, labyrinth-spiel, retro-gaming">
+    <meta name="author" content="Pac-Man Arcade">
+    <meta http-equiv="content-language" content="de">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="吃豆人 - 经典街机游戏">
-    <meta name="twitter:description" content="免费在线玩经典街机游戏吃豆人。在这款永恒的经典游戏中穿越迷宫、吃豆子、躲避幽灵、追求高分！">
+    <meta name="twitter:title" content="Pac-Man - Klassisches Arcade-Spiel">
+    <meta name="twitter:description" content="Spielen Sie das klassische Pac-Man Arcade-Spiel kostenlos online. Navigieren Sie durch Labyrinthe, fressen Sie Punkte, vermeiden Sie Geister und jagen Sie Highscores in diesem zeitlosen Klassiker!">
     <meta name="twitter:image" content="https://pacman-arcade.com/images/pacman-version.jpg">
     
     <link rel="icon" type="image/png" href="icon/favicon.png"/>
@@ -201,6 +197,7 @@
             font-size: 1.5rem;
         }
         
+        /* Game Version Cards Styles */
         .game-versions {
             display: flex;
             flex-wrap: wrap;
@@ -221,7 +218,7 @@
         
         .version-img {
             width: 100%;
-            height: 370px;
+            height: 370px; /* Adjusted for 584×743 aspect ratio */
             background-color: rgba(100, 100, 100, 0.2);
             display: flex;
             align-items: center;
@@ -248,6 +245,7 @@
             font-size: 1.5rem;
         }
         
+        /* Learn and Practice Mode Styles */
         .special-modes {
             display: flex;
             flex-direction: column;
@@ -266,7 +264,7 @@
         .mode-img-learn {
             width: 90%;
             margin: 0 auto;
-            height: 350px;
+            height: 350px; /* Adjusted for 2340×700 aspect ratio */
             background-color: rgba(100, 100, 100, 0.2);
             display: flex;
             align-items: center;
@@ -278,7 +276,7 @@
         .mode-img-practice {
             width: 90%; 
             margin: 0 auto;
-            height: 410px;
+            height: 410px; /* Adjusted for 1800×819 aspect ratio */
             background-color: rgba(100, 100, 100, 0.2);
             display: flex;
             align-items: center;
@@ -304,6 +302,7 @@
             font-size: 1.8rem;
         }
         
+        /* Turbo Mode Style */
         .turbo-mode {
             margin-top: 50px;
             max-width: 600px;
@@ -326,6 +325,7 @@
             font-size: 1.5rem;
         }
         
+        /* Controls Section Style */
         .controls {
             display: flex;
             flex-wrap: wrap;
@@ -366,29 +366,8 @@
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.7);
         }
-
-        /* 语言切换器样式 */
-        #lang-switcher {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-        }
-
-        #lang-switcher select {
-            padding: 8px 12px;
-            border-radius: 5px;
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            border: 2px solid var(--text-color);
-            font-family: 'Arial', sans-serif;
-            cursor: pointer;
-        }
-
-        #lang-switcher select:hover {
-            background-color: var(--accent-color);
-        }
         
+        /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
                 font-size: 3rem;
@@ -447,6 +426,28 @@
                 height: 200px;
             }
         }
+
+        /* 语言切换器样式 */
+        #lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        #lang-switcher select {
+            padding: 8px 12px;
+            border-radius: 5px;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: 2px solid var(--text-color);
+            font-family: 'Arial', sans-serif;
+            cursor: pointer;
+        }
+
+        #lang-switcher select:hover {
+            background-color: var(--accent-color);
+        }
     </style>
     
     <!-- Structured Data (JSON-LD) -->
@@ -454,28 +455,27 @@
     {
         "@context": "https://schema.org",
         "@type": "VideoGame",
-        "name": "吃豆人",
-        "alternateName": "Pac-Man",
-        "description": "经典街机迷宫追逐游戏，玩家需要在迷宫中穿行，吃掉所有豆子，躲避幽灵，追求最高分数",
-        "genre": ["街机游戏", "动作游戏", "迷宫游戏"],
-        "gamePlatform": ["网页浏览器", "HTML5"],
+        "name": "Pac-Man",
+        "description": "Klassisches Arcade-Labyrinth-Verfolgungsspiel, bei dem Spieler durch Labyrinthe navigieren, Punkte fressen, Geistern ausweichen und Highscores jagen",
+        "genre": ["Arcade", "Action", "Labyrinth"],
+        "gamePlatform": ["Webbrowser", "HTML5"],
         "publisher": {
             "@type": "Organization",
-            "name": "吃豆人街机游戏"
+            "name": "Pac-Man Arcade"
         },
         "datePublished": "1980",
-        "inLanguage": "zh-CN",
-        "url": "https://pacman-arcade.com/index-zh.html",
+        "inLanguage": ["en", "zh-CN", "zh-TW", "ja", "es", "pt", "de"],
+        "url": "https://pacman-arcade.com",
         "image": "https://pacman-arcade.com/images/pacman-version.jpg",
         "offers": {
             "@type": "Offer",
             "price": "0",
-            "priceCurrency": "CNY",
+            "priceCurrency": "USD",
             "availability": "https://schema.org/InStock"
         },
-        "applicationCategory": "游戏",
-        "operatingSystem": "任意系统",
-        "browserRequirements": "支持HTML5 Canvas"
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "browserRequirements": "HTML5 Canvas support"
     }
     </script>
 </head>
@@ -484,12 +484,12 @@
     <div id="lang-switcher">
         <select onchange="changeLang(this.value)">
             <option value="index.html">English</option>
-            <option value="index-zh.html" selected>简体中文</option>
+            <option value="index-zh.html">简体中文</option>
             <option value="index-zh-tw.html">繁體中文</option>
             <option value="index-es.html">Español</option>
             <option value="index-ja.html">日本語</option>
             <option value="index-pt.html">Português</option>
-            <option value="index-de.html">Deutsch</option>
+            <option value="index-de.html" selected>Deutsch</option>
         </select>
     </div>
     <script>
@@ -518,36 +518,38 @@
             
             window.location.href = finalUrl;
         }
+        
+
     </script>
 
     <header>
         <div class="container">
-            <h1 class="arcade-font">吃豆人</h1>
-            <p class="subtitle">经典街机迷宫追逐游戏，现在可以在浏览器中畅玩</p>
-            <p style="font-size: 0.9rem; opacity: 0.8; margin: 10px 0;">🇨🇳  免费HTML5游戏</p>
-            <a href="game-zh.html" class="play-btn">开始游戏</a>
+            <h1 class="arcade-font">PAC-MAN</h1>
+            <p class="subtitle">Das ikonische Labyrinth-Verfolgungsspiel, jetzt in Ihrem Browser spielbar</p>
+            <p style="font-size: 0.9rem; opacity: 0.8; margin: 10px 0;">🇩🇪  Kostenloses HTML5-Spiel</p>
+            <a href="game-de.html" class="play-btn">JETZT SPIELEN</a>
         </div>
     </header>
     
     <section id="about">
         <div class="container">
-            <h2>关于游戏</h2>
+            <h2>Über das Spiel</h2>
             <p class="intro-text">
-                吃豆人是有史以来最受欢迎的街机游戏之一。自1980年首次发布以来，这款标志性的游戏凭借其简单而令人上瘾的玩法吸引了一代又一代的玩家。在迷宫中穿行，吃掉所有豆子，躲避幽灵，追求最高分！
+                Pac-Man ist eines der beliebtesten Arcade-Spiele, die jemals erstellt wurden. Erstmals 1980 veröffentlicht, hat dieses ikonische Spiel Generationen von Spielern mit seinem einfachen, aber süchtig machenden Gameplay unterhalten. Navigieren Sie durch Labyrinthe, fressen Sie alle Punkte, vermeiden Sie Geister und jagen Sie Highscores in diesem zeitlosen Klassiker.
             </p>
             
             <div class="features">
                 <div class="feature-card">
-                    <h3>经典玩法</h3>
-                    <p>体验原汁原味的吃豆人游戏，包括街机版的原始画面、音效和游戏机制。</p>
+                    <h3>Klassisches Gameplay</h3>
+                    <p>Erleben Sie das originale Pac-Man-Gameplay mit authentischen Grafiken, Sounds und Mechaniken, genau wie die Arcade-Version.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>免费畅玩</h3>
-                    <p>无需下载，无需订阅，无广告。只需打开浏览器即可立即开始游戏。</p>
+                    <h3>Kostenlos zu spielen</h3>
+                    <p>Keine Downloads, keine Abonnements und keine Werbung. Öffnen Sie einfach Ihren Browser und beginnen Sie sofort zu spielen.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>多个版本和模式</h3>
-                    <p>体验多个经典版本和游戏模式，包括原版吃豆人、吃豆人夫人，以及创新的饼干人模式。</p>
+                    <h3>Mehrere Versionen & Modi</h3>
+                    <p>Erleben Sie mehrere klassische Versionen und Spielmodi, einschließlich Original Pac-Man, Ms. Pac-Man und dem innovativen Cookie-Man.</p>
                 </div>
             </div>
         </div>
@@ -555,37 +557,37 @@
     
     <section id="game-versions">
         <div class="container">
-            <h2>游戏版本</h2>
+            <h2>Spielversionen</h2>
             <p class="intro-text">
-                我们提供多个经典吃豆人游戏版本，每个版本都有其独特的特点和玩法。选择你喜欢的版本开始游戏吧！
+                Wir bieten mehrere klassische Pac-Man-Spielversionen, jede mit ihren einzigartigen Funktionen und Gameplay. Wählen Sie Ihre Lieblingsversion und beginnen Sie zu spielen!
             </p>
             
             <div class="game-versions">
                 <div class="version-card">
                     <div class="version-info">
-                        <h3>吃豆人</h3>
-                        <p>1980年南梦宫（Namco）推出的原版街机经典。体验最纯正的吃豆人游戏玩法，追求高分，躲避幽灵。</p>
+                        <h3>Pac-Man</h3>
+                        <p>Der ursprüngliche Arcade-Klassiker von 1980 von Namco. Erleben Sie das authentischste Pac-Man-Gameplay, jagen Sie Highscores und vermeiden Sie Geister.</p>
                     </div>
                     <div class="version-img">
-                        <img src="images/pacman-version.jpg" alt="吃豆人游戏版本" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="images/pacman-version.jpg" alt="Pac-Man Spielversion" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
                 <div class="version-card">
                     <div class="version-info">
-                        <h3>吃豆人夫人</h3>
-                        <p>1981年GCC/Midway开发的改良版。具有更多迷宫和增强的游戏机制，成为了一个经典续作。</p>
+                        <h3>Ms. Pac-Man</h3>
+                        <p>Die Modifikation von 1981 von GCC/Midway. Bietet mehr Labyrinthe und verbesserte Gameplay-Mechaniken und wurde zu einem klassischen Nachfolger.</p>
                     </div>
                     <div class="version-img">
-                        <img src="images/mspacman-version.jpg" alt="吃豆人夫人游戏版本" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="images/mspacman-version.jpg" alt="Ms. Pac-Man Spielversion" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
                 <div class="version-card">
                     <div class="version-info">
-                        <h3>饼干人</h3>
-                        <p>一个全新版本，具有先进的<b>程序化地图生成器</b>，每一关都会呈现不同的迷宫。</p>
+                        <h3>Cookie-Man</h3>
+                        <p>Eine brandneue Version mit einem ausgeklügelten <b>prozeduralen Kartengenerator</b>. Jedes Level präsentiert ein anderes Labyrinth.</p>
                     </div>
                     <div class="version-img">
-                        <img src="images/cookieman-version.jpg" alt="饼干人游戏版本" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="images/cookieman-version.jpg" alt="Cookie-Man Spielversion" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -594,37 +596,37 @@
     
     <section id="game-modes">
         <div class="container">
-            <h2>游戏模式</h2>
+            <h2>Spielmodi</h2>
             <p class="intro-text">
-                每个版本都提供多种游戏模式，以满足不同玩家的需求和偏好。从新手到专家，总有适合你的模式！
+                Jede Version bietet mehrere Spielmodi, um verschiedene Spielerbedürfnisse und -vorlieben zu erfüllen. Von Anfängern bis zu Experten gibt es einen Modus für jeden!
             </p>
             
             <div class="special-modes">
                 <div class="mode-card-wide">
                     <div class="mode-info">
-                        <h3>学习模式</h3>
-                        <p>学习模式让你可以直观地了解幽灵的行为。彩色方块代表幽灵的目标位置，帮助你理解幽灵AI的工作原理并提升游戏策略。</p>
+                        <h3>Lernmodus</h3>
+                        <p>Der Lernmodus ermöglicht es Ihnen, die Verhaltensweisen der Geister zu visualisieren. Farbige Quadrate repräsentieren die Geisterziele und helfen Ihnen zu verstehen, wie die Geister-KI funktioniert und Ihre Spielstrategie zu verbessern.</p>
                     </div>
                     <div class="mode-img-learn">
-                        <img src="images/learn-mode.jpg" alt="学习模式" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="images/learn-mode.jpg" alt="Lernmodus" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
                 
                 <div class="mode-card-wide">
                     <div class="mode-info">
-                        <h3>练习模式</h3>
-                        <p>此模式提供慢动作、时间回溯、无敌状态和幽灵行为可视化等特殊功能。非常适合想要掌握游戏、研究游戏机制并提高技能的玩家。</p>
+                        <h3>Übungsmodus</h3>
+                        <p>Dieser Modus bietet spezielle Funktionen wie Zeitlupe, Zeitrückspulung, Unverwundbarkeit und Visualisierung des Geisterverhaltens. Perfekt für Spieler, die das Spiel meistern, seine Mechaniken studieren und ihre Fähigkeiten verbessern möchten.</p>
                     </div>
                     <div class="mode-img-practice">
-                        <img src="images/practice-mode.jpg" alt="练习模式" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="images/practice-mode.jpg" alt="Übungsmodus" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
             </div>
             
             <div class="turbo-mode">
                 <div class="turbo-card">
-                    <h3>极速模式</h3>
-                    <p>这是在原始街机上常见的硬件改装模式。在此模式下，吃豆人的移动速度翻倍（与幽灵眼睛的速度相同），且吃豆子时不会减速。适合寻求更大挑战的玩家！</p>
+                    <h3>Turbo-Modus</h3>
+                    <p>Eine beliebte Hardware-Modifikation, die in originalen Arcade-Automaten zu finden ist. In diesem Modus bewegt sich Pac-Man doppelt so schnell (entspricht der Geschwindigkeit der Geisteraugen) und verlangsamt sich nicht beim Fressen von Pellets. Perfekt für Spieler, die eine größere Herausforderung suchen!</p>
                 </div>
             </div>
         </div>
@@ -632,30 +634,30 @@
     
     <section id="controls">
         <div class="container">
-            <h2>操作控制</h2>
+            <h2>Steuerung</h2>
             <p class="intro-text">
-                吃豆人的操作简单直观，适合所有年龄段的玩家。以下是主要控制方式和特殊模式下的额外操作。
+                Die Pac-Man-Steuerung ist einfach und intuitiv, geeignet für Spieler aller Altersgruppen. Unten sind die Hauptsteuerungen und zusätzliche Operationen für spezielle Modi aufgeführt.
             </p>
             
             <div class="controls">
                 <div class="control-card">
-                    <h3>基本操作</h3>
+                    <h3>Hauptsteuerung</h3>
                     <ul>
-                        <li><b>滑动</b>：在移动设备上控制吃豆人</li>
-                        <li><b>方向键</b>：控制吃豆人移动</li>
-                        <li><b>End键</b>：暂停游戏</li>
-                        <li><b>Esc键</b>：打开游戏菜单</li>
+                        <li><b>Wischen</b>: Steuern Sie Pac-Man auf mobilen Geräten</li>
+                        <li><b>Pfeiltasten</b>: Steuern Sie Pac-Mans Bewegung</li>
+                        <li><b>Ende-Taste</b>: Spiel pausieren</li>
+                        <li><b>Esc-Taste</b>: Spielmenü öffnen</li>
                     </ul>
                 </div>
                 <div class="control-card">
-                    <h3>练习模式额外操作</h3>
+                    <h3>Übungsmodus Zusatzsteuerung</h3>
                     <ul>
-                        <li><b>Shift</b>：按住可回溯时间（类似《时空幻境》）</li>
-                        <li><b>1</b>：按住可将游戏速度降至0.5倍</li>
-                        <li><b>2</b>：按住可将游戏速度降至0.25倍</li>
-                        <li><b>o</b>：切换吃豆人极速模式</li>
-                        <li><b>i</b>：切换吃豆人无敌状态</li>
-                        <li><b>q,w,e,r,t</b>：分别切换Blinky、Pinky、Inky、Clyde和吃豆人的目标图形显示</li>
+                        <li><b>Umschalt</b>: Gedrückt halten, um die Zeit zurückzuspulen (wie in Braid)</li>
+                        <li><b>1</b>: Halten, um die Spielgeschwindigkeit auf 0,5x zu verlangsamen</li>
+                        <li><b>2</b>: Halten, um die Spielgeschwindigkeit auf 0,25x zu verlangsamen</li>
+                        <li><b>o</b>: Pac-Man Turbo-Modus umschalten</li>
+                        <li><b>i</b>: Pac-Man Unverwundbarkeit umschalten</li>
+                        <li><b>q,w,e,r,t</b>: Zielgrafiken für Blinky, Pinky, Inky, Clyde und Pac-Man umschalten</li>
                     </ul>
                 </div>
             </div>

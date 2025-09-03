@@ -27,6 +27,8 @@
     <link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/index-zh-tw.html">
     <link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/index-ja.html">
     <link rel="alternate" hreflang="es" href="https://pacman-arcade.com/index-es.html">
+    <link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/index-pt.html">
+    <link rel="alternate" hreflang="de" href="https://pacman-arcade.com/index-de.html">
     <link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/index.html">
     
     <!-- Open Graph Meta Tags -->
@@ -462,7 +464,7 @@
             "name": "Pac-Man Arcade"
         },
         "datePublished": "1980",
-        "inLanguage": ["en", "zh-CN", "zh-TW", "ja", "es"],
+        "inLanguage": ["en", "zh-CN", "zh-TW", "ja", "es", "pt", "de"],
         "url": "https://pacman-arcade.com",
         "image": "https://pacman-arcade.com/images/pacman-version.jpg",
         "offers": {
@@ -486,6 +488,8 @@
             <option value="index-zh-tw.html">繁體中文</option>
             <option value="index-es.html">Español</option>
             <option value="index-ja.html">日本語</option>
+            <option value="index-pt.html">Português</option>
+            <option value="index-de.html">Deutsch</option>
         </select>
     </div>
     <script>
@@ -493,12 +497,29 @@
             // 记录用户手动选择了语言
             localStorage.setItem('manualLanguage', 'true');
             
+            // 记录选择时间
+            localStorage.setItem('languageSelectionTime', Date.now().toString());
+            
+            // 记录用户选择的语言类型
+            let selectedLanguage = 'en';
+            if (url.includes('index-zh.html')) selectedLanguage = 'zh-CN';
+            else if (url.includes('index-zh-tw.html')) selectedLanguage = 'zh-TW';
+            else if (url.includes('index-ja.html')) selectedLanguage = 'ja';
+            else if (url.includes('index-es.html')) selectedLanguage = 'es';
+            else if (url.includes('index-pt.html')) selectedLanguage = 'pt';
+            else if (url.includes('index-de.html')) selectedLanguage = 'de';
+            
+            localStorage.setItem('userSelectedLanguage', selectedLanguage);
+            console.log('💾 Saved user language preference:', selectedLanguage);
+            
             // 添加URL参数标记这是手动选择
             const separator = url.includes('?') ? '&' : '?';
             const finalUrl = url + separator + 'lang=manual';
             
             window.location.href = finalUrl;
         }
+        
+
     </script>
 
     <header>

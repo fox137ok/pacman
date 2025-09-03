@@ -13,6 +13,8 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/index-zh-tw.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/index-ja.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/index-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/index.html"/>
   </url>
 
@@ -27,6 +29,8 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/index-zh-tw.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/index-ja.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/index-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/index.html"/>
   </url>
 
@@ -41,6 +45,8 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/index-zh-tw.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/index-ja.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/index-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/index.html"/>
   </url>
 
@@ -55,6 +61,8 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/index-zh-tw.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/index-ja.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/index-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/index.html"/>
   </url>
 
@@ -69,6 +77,40 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/index-zh-tw.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/index-ja.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/index-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/index.html"/>
+  </url>
+
+  <!-- Portuguese Main Page -->
+  <url>
+    <loc>https://pacman-arcade.com/index-pt.html</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacman-arcade.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacman-arcade.com/index-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/index-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/index-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/index-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/index.html"/>
+  </url>
+
+  <!-- German Main Page -->
+  <url>
+    <loc>https://pacman-arcade.com/index-de.html</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacman-arcade.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacman-arcade.com/index-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/index-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/index-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/index-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/index-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/index.html"/>
   </url>
 
@@ -83,6 +125,8 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/game-zh-tw.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/game-ja.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/game-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/game-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/game-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/game.html"/>
   </url>
 
@@ -97,6 +141,8 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/game-zh-tw.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/game-ja.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/game-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/game-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/game-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/game.html"/>
   </url>
 
@@ -111,6 +157,8 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/game-zh-tw.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/game-ja.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/game-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/game-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/game-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/game.html"/>
   </url>
 
@@ -125,6 +173,8 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/game-zh-tw.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/game-ja.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/game-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/game-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/game-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/game.html"/>
   </url>
 
@@ -139,6 +189,40 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/game-zh-tw.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/game-ja.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/game-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/game-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/game-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/game.html"/>
+  </url>
+
+  <!-- Portuguese Game Page -->
+  <url>
+    <loc>https://pacman-arcade.com/game-pt.html</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacman-arcade.com/game.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacman-arcade.com/game-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/game-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/game-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/game-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/game-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/game-de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/game.html"/>
+  </url>
+
+  <!-- German Game Page -->
+  <url>
+    <loc>https://pacman-arcade.com/game-de.html</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacman-arcade.com/game.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacman-arcade.com/game-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacman-arcade.com/game-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacman-arcade.com/game-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacman-arcade.com/game-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacman-arcade.com/game-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacman-arcade.com/game-de.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/game.html"/>
   </url>
 

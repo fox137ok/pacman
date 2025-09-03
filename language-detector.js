@@ -8,7 +8,9 @@
         'zh-CN': 'index-zh.html',
         'zh-TW': 'index-zh-tw.html',
         'ja': 'index-ja.html',
-        'es': 'index-es.html'
+        'es': 'index-es.html',
+        'pt': 'index-pt.html',
+        'de': 'index-de.html'
     };
     
     // 获取用户首选语言
@@ -36,24 +38,35 @@
         // 提取主要语言代码
         const mainLang = userLang.split('-')[0];
         
+        console.log('🔍 Language detection details:');
+        console.log('  - Raw browser language:', userLang);
+        console.log('  - Main language code:', mainLang);
+        console.log('  - Supported languages:', Object.keys(languageMap));
+        
         // 检查是否支持该语言
         if (languageMap[mainLang]) {
+            console.log('  ✅ Language supported:', mainLang);
             return mainLang;
         }
         
         // 默认返回英语
+        console.log('  ⚠️ Language not supported, defaulting to English');
         return 'en';
     }
     
     // 检查当前页面是否匹配用户语言
     function shouldRedirect() {
         const currentPath = window.location.pathname;
-        const userLang = getUserLanguage();
+        const userLang = getUserPreferredLanguage(); // 使用改进的语言检测
         const targetPage = languageMap[userLang];
         
         console.log('🔍 Checking redirect conditions:');
         console.log('  - Current path:', currentPath);
+<<<<<<< HEAD
         console.log('  - User language:', userLang);
+=======
+        console.log('  - User preferred language:', userLang);
+>>>>>>> 7242251 (新增两个小语种)
         console.log('  - Target page:', targetPage);
         
         // 处理根目录访问 (/) 的情况
@@ -95,16 +108,55 @@
         // 检查URL参数
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('lang') === 'manual') {
+            console.log('⏭️ Skipping redirect - manual language selection in URL');
             return true;
         }
         
         // 检查localStorage（用户之前手动选择过语言）
         const manualLanguage = localStorage.getItem('manualLanguage');
-        if (manualLanguage) {
+        const languageSelectionTime = localStorage.getItem('languageSelectionTime');
+        
+        if (manualLanguage && languageSelectionTime) {
+            // 检查是否超过7天（7 * 24 * 60 * 60 * 1000 毫秒）
+            const sevenDays = 7 * 24 * 60 * 60 * 1000;
+            const now = Date.now();
+            const timeDiff = now - parseInt(languageSelectionTime);
+            
+            if (timeDiff > sevenDays) {
+                console.log('⏰ Language preference expired (older than 7 days), clearing...');
+                // 清除过期的语言偏好
+                localStorage.removeItem('manualLanguage');
+                localStorage.removeItem('userSelectedLanguage');
+                localStorage.removeItem('languageSelectionTime');
+                return false; // 允许自动重定向
+            }
+            
+            // 新逻辑：如果用户直接访问index.html，但浏览器语言不是英语，应该重定向
+            const currentPath = window.location.pathname;
+            const browserLanguage = getUserLanguage();
+            
+            console.log('🔍 Smart redirect check:');
+            console.log('  - Current path:', currentPath);
+            console.log('  - Browser language:', browserLanguage);
+            
+            // 如果用户访问index.html但浏览器语言不是英语，允许重定向
+            if ((currentPath === '/' || currentPath.endsWith('/index.html')) && browserLanguage !== 'en') {
+                console.log('⚡ Accessing index.html with non-English browser, allowing redirect to match browser language');
+                return false;
+            }
+            
+            console.log('⏭️ Skipping redirect - user previously selected language manually (within 7 days)');
             return true;
         }
         
         return false;
+    }
+    
+    // 获取用户首选语言（考虑手动选择的历史）
+    function getUserPreferredLanguage() {
+        // 总是使用浏览器语言进行检测
+        // shouldSkipRedirect() 会处理是否要跳过重定向的逻辑
+        return getUserLanguage();
     }
     
     // 主函数

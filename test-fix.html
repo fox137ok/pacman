@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Detection Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #007cba;
+        }
+        .success { border-left-color: #28a745; }
+        .error { border-left-color: #dc3545; }
+        .warning { border-left-color: #ffc107; }
+        button {
+            background: #007cba;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover { background: #005a8b; }
+        .console-output {
+            background: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 3px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 语言检测修复测试</h1>
+    
+    <div class="test-section">
+        <h3>🌍 浏览器信息</h3>
+        <p><strong>Navigator.language:</strong> <span id="nav-lang"></span></p>
+        <p><strong>Navigator.languages:</strong> <span id="nav-langs"></span></p>
+        <p><strong>当前URL:</strong> <span id="current-url"></span></p>
+    </div>
+    
+    <div class="test-section">
+        <h3>💾 本地存储状态</h3>
+        <p><strong>manualLanguage:</strong> <span id="manual-lang"></span></p>
+        <p><strong>userSelectedLanguage:</strong> <span id="user-lang"></span></p>
+        <p><strong>languageSelectionTime:</strong> <span id="selection-time"></span></p>
+    </div>
+    
+    <div class="test-section">
+        <h3>🧪 测试操作</h3>
+        <button onclick="testLanguageDetection()">测试语言检测</button>
+        <button onclick="clearStorage()">清除本地存储</button>
+        <button onclick="simulateManualSelection('pt')">模拟选择葡萄牙语</button>
+        <button onclick="simulateManualSelection('de')">模拟选择德语</button>
+        <button onclick="testIndexRedirect()">测试index.html重定向</button>
+        <button onclick="location.reload()">重新加载页面</button>
+    </div>
+    
+    <div class="test-section">
+        <h3>📋 检测结果</h3>
+        <p><strong>检测到的语言:</strong> <span id="detected-lang"></span></p>
+        <p><strong>目标页面:</strong> <span id="target-page"></span></p>
+        <p><strong>是否应该跳过重定向:</strong> <span id="skip-redirect"></span></p>
+    </div>
+    
+    <div class="test-section">
+        <h3>📝 控制台输出</h3>
+        <div id="console-output" class="console-output"></div>
+    </div>
+
+    <script src="language-detector.js"></script>
+    <script>
+        // 捕获控制台输出
+        const originalLog = console.log;
+        const outputDiv = document.getElementById('console-output');
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            outputDiv.textContent += args.join(' ') + '\n';
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        };
+        
+        // 显示浏览器信息
+        function updateBrowserInfo() {
+            document.getElementById('nav-lang').textContent = navigator.language || 'Not available';
+            document.getElementById('nav-langs').textContent = navigator.languages ? navigator.languages.join(', ') : 'Not available';
+            document.getElementById('current-url').textContent = window.location.href;
+        }
+        
+        // 显示本地存储状态
+        function updateStorageInfo() {
+            document.getElementById('manual-lang').textContent = localStorage.getItem('manualLanguage') || 'null';
+            document.getElementById('user-lang').textContent = localStorage.getItem('userSelectedLanguage') || 'null';
+            const selectionTime = localStorage.getItem('languageSelectionTime');
+            if (selectionTime) {
+                const date = new Date(parseInt(selectionTime));
+                document.getElementById('selection-time').textContent = date.toLocaleString();
+            } else {
+                document.getElementById('selection-time').textContent = 'null';
+            }
+        }
+        
+        // 测试语言检测
+        function testLanguageDetection() {
+            if (window.languageDetector) {
+                const detectedLang = window.languageDetector.getUserLanguage();
+                const targetPage = getTargetPage(detectedLang);
+                const shouldSkip = checkShouldSkip();
+                
+                document.getElementById('detected-lang').textContent = detectedLang;
+                document.getElementById('target-page').textContent = targetPage;
+                document.getElementById('skip-redirect').textContent = shouldSkip ? 'Yes' : 'No';
+                
+                console.log('=== TEST RESULTS ===');
+                console.log('Detected language:', detectedLang);
+                console.log('Target page:', targetPage);
+                console.log('Should skip redirect:', shouldSkip);
+            } else {
+                console.log('❌ Language detector not available');
+            }
+        }
+        
+        // 获取目标页面
+        function getTargetPage(lang) {
+            const languageMap = {
+                'en': 'index.html',
+                'zh-CN': 'index-zh.html',
+                'zh-TW': 'index-zh-tw.html',
+                'ja': 'index-ja.html',
+                'es': 'index-es.html',
+                'pt': 'index-pt.html',
+                'de': 'index-de.html'
+            };
+            return languageMap[lang] || 'Unknown';
+        }
+        
+        // 检查是否应该跳过重定向
+        function checkShouldSkip() {
+            const manualLanguage = localStorage.getItem('manualLanguage');
+            const languageSelectionTime = localStorage.getItem('languageSelectionTime');
+            
+            if (manualLanguage === 'true' && languageSelectionTime) {
+                const selectionTime = parseInt(languageSelectionTime);
+                const now = Date.now();
+                const daysDiff = (now - selectionTime) / (1000 * 60 * 60 * 24);
+                return daysDiff < 7;
+            }
+            return false;
+        }
+        
+        // 清除本地存储
+        function clearStorage() {
+            localStorage.removeItem('manualLanguage');
+            localStorage.removeItem('userSelectedLanguage');
+            localStorage.removeItem('languageSelectionTime');
+            console.log('✅ Local storage cleared!');
+            updateStorageInfo();
+        }
+        
+        // 模拟手动语言选择
+        function simulateManualSelection(language) {
+            localStorage.setItem('manualLanguage', 'true');
+            localStorage.setItem('userSelectedLanguage', language);
+            localStorage.setItem('languageSelectionTime', Date.now().toString());
+            console.log('✅ Simulated manual selection:', language);
+            updateStorageInfo();
+        }
+        
+        // 测试index.html重定向
+        function testIndexRedirect() {
+            console.log('🧪 Testing index.html redirect...');
+            window.open('index.html', '_blank');
+        }
+        
+        // 初始化显示
+        updateBrowserInfo();
+        updateStorageInfo();
+        
+        // 页面加载完成后测试
+        window.addEventListener('load', function() {
+            setTimeout(testLanguageDetection, 1000);
+        });
+    </script>
+</body>
+</html>

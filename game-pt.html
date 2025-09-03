@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="es">
+<html lang="pt">
+
 <head>
-    <title>Jugar Pac-Man - Juego Arcade Clásico Online</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="Juega gratis al clásico juego arcade Pac-Man en línea. Recorre laberintos, come puntos, esquiva fantasmas en esta recreación auténtica del original de 1980.">
+
+    <title>Jogar Pac-Man - Jogo de Arcade Clássico Online</title>
+    <meta name="description" content="Jogue o clássico jogo de arcade Pac-Man gratuitamente online. Navegue por labirintos, coma pontos, evite fantasmas nesta recriação autêntica do original de 1980.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Hreflang Tags for Multi-language Support -->
@@ -17,26 +18,29 @@
     <link rel="alternate" hreflang="x-default" href="https://pacman-arcade.com/game.html">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Jugar Pac-Man - Juego Arcade Clásico Online">
-    <meta property="og:description" content="Juega gratis al clásico juego arcade Pac-Man en línea. Recorre laberintos, come puntos, esquiva fantasmas en esta recreación auténtica del original de 1980.">
+    <meta property="og:title" content="Jogar Pac-Man - Jogo de Arcade Clássico Online">
+    <meta property="og:description" content="Jogue o clássico jogo de arcade Pac-Man gratuitamente online. Navegue por labirintos, coma pontos, evite fantasmas nesta recriação autêntica do original de 1980.">
     <meta property="og:image" content="https://pacman-arcade.com/images/pacman-version.jpg">
-    <meta property="og:url" content="https://pacman-arcade.com/game-es.html">
+    <meta property="og:url" content="https://pacman-arcade.com/game-pt.html">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale" content="pt_BR">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Jugar Pac-Man - Juego Arcade Clásico Online">
-    <meta name="twitter:description" content="Juega gratis al clásico juego arcade Pac-Man en línea. Recorre laberintos, come puntos, esquiva fantasmas en esta recreación auténtica del original de 1980.">
+    <meta name="twitter:title" content="Jogar Pac-Man - Jogo de Arcade Clássico Online">
+    <meta name="twitter:description" content="Jogue o clássico jogo de arcade Pac-Man gratuitamente online. Navegue por labirintos, coma pontos, evite fantasmas nesta recriação autêntica do original de 1980.">
     <meta name="twitter:image" content="https://pacman-arcade.com/images/pacman-version.jpg">
 
-    <!-- Permitir guardar como aplicación web en iOS -->
+    <!-- Language Detection Script -->
+    <script src="language-detector.js"></script>
+
+    <!-- Allow page to be saved as web app on iOS. -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <!-- Ocultar barra de estado -->
+    <!-- Hide status bar -->
     <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <!-- Icono para aplicación web iOS -->
+    <!-- icon used for iOS Web App -->
     <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
 
     <link rel="icon" type="image/png" href="icon/favicon.png"/>
@@ -49,6 +53,9 @@
         @font-face {
             font-family: 'ArcadeR';
             src: url('font/ARCADE_R.TTF');
+            /*
+            src: url('font/PressStart2P.ttf');
+            */
         }
         #canvas-warning {
             color: #FF0;
@@ -74,14 +81,20 @@
         }
     </style>
 
-    <script src="pacman.js"></script>
+<script src="pacman.js"></script>
+
 </head>
 
 <body>
+
+</div>
+
     <div style='font-family: ArcadeR'> </div>
-    <canvas id='canvas'><div id="canvas-warning">¡Tu navegador no soporta HTML Canvas. ¡Por favor, actualiza tu navegador!</div></canvas>
+    <canvas id='canvas'><div id="canvas-warning">Versão em Português - Seu navegador não suporta HTML Canvas. Por favor, atualize!</div></canvas>
     <canvas id='atlas' style="display:none"></canvas>
 
-    <a href="index-es.html" id="home-button">VOLVER</a>
+    <a href="index-pt.html" id="home-button">VOLTAR PARA INÍCIO</a>
+
 </body>
+
 </html>
