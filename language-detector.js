@@ -12,6 +12,30 @@
         'pt': 'index-pt.html',
         'de': 'index-de.html'
     };
+
+    const BOT_PATTERNS = [
+        /googlebot/i,
+        /bingbot/i,
+        /baiduspider/i,
+        /yandexbot/i,
+        /duckduckbot/i,
+        /slurp/i,
+        /sogou/i,
+        /exabot/i,
+        /facebot/i,
+        /ia_archiver/i
+    ];
+
+    const REDIRECT_DELAY = 250;
+
+    function isBot() {
+        if (typeof navigator === 'undefined' || !navigator.userAgent) {
+            return false;
+        }
+        return BOT_PATTERNS.some(function(pattern) {
+            return pattern.test(navigator.userAgent);
+        });
+    }
     
     // 获取用户首选语言
     function getUserLanguage() {
@@ -88,14 +112,18 @@
     }
     
     // 执行重定向
-    function redirectToLanguage() {
-        const targetPage = shouldRedirect();
+    function redirectToLanguage(targetPage) {
+        if (isBot()) {
+            console.log('🤖 Bot detected, redirect suppressed');
+            return;
+        }
+        const destination = targetPage || shouldRedirect();
         
-        if (targetPage && targetPage !== 'index.html') {
+        if (destination && destination !== 'index.html') {
             // 添加延迟，避免闪烁
             setTimeout(function() {
-                window.location.href = targetPage;
-            }, 100);
+                window.location.href = destination;
+            }, REDIRECT_DELAY);
         }
     }
     
@@ -162,6 +190,10 @@
         console.log('📍 Current path:', window.location.pathname);
         console.log('🔗 Current URL:', window.location.href);
         console.log('📁 Document ready state:', document.readyState);
+        if (isBot()) {
+            console.log('🤖 Bot detected, skipping automatic language redirect');
+            return;
+        }
         
         // 如果用户手动选择过语言，跳过自动重定向
         if (shouldSkipRedirect()) {
@@ -173,8 +205,8 @@
         const targetPage = shouldRedirect();
         if (targetPage) {
             console.log('🔄 Redirecting to:', targetPage);
-            console.log('⏰ Redirect will happen in 100ms...');
-            redirectToLanguage();
+            console.log('⏰ Redirect will happen in ' + REDIRECT_DELAY + 'ms...');
+            redirectToLanguage(targetPage);
         } else {
             console.log('✅ No redirect needed');
         }

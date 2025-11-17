@@ -169,3 +169,6 @@ body,
   overflow: hidden;
 }" > styles/global.css
 
+# refresh sitemap timestamps with the current build date
+SITEMAP_DATE=$(date +%F)
+perl -0pi -e "s|<lastmod>[^<]+</lastmod>|<lastmod>${SITEMAP_DATE}</lastmod>|g" sitemap.xml
