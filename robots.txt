@@ -14,4 +14,4 @@ Disallow: /randturn/
 Disallow: /promo/
 
 # Sitemap
-Sitemap: https://pacman-arcade.com/sitemap.xml
+Sitemap: https://pacmanonline.org/sitemap.xml
