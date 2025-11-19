@@ -60,6 +60,8 @@
         body {
             margin:0;
             background: #000;
+            min-height: 100vh;
+            padding-bottom: 300px;
         }
         @font-face {
             font-family: 'ArcadeR';
@@ -80,12 +82,54 @@
             font-family: 'ArcadeR', Arial, sans-serif;
             text-decoration: none;
             font-size: 14px;
-            z-index: 100;
+            z-index: 99999;
             border: 2px solid #FFF;
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+            cursor: pointer;
         }
         #home-button:hover {
             background-color: #FFF;
+        }
+        /* 移动端优化：扩大触摸区域但不改变视觉大小 */
+        @media (max-width: 768px) {
+            #home-button {
+                touch-action: manipulation;
+                pointer-events: auto;
+            }
+            #home-button::before {
+                content: '';
+                position: absolute;
+                top: -15px;
+                right: -15px;
+                bottom: -15px;
+                left: -15px;
+                z-index: -1;
+            }
+        }
+        .game-info {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(640px, calc(100% - 40px));
+            top: 726px;
+            text-align: center;
+            color: #FFF;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: rgba(0,0,0,0.6);
+            border-radius: 14px;
+            padding: 24px 30px;
+        }
+        @media (max-width: 768px) {
+            .game-info {
+                width: calc(100% - 40px);
+                top: 506px;
+                padding: 20px;
+                font-size: 14px;
+            }
+            .game-info h1 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 
@@ -120,6 +164,32 @@
     <canvas id='canvas'><div id="canvas-warning">¡Tu navegador no soporta HTML Canvas. ¡Por favor, actualiza tu navegador!</div></canvas>
     <canvas id='atlas' style="display:none"></canvas>
 
+    <section class="game-info">
+        <h1>Pac-Man Juego Online</h1>
+        <p>Experimenta la jugabilidad completa del clásico arcade de 1980 en tu navegador, con sonidos auténticos y ritmo de laberinto.</p>
+        <p>Usa las teclas de flecha del teclado o desliza en pantalla táctil para controlar a Pac-Man, come todos los puntos y evita los fantasmas.</p>
+        <p>Presiona <kbd>Esc</kbd> para abrir el menú, cambiar de modo o volver a la página de inicio para elegir otros juegos.</p>
+    </section>
+
     <a href="index-es.html" id="home-button">VOLVER</a>
+
+    <script>
+    // 修复移动端按钮点击问题：阻止触摸事件被游戏拦截
+    (function() {
+        var homeButton = document.getElementById('home-button');
+        if (homeButton) {
+            homeButton.addEventListener('touchstart', function(e) {
+                e.stopPropagation();
+            }, {passive: false});
+
+            homeButton.addEventListener('touchend', function(e) {
+                e.stopPropagation();
+                // 确保点击跳转
+                window.location.href = homeButton.href;
+            }, {passive: false});
+        }
+    })();
+    </script>
+
 </body>
 </html>

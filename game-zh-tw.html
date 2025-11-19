@@ -61,6 +61,8 @@
         body {
             margin:0;
             background: #000;
+            min-height: 100vh;
+            padding-bottom: 300px;
         }
         @font-face {
             font-family: 'ArcadeR';
@@ -81,12 +83,54 @@
             font-family: 'ArcadeR', Arial, sans-serif;
             text-decoration: none;
             font-size: 14px;
-            z-index: 100;
+            z-index: 99999;
             border: 2px solid #FFF;
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+            cursor: pointer;
         }
         #home-button:hover {
             background-color: #FFF;
+        }
+        /* 移动端优化：扩大触摸区域但不改变视觉大小 */
+        @media (max-width: 768px) {
+            #home-button {
+                touch-action: manipulation;
+                pointer-events: auto;
+            }
+            #home-button::before {
+                content: '';
+                position: absolute;
+                top: -15px;
+                right: -15px;
+                bottom: -15px;
+                left: -15px;
+                z-index: -1;
+            }
+        }
+        .game-info {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(640px, calc(100% - 40px));
+            top: 726px;
+            text-align: center;
+            color: #FFF;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: rgba(0,0,0,0.6);
+            border-radius: 14px;
+            padding: 24px 30px;
+        }
+        @media (max-width: 768px) {
+            .game-info {
+                width: calc(100% - 40px);
+                top: 506px;
+                padding: 20px;
+                font-size: 14px;
+            }
+            .game-info h1 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 
@@ -121,7 +165,33 @@
     <canvas id='canvas'><div id="canvas-warning">您的瀏覽器不支援HTML Canvas。請升級您的瀏覽器！</div></canvas>
     <canvas id='atlas' style="display:none"></canvas>
 
+    <section class="game-info">
+        <h1>小精靈網頁版</h1>
+        <p>在瀏覽器中體驗1980年經典街機的完整玩法,伴隨熟悉的音效和迷宮節奏。</p>
+        <p>使用鍵盤方向鍵或在觸控螢幕上滑動即可操控小精靈吃掉全部豆子並躲避幽靈。</p>
+        <p>按下 <kbd>Esc</kbd> 打開選單,可切換模式或返回主頁選擇其他遊戲。</p>
+    </section>
+
     <a href="index-zh-tw.html" id="home-button">返回首頁</a>
+
+    <script>
+    // 修复移动端按钮点击问题：阻止触摸事件被游戏拦截
+    (function() {
+        var homeButton = document.getElementById('home-button');
+        if (homeButton) {
+            homeButton.addEventListener('touchstart', function(e) {
+                e.stopPropagation();
+            }, {passive: false});
+
+            homeButton.addEventListener('touchend', function(e) {
+                e.stopPropagation();
+                // 确保点击跳转
+                window.location.href = homeButton.href;
+            }, {passive: false});
+        }
+    })();
+    </script>
+
 </body>
 
 </html>

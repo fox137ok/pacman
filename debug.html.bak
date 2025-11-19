@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta name="robots" content="noindex, nofollow">
-<meta charset="UTF-8">
-<title>Debug - Development Only</title>
-</head>
-<body>
 
 <script src="src/inherit.js"></script>
 <script src="src/sound.js"></script>
@@ -1966,6 +1958,3 @@
 <script src="src/vcr.js"></script>
 <script src="src/main.js"></script>
 
-
-</body>
-</html>

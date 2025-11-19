@@ -1,10 +1,12 @@
 User-agent: *
 Allow: /
+Allow: /images/
 
 # Disallow backup files and development files
 Disallow: /*.bak
 Disallow: /debug.htm
 Disallow: /debug.html
+Disallow: /test-*.html
 Disallow: /build.sh
 Disallow: /src/
 Disallow: /doc/

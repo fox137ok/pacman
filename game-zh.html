@@ -61,6 +61,8 @@
         body {
             margin:0;
             background: #000;
+            min-height: 100vh;
+            padding-bottom: 300px;
         }
         @font-face {
             font-family: 'ArcadeR';
@@ -81,12 +83,63 @@
             font-family: 'ArcadeR', Arial, sans-serif;
             text-decoration: none;
             font-size: 14px;
-            z-index: 100;
+            z-index: 99999;
             border: 2px solid #FFF;
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+            cursor: pointer;
         }
         #home-button:hover {
             background-color: #FFF;
+        }
+        /* 移动端优化：扩大触摸区域但不改变视觉大小 */
+        @media (max-width: 768px) {
+            #home-button {
+                touch-action: manipulation;
+                pointer-events: auto;
+            }
+            #home-button::before {
+                content: '';
+                position: absolute;
+                top: -15px;
+                right: -15px;
+                bottom: -15px;
+                left: -15px;
+                z-index: -1;
+            }
+        }
+        .game-info {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(640px, calc(100% - 40px));
+            top: 726px;
+            text-align: center;
+            color: #FFF;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: rgba(0,0,0,0.6);
+            border-radius: 14px;
+            padding: 24px 30px;
+        }
+        @media (max-width: 768px) {
+            .game-info {
+                width: calc(100% - 40px);
+                top: 506px;
+                padding: 20px;
+                font-size: 14px;
+            }
+            .game-info h1 {
+                font-size: 1.5rem;
+            }
+        }
+        .game-info h1 {
+            font-family: 'ArcadeR', Arial, sans-serif;
+            color: #FFD700;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .game-info p {
+            margin-bottom: 0.8rem;
         }
     </style>
 
@@ -121,7 +174,33 @@
     <canvas id='canvas'><div id="canvas-warning">您的浏览器不支持HTML Canvas。请升级您的浏览器！<br/>简体中文版游戏 - 经典吃豆人街机游戏体验</div></canvas>
     <canvas id='atlas' style="display:none"></canvas>
 
+    <section class="game-info">
+        <h1>吃豆人网页版</h1>
+        <p>在浏览器中体验1980年经典街机的完整玩法，伴随熟悉的音效和迷宫节奏。</p>
+        <p>使用键盘方向键或在触屏上滑动即可操控吃豆人吃掉全部豆子并躲避幽灵。</p>
+        <p>按下 <kbd>Esc</kbd> 打开菜单，可切换模式或返回主页选择其他游戏。</p>
+    </section>
+
     <a href="index-zh.html" id="home-button">返回首页</a>
+
+    <script>
+    // 修复移动端按钮点击问题：阻止触摸事件被游戏拦截
+    (function() {
+        var homeButton = document.getElementById('home-button');
+        if (homeButton) {
+            homeButton.addEventListener('touchstart', function(e) {
+                e.stopPropagation();
+            }, {passive: false});
+
+            homeButton.addEventListener('touchend', function(e) {
+                e.stopPropagation();
+                // 确保点击跳转
+                window.location.href = homeButton.href;
+            }, {passive: false});
+        }
+    })();
+    </script>
+
 </body>
 
 </html>
