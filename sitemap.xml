@@ -15,6 +15,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/index-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/index-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/index-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/index-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/index.html"/>
   </url>
 
@@ -31,6 +33,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/index-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/index-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/index-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/index-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/index.html"/>
   </url>
 
@@ -47,6 +51,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/index-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/index-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/index-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/index-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/index.html"/>
   </url>
 
@@ -63,6 +69,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/index-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/index-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/index-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/index-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/index.html"/>
   </url>
 
@@ -79,6 +87,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/index-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/index-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/index-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/index-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/index.html"/>
   </url>
 
@@ -95,6 +105,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/index-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/index-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/index-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/index-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/index.html"/>
   </url>
 
@@ -111,6 +123,44 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/index-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/index-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/index-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/index-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/index.html"/>
+  </url>
+  
+  <!-- Italian Main Page -->
+  <url>
+    <loc>https://pacmanonline.org/index-it.html</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/index-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/index-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/index-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/index-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/index-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/index-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/index.html"/>
+  </url>
+
+  <!-- French Main Page -->
+  <url>
+    <loc>https://pacmanonline.org/index-fr.html</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/index-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/index-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/index-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/index-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/index-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/index-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/index-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/index-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/index.html"/>
   </url>
 
@@ -127,6 +177,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/game-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/game-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/game-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/game-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/game-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/game.html"/>
   </url>
 
@@ -143,6 +195,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/game-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/game-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/game-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/game-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/game-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/game.html"/>
   </url>
 
@@ -159,6 +213,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/game-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/game-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/game-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/game-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/game-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/game.html"/>
   </url>
 
@@ -175,6 +231,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/game-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/game-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/game-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/game-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/game-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/game.html"/>
   </url>
 
@@ -191,6 +249,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/game-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/game-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/game-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/game-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/game-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/game.html"/>
   </url>
 
@@ -207,6 +267,8 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/game-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/game-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/game-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/game-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/game-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/game.html"/>
   </url>
 
@@ -223,6 +285,44 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/game-es.html"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/game-pt.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/game-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/game-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/game-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/game.html"/>
+  </url>
+  
+  <!-- Italian Game Page -->
+  <url>
+    <loc>https://pacmanonline.org/game-it.html</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/game.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/game-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/game-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/game-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/game-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/game-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/game-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/game-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/game-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/game.html"/>
+  </url>
+
+  <!-- French Game Page -->
+  <url>
+    <loc>https://pacmanonline.org/game-fr.html</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/game.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/game-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/game-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/game-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/game-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/game-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/game-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/game-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/game-fr.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/game.html"/>
   </url>
 

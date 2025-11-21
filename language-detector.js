@@ -10,7 +10,9 @@
         'ja': 'index-ja.html',
         'es': 'index-es.html',
         'pt': 'index-pt.html',
-        'de': 'index-de.html'
+        'de': 'index-de.html',
+        'it': 'index-it.html',
+        'fr': 'index-fr.html'
     };
 
     const BOT_PATTERNS = [

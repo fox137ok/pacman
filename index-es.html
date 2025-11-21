@@ -29,6 +29,8 @@
     <link rel="alternate" hreflang="es" href="https://pacmanonline.org/index-es.html">
     <link rel="alternate" hreflang="pt" href="https://pacmanonline.org/index-pt.html">
     <link rel="alternate" hreflang="de" href="https://pacmanonline.org/index-de.html">
+    <link rel="alternate" hreflang="it" href="https://pacmanonline.org/index-it.html">
+    <link rel="alternate" hreflang="fr" href="https://pacmanonline.org/index-fr.html">
     <link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/index.html">
     
     <!-- Open Graph Meta Tags -->
@@ -489,6 +491,8 @@
             <option value="index-ja.html">日本語</option>
             <option value="index-pt.html">Português</option>
             <option value="index-de.html">Deutsch</option>
+            <option value="index-it.html">Italiano</option>
+            <option value="index-fr.html">Français</option>
         </select>
     </div>
     <script>
@@ -507,6 +511,8 @@
             else if (url.includes('index-es.html')) selectedLanguage = 'es';
             else if (url.includes('index-pt.html')) selectedLanguage = 'pt';
             else if (url.includes('index-de.html')) selectedLanguage = 'de';
+            else if (url.includes('index-it.html')) selectedLanguage = 'it';
+            else if (url.includes('index-fr.html')) selectedLanguage = 'fr';
             
             localStorage.setItem('userSelectedLanguage', selectedLanguage);
             console.log('💾 Saved user language preference:', selectedLanguage);
