@@ -422,17 +422,27 @@ var loadHighScores = function() {
     var hs;
     var hslen;
     var i;
-    if (localStorage && localStorage.highScores) {
-        hs = JSON.parse(localStorage.highScores);
-        hslen = hs.length;
-        for (i=0; i<hslen; i++) {
-            highScores[i] = Math.max(highScores[i],hs[i]);
+    try {
+        if (localStorage && localStorage.highScores) {
+            hs = JSON.parse(localStorage.highScores);
+            hslen = hs.length;
+            for (i=0; i<hslen; i++) {
+                highScores[i] = Math.max(highScores[i],hs[i]);
+            }
         }
+    }
+    catch (err) {
+        console.warn("Skipping high score load; storage unavailable", err);
     }
 };
 var saveHighScores = function() {
-    if (localStorage) {
-        localStorage.highScores = JSON.stringify(highScores);
+    try {
+        if (localStorage) {
+            localStorage.highScores = JSON.stringify(highScores);
+        }
+    }
+    catch (err) {
+        console.warn("Skipping high score save; storage unavailable", err);
     }
 };
 //@line 1 "src/direction.js"
@@ -3093,6 +3103,64 @@ var getDevicePixelRatio = function() {
     return 1;
 };
 
+var showGameError = function(message) {
+    var canvasEl = document.getElementById('canvas');
+    if (canvasEl) {
+        canvasEl.style.display = "none";
+    }
+
+    var errorDiv = document.getElementById('game-error');
+    if (!errorDiv) {
+        errorDiv = document.createElement('div');
+        errorDiv.id = "game-error";
+        errorDiv.style.position = "fixed";
+        errorDiv.style.top = "50%";
+        errorDiv.style.left = "50%";
+        errorDiv.style.transform = "translate(-50%, -50%)";
+        errorDiv.style.background = "#000";
+        errorDiv.style.color = "#fff";
+        errorDiv.style.padding = "24px 28px";
+        errorDiv.style.border = "3px solid #ff0";
+        errorDiv.style.borderRadius = "10px";
+        errorDiv.style.fontFamily = "ArcadeR, monospace";
+        errorDiv.style.fontSize = "16px";
+        errorDiv.style.textAlign = "center";
+        errorDiv.style.zIndex = "10000";
+        errorDiv.style.maxWidth = "90%";
+        errorDiv.style.lineHeight = "1.6";
+        document.body.appendChild(errorDiv);
+    }
+
+    errorDiv.innerHTML = "";
+    var title = document.createElement("div");
+    title.textContent = "GAME ERROR";
+    title.style.fontSize = "22px";
+    title.style.marginBottom = "16px";
+    title.style.color = "#ff0";
+    errorDiv.appendChild(title);
+
+    var msg = document.createElement("div");
+    msg.textContent = message;
+    msg.style.whiteSpace = "pre-line";
+    errorDiv.appendChild(msg);
+
+    var reloadBtn = document.createElement("button");
+    reloadBtn.textContent = "RELOAD PAGE";
+    reloadBtn.style.marginTop = "16px";
+    reloadBtn.style.padding = "10px 16px";
+    reloadBtn.style.fontFamily = "ArcadeR, monospace";
+    reloadBtn.style.fontSize = "14px";
+    reloadBtn.style.background = "#ff0";
+    reloadBtn.style.color = "#000";
+    reloadBtn.style.border = "none";
+    reloadBtn.style.borderRadius = "6px";
+    reloadBtn.style.cursor = "pointer";
+    reloadBtn.addEventListener("click", function() { window.location.reload(); });
+    errorDiv.appendChild(reloadBtn);
+
+    errorDiv.style.display = "block";
+};
+
 var initRenderer = function(){
 
     var bgCanvas;
@@ -3173,9 +3241,17 @@ var initRenderer = function(){
 
     // create foreground and background canvases
     canvas = document.getElementById('canvas');
+    if (!canvas) {
+        showGameError("Game canvas not found. Please refresh or try another browser.");
+        return false;
+    }
     bgCanvas = document.createElement('canvas');
     ctx = canvas.getContext("2d");
     bgCtx = bgCanvas.getContext("2d");
+    if (!ctx || !bgCtx) {
+        showGameError("Unable to initialize graphics. Try turning off private/incognito mode or browser extensions.");
+        return false;
+    }
 
     // initialize placement and size
     fullscreen();
@@ -4129,6 +4205,8 @@ var initRenderer = function(){
         new ArcadeRenderer(),
     ];
     renderer = renderer_list[1];
+
+    return true;
 };
 //@line 1 "src/hud.js"
 
@@ -13510,26 +13588,34 @@ var vcr = (function() {
 // Entry Point
 
 window.addEventListener("load", function() {
-    loadHighScores();
-    initRenderer();
-    atlas.create();
-    initSwipe();
-	var anchor = window.location.hash.substring(1);
-	if (anchor == "learn") {
-		switchState(learnState);
-	}
-	else if (anchor == "cheat_pac" || anchor == "cheat_mspac") {
-		gameMode = (anchor == "cheat_pac") ? GAME_PACMAN : GAME_MSPACMAN;
-		practiceMode = true;
-        switchState(newGameState);
-		for (var i=0; i<4; i++) {
-			ghosts[i].isDrawTarget = true;
-			ghosts[i].isDrawPath = true;
-		}
-	}
-	else {
-		switchState(homeState);
-	}
-    executive.init();
+    try {
+        loadHighScores();
+        if (!initRenderer()) {
+            return;
+        }
+        atlas.create();
+        initSwipe();
+    	var anchor = window.location.hash.substring(1);
+    	if (anchor == "learn") {
+    		switchState(learnState);
+    	}
+    	else if (anchor == "cheat_pac" || anchor == "cheat_mspac") {
+    		gameMode = (anchor == "cheat_pac") ? GAME_PACMAN : GAME_MSPACMAN;
+    		practiceMode = true;
+            switchState(newGameState);
+    		for (var i=0; i<4; i++) {
+    			ghosts[i].isDrawTarget = true;
+    			ghosts[i].isDrawPath = true;
+    		}
+    	}
+    	else {
+    		switchState(homeState);
+    	}
+        executive.init();
+    }
+    catch (err) {
+        console.error("Game initialization failed:", err);
+        showGameError("Unable to start the game. Please refresh, disable private/incognito mode, or try another browser.");
+    }
 });
 })();
