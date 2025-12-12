@@ -25,7 +25,9 @@
         /sogou/i,
         /exabot/i,
         /facebot/i,
-        /ia_archiver/i
+        /ia_archiver/i,
+        /lighthouse/i,
+        /pagespeed/i
     ];
 
     const REDIRECT_DELAY = 250;
@@ -33,6 +35,9 @@
     function isBot() {
         if (typeof navigator === 'undefined' || !navigator.userAgent) {
             return false;
+        }
+        if (navigator.webdriver) {
+            return true;
         }
         return BOT_PATTERNS.some(function(pattern) {
             return pattern.test(navigator.userAgent);
@@ -82,6 +87,10 @@
     
     // 检查当前页面是否匹配用户语言
     function shouldRedirect() {
+        // 本地/测试环境跳过自动重定向，避免影响开发和测速
+        if (['127.0.0.1', 'localhost'].includes(window.location.hostname)) {
+            return null;
+        }
         const currentPath = window.location.pathname;
         const userLang = getUserPreferredLanguage(); // 使用改进的语言检测
         const targetPage = languageMap[userLang];

@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7912112964735452"
-     crossorigin="anonymous"></script>
-<meta charset="UTF-8">
+    <!-- 延迟加载第三方脚本：gtag / adsense / plausible / clarity -->
+    <script>
+      (function() {
+        const GTAG_ID = 'G-3H5HVRCKP5';
+        const ADS_CLIENT = 'ca-pub-7912112964735452';
+        const CLARITY_ID = 'uic6makaek';
+        const PLAUSIBLE_SRC = 'https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js';
+        let loaded = false;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function(){ dataLayer.push(arguments); };
+        window.plausible = window.plausible || function(){ (plausible.q = plausible.q || []).push(arguments); };
+
+        function loadScript(src, attrs = {}, onload) {
+          const s = document.createElement('script');
+          s.src = src;
+          s.async = true;
+          Object.entries(attrs).forEach(([k,v]) => s.setAttribute(k, v));
+          if (onload) s.onload = onload;
+          document.head.appendChild(s);
+        }
+
+        function loadAll() {
+          if (loaded) return;
+          loaded = true;
+          loadScript(`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`, {}, function() {
+            gtag('js', new Date());
+            gtag('config', GTAG_ID);
+          });
+          loadScript(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADS_CLIENT}`, { crossorigin: 'anonymous' });
+          loadScript(PLAUSIBLE_SRC, {}, function() {
+            plausible('pageview');
+          });
+          loadScript(`https://www.clarity.ms/tag/${CLARITY_ID}`);
+        }
+
+        function trigger() {
+          loadAll();
+          window.removeEventListener('scroll', trigger);
+          window.removeEventListener('pointerdown', trigger);
+          window.removeEventListener('touchstart', trigger);
+          window.removeEventListener('keydown', trigger);
+        }
+
+        window.addEventListener('scroll', trigger, { once: true, passive: true });
+        window.addEventListener('pointerdown', trigger, { once: true, passive: true });
+        window.addEventListener('touchstart', trigger, { once: true, passive: true });
+        window.addEventListener('keydown', trigger, { once: true });
+        document.addEventListener('visibilitychange', function() {
+          if (document.visibilityState === 'hidden') trigger();
+        }, { once: true });
+        window.addEventListener('DOMContentLoaded', function() {
+          const btn = document.querySelector('.play-btn');
+          if (btn) btn.addEventListener('click', trigger, { once: true });
+        });
+      })();
+    </script>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-3H5HVRCKP5');
-    </script>
 
-    <!-- Privacy-friendly analytics by Plausible -->
-    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
-    <script>
-      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-      plausible.init()
-    </script>
-
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "uic6makaek");
-    </script>
 
     <!-- Language Detection Script -->
-    <script src="language-detector.js"></script>
+    <script src="language-detector.js" defer></script>
+    <link rel="preload" as="font" href="font/ARCADE_R.TTF" type="font/ttf" crossorigin>
+    <link rel="preload" as="image" href="images/pacman-version.webp" fetchpriority="high">
     
     <title>Pac-Man - Jeu d'Arcade Classique</title>
     <meta name="description" content="Jouez gratuitement en ligne au classique Pac-Man. Parcourez les labyrinthes, mangez les pac-gommes, évitez les fantômes et visez le meilleur score dans cet incontournable rétro !">
@@ -82,6 +113,7 @@
         @font-face {
             font-family: 'ArcadeR';
             src: url('font/ARCADE_R.TTF');
+            font-display: swap;
         }
         
         :root {
@@ -105,6 +137,17 @@
             color: var(--text-color);
             line-height: 1.6;
         }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
         
         .arcade-font {
             font-family: 'ArcadeR', 'Arial', sans-serif;
@@ -117,7 +160,13 @@
         }
         
         header {
+            /* fallback */
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/pacman-version.jpg');
+            /* prefer modern format */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), image-set(
+                url('images/pacman-version.webp') type('image/webp') 1x,
+                url('images/pacman-version.jpg') type('image/jpeg') 1x
+            );
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -212,6 +261,7 @@
             width: 300px;
             text-align: center;
             border: 2px solid var(--accent-color);
+            color: #f0f0f0;
         }
         
         .feature-card h3 {
@@ -228,6 +278,7 @@
             justify-content: center;
             gap: 30px;
             margin-top: 40px;
+            align-items: stretch;
         }
         
         .version-card {
@@ -236,13 +287,18 @@
             width: 320px;
             text-align: center;
             border: 2px solid var(--accent-color);
-            overflow: hidden;
+            overflow: visible;
             padding-bottom: 15px;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 320px;
+            min-height: 100%;
         }
         
         .version-img {
             width: 100%;
-            height: 370px; /* Adjusted for 584×743 aspect ratio */
+            aspect-ratio: 584 / 743;
             background-color: rgba(100, 100, 100, 0.2);
             display: flex;
             align-items: center;
@@ -252,6 +308,19 @@
             margin-bottom: 15px;
             border-radius: 8px;
         }
+
+        .version-img picture {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .version-img img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
         
         .version-img p {
             font-size: 0.9rem;
@@ -260,6 +329,11 @@
         
         .version-info {
             padding: 25px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-height: 180px;
         }
         
         .version-info h3 {
@@ -281,8 +355,9 @@
             background-color: var(--section-bg);
             border-radius: 10px;
             border: 2px solid var(--accent-color);
-            overflow: hidden;
+            overflow: visible;
             padding-bottom: 15px;
+            color: #f0f0f0;
         }
         
         .mode-img-learn {
@@ -295,6 +370,21 @@
             justify-content: center;
             margin-bottom: 15px;
             border-radius: 8px;
+        }
+
+        .mode-img-learn picture,
+        .mode-img-practice picture {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mode-img-learn img,
+        .mode-img-practice img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
         
         .mode-img-practice {
@@ -506,7 +596,8 @@
 <body>
     <!-- 语言切换器 -->
     <div id="lang-switcher">
-        <select onchange="changeLang(this.value)">
+        <label for="lang-switcher-select" class="sr-only">Language</label>
+        <select id="lang-switcher-select" onchange="changeLang(this.value)">
             <option value="index.html">English</option>
             <option value="index-zh.html">简体中文</option>
             <option value="index-zh-tw.html">繁體中文</option>
@@ -550,6 +641,7 @@
 
     </script>
 
+    <main>
     <header>
         <div class="container">
             <h1 class="arcade-font">PAC-MAN</h1>
@@ -597,7 +689,10 @@
                         <p>Le classique de 1980 signé Namco. Gameplay iconique, ambiance arcade originale et montée en difficulté progressive.</p>
                     </div>
                     <div class="version-img">
-                        <img src="images/pacman-version.jpg" alt="Version de jeu Pac-Man" style="width: 100%; height: 100%; object-fit: cover;">
+                        <picture>
+                            <source srcset="images/pacman-version.webp" type="image/webp">
+                            <img src="images/pacman-version.jpg" alt="Version de jeu Pac-Man" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        </picture>
                     </div>
                 </div>
                 <div class="version-card">
@@ -606,7 +701,10 @@
                         <p>La version 1981 de GCC/Midway avec de nouveaux labyrinthes, des fantômes moins prévisibles et des mécaniques améliorées.</p>
                     </div>
                     <div class="version-img">
-                        <img src="images/mspacman-version.jpg" alt="Version Ms. Pac-Man" style="width: 100%; height: 100%; object-fit: cover;">
+                        <picture>
+                            <source srcset="images/mspacman-version.webp" type="image/webp">
+                            <img src="images/mspacman-version.jpg" alt="Version Ms. Pac-Man" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        </picture>
                     </div>
                 </div>
                 <div class="version-card">
@@ -615,7 +713,10 @@
                         <p>Une création inédite dotée d'un <b>générateur de cartes procédural</b> : chaque niveau propose un labyrinthe différent.</p>
                     </div>
                     <div class="version-img">
-                        <img src="images/cookieman-version.jpg" alt="Version Cookie-Man" style="width: 100%; height: 100%; object-fit: cover;">
+                        <picture>
+                            <source srcset="images/cookieman-version.webp" type="image/webp">
+                            <img src="images/cookieman-version.jpg" alt="Version Cookie-Man" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -636,7 +737,10 @@
                         <p>Visualisez la logique des fantômes grâce à des repères colorés indiquant leurs cibles. Parfait pour comprendre l'IA et anticiper les trajectoires.</p>
                     </div>
                     <div class="mode-img-learn">
-                        <img src="images/learn-mode.jpg" alt="Mode Analyse" style="width: 100%; height: 100%; object-fit: cover;">
+                        <picture>
+                            <source srcset="images/learn-mode.webp" type="image/webp">
+                            <img src="images/learn-mode.jpg" alt="Mode Analyse" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        </picture>
                     </div>
                 </div>
                 
@@ -646,7 +750,10 @@
                         <p>Activez des outils spéciaux : ralenti, rembobinage, invincibilité et visualisation des trajectoires. L'idéal pour maîtriser chaque détail du jeu.</p>
                     </div>
                     <div class="mode-img-practice">
-                        <img src="images/practice-mode.jpg" alt="Mode Entraînement" style="width: 100%; height: 100%; object-fit: cover;">
+                        <picture>
+                            <source srcset="images/practice-mode.webp" type="image/webp">
+                            <img src="images/practice-mode.jpg" alt="Mode Entraînement" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -691,6 +798,7 @@
             </div>
         </div>
     </section>
+    </main>
     
     <footer>
         <div class="container" style="text-align: center; padding: 20px 0;">
@@ -698,9 +806,14 @@
                 <strong>PAC-MAN™ & © Bandai Namco Entertainment Inc.</strong><br>
                 <small>Ce projet open source suit la licence GPL v3 et est destiné uniquement à des fins éducatives</small>
             </p>
-            <p style="font-size: 0.75rem; opacity: 0.6;">
+            <p style="font-size: 0.75rem; opacity: 0.6; margin-bottom: 15px;">
                 © 2025 Jeu Pac-Man en Ligne Gratuit | Version non officielle
             </p>
+            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <a href="privacy-fr.html" style="color: #d7d7d7; text-decoration: none; margin: 0 15px; font-size: 0.75rem; transition: color 0.3s;">Politique de Confidentialité</a>
+                <span style="color: rgba(255, 255, 255, 0.3);">|</span>
+                <a href="terms-fr.html" style="color: #d7d7d7; text-decoration: none; margin: 0 15px; font-size: 0.75rem; transition: color 0.3s;">Conditions d'Utilisation</a>
+            </div>
         </div>
     </footer>
 </body>
