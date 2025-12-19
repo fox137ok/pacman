@@ -326,4 +326,311 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/game.html"/>
   </url>
 
+
+  <url>
+    <loc>https://pacmanonline.org/privacy.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/privacy-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/privacy-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/privacy-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/privacy-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/privacy-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/privacy-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/privacy-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/privacy-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/privacy-zh.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/privacy-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/privacy-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/privacy-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/privacy-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/privacy-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/privacy-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/privacy-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/privacy-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/privacy-zh-tw.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/privacy-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/privacy-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/privacy-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/privacy-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/privacy-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/privacy-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/privacy-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/privacy-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/privacy-ja.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/privacy-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/privacy-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/privacy-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/privacy-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/privacy-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/privacy-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/privacy-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/privacy-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/privacy-es.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/privacy-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/privacy-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/privacy-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/privacy-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/privacy-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/privacy-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/privacy-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/privacy-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/privacy-pt.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/privacy-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/privacy-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/privacy-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/privacy-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/privacy-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/privacy-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/privacy-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/privacy-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/privacy-de.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/privacy-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/privacy-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/privacy-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/privacy-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/privacy-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/privacy-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/privacy-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/privacy-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/privacy-it.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/privacy-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/privacy-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/privacy-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/privacy-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/privacy-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/privacy-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/privacy-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/privacy-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/privacy-fr.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/privacy-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/privacy-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/privacy-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/privacy-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/privacy-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/privacy-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/privacy-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/privacy-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/terms.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/terms-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/terms-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/terms-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/terms-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/terms-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/terms-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/terms-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/terms-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/terms.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/terms-zh.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/terms-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/terms-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/terms-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/terms-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/terms-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/terms-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/terms-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/terms-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/terms.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/terms-zh-tw.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/terms-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/terms-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/terms-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/terms-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/terms-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/terms-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/terms-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/terms-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/terms.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/terms-ja.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/terms-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/terms-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/terms-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/terms-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/terms-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/terms-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/terms-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/terms-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/terms.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/terms-es.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/terms-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/terms-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/terms-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/terms-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/terms-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/terms-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/terms-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/terms-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/terms.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/terms-pt.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/terms-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/terms-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/terms-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/terms-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/terms-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/terms-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/terms-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/terms-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/terms.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/terms-de.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/terms-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/terms-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/terms-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/terms-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/terms-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/terms-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/terms-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/terms-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/terms.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/terms-it.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/terms-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/terms-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/terms-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/terms-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/terms-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/terms-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/terms-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/terms-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/terms.html"/>
+  </url>
+
+  <url>
+    <loc>https://pacmanonline.org/terms-fr.html</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/terms-zh.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/terms-zh-tw.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pacmanonline.org/terms-ja.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pacmanonline.org/terms-es.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pacmanonline.org/terms-pt.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pacmanonline.org/terms-de.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pacmanonline.org/terms-it.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pacmanonline.org/terms-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/terms.html"/>
+  </url>
+
 </urlset>

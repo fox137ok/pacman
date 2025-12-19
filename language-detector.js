@@ -17,6 +17,13 @@
 
     const BOT_PATTERNS = [
         /googlebot/i,
+        /google-inspectiontool/i,
+        /googleother/i,
+        /adsbot-google/i,
+        /mediapartners-google/i,
+        /storebot-google/i,
+        /feedfetcher-google/i,
+        /googleweblight/i,
         /bingbot/i,
         /baiduspider/i,
         /yandexbot/i,
@@ -27,7 +34,10 @@
         /facebot/i,
         /ia_archiver/i,
         /lighthouse/i,
-        /pagespeed/i
+        /pagespeed/i,
+        /crawler/i,
+        /spider/i,
+        /bot/i
     ];
 
     const REDIRECT_DELAY = 250;
@@ -37,6 +47,9 @@
             return false;
         }
         if (navigator.webdriver) {
+            return true;
+        }
+        if (/google/i.test(navigator.userAgent) && /(bot|crawl|spider)/i.test(navigator.userAgent)) {
             return true;
         }
         return BOT_PATTERNS.some(function(pattern) {
@@ -212,12 +225,10 @@
             return;
         }
         
-        // 执行语言检测和重定向
+        // 执行语言检测但不自动重定向（避免被搜索引擎判定为自动跳转）
         const targetPage = shouldRedirect();
         if (targetPage) {
-            console.log('🔄 Redirecting to:', targetPage);
-            console.log('⏰ Redirect will happen in ' + REDIRECT_DELAY + 'ms...');
-            redirectToLanguage(targetPage);
+            console.log('ℹ️ Auto redirect disabled. Suggested target:', targetPage);
         } else {
             console.log('✅ No redirect needed');
         }
