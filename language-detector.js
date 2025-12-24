@@ -41,6 +41,7 @@
     ];
 
     const REDIRECT_DELAY = 250;
+    const AUTO_REDIRECT_ENABLED = false; // keep disabled to avoid referrer loss and bot-cloaking risk
 
     function isBot() {
         if (typeof navigator === 'undefined' || !navigator.userAgent) {
@@ -225,12 +226,17 @@
             return;
         }
         
-        // 执行语言检测但不自动重定向（避免被搜索引擎判定为自动跳转）
-        const targetPage = shouldRedirect();
-        if (targetPage) {
-            console.log('ℹ️ Auto redirect disabled. Suggested target:', targetPage);
+        if (AUTO_REDIRECT_ENABLED) {
+            const targetPage = shouldRedirect();
+            if (targetPage) {
+                console.log('🔄 Redirecting to:', targetPage);
+                console.log('⏰ Redirect will happen in ' + REDIRECT_DELAY + 'ms...');
+                redirectToLanguage(targetPage);
+            } else {
+                console.log('✅ No redirect needed');
+            }
         } else {
-            console.log('✅ No redirect needed');
+            console.log('ℹ️ Automatic language redirect is disabled; using language selector/manual choice only');
         }
     }
     
