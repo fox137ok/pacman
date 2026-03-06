@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3H5HVRCKP5');
+    </script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uic6makaek");
+    </script>
+
+    <title>パックマン FAQ - よくある質問</title>
+    <meta name="description" content="Pac-Man Arcade に関するよくある質問をまとめています。操作方法、対応端末、ゲームモード、不具合時の確認方法、プライバシー、お問い合わせ先をご確認ください。">
+    <link rel="canonical" href="https://pacmanonline.org/faq-ja.html">
+
+    <link rel="alternate" hreflang="en" href="https://pacmanonline.org/faq.html">
+    <link rel="alternate" hreflang="ja" href="https://pacmanonline.org/faq-ja.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/faq.html">
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section,
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>FAQ</h1>
+            <a href="index-ja.html" class="back-link">← ホームに戻る</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="highlight-box">
+                <h2>よくある質問をまとめました</h2>
+                <p>このページでは、遊び方、対応端末、ゲームモード、不具合時の確認方法、プライバシー、お問い合わせ先など、よくある質問をわかりやすくご案内しています。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>このゲームは無料で遊べますか？</h2>
+                <p>はい。ブラウザ版は無料でご利用いただけます。アカウント登録や事前の支払いは必要ありません。</p>
+
+                <h2>何かダウンロードは必要ですか？</h2>
+                <p>いいえ、必要ありません。ページを開けば、そのままブラウザ上ですぐにプレイできます。</p>
+
+                <h2>スマートフォンでも遊べますか？</h2>
+                <p>はい。対応しているモバイルブラウザであればプレイ可能です。スマートフォンではタッチ操作やスワイプ操作に対応していますが、全体的な遊びやすさはPCのほうが高いことが多いです。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>操作方法を教えてください</h2>
+                <p>PCでは方向キーで操作します。スマートフォンやタブレットでは、タッチ操作とスワイプ操作に対応しています。</p>
+
+                <h2>パックマンの目的は何ですか？</h2>
+                <p>迷路の中にあるドットをすべて食べ切りながら、おばけにつかまらずに進むことが目的です。パワーエサを取ると一時的に反撃でき、おばけを食べて追加得点も狙えます。</p>
+
+                <h2>高得点を取るにはどうすればいいですか？</h2>
+                <p>通常ドット、パワーエサ、フルーツ、おばけの連続撃破で得点が入ります。無駄な動きを減らし、安全なルートを意識しながら、パワーエサを使う場面を見極めることが高得点への近道です。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>学習モードと練習モードは何ができますか？</h2>
+                <p>どちらもゲームを理解しやすくするためのモードです。学習モードではおばけの動きの意図を把握しやすくなり、練習モードではスロー再生や巻き戻しを使って危険な場面を何度でも試せます。</p>
+
+                <h2>ターボモードとは何ですか？</h2>
+                <p>ゲーム全体のテンポが速くなり、操作の精度がより求められるモードです。通常のスピードに慣れてきた方に向いています。</p>
+
+                <h2>初心者はどのモードから始めるのがおすすめですか？</h2>
+                <p>まずは通常のゲームで基本の流れに慣れるのがおすすめです。その後、失敗の原因を確認したいときに学習モードや練習モードを使うと、上達しやすくなります。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>ゲームがうまく読み込めないときは？</h2>
+                <p>ページの再読み込み、別の最新ブラウザでの確認、拡張機能の一時停止、ネットワーク環境の切り替えをお試しください。ブラウザのキャッシュやスクリプト制限が原因になることもあります。</p>
+
+                <h2>音が出ないのはなぜですか？</h2>
+                <p>ブラウザによっては、ページ上で操作するまで音声再生が制限されることがあります。端末の音量、ブラウザの音声設定、タブのミュート状態をご確認ください。ページを一度操作したあとに再読み込みすると改善する場合もあります。</p>
+
+                <h2>進行状況は自動で保存されますか？</h2>
+                <p>保存の有無は機能やブラウザのローカル保存の扱いによって変わります。基本的には、アカウント連携型の長期保存よりも、気軽にすぐ遊べるブラウザ体験を重視した設計です。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>これは公式のPac-Manサイトですか？</h2>
+                <p>いいえ。このサイトは、非公式のファン向け・教育目的を含むプロジェクトとして運営されています。ブラウザでクラシックな迷路アクションを楽しめるようにしつつ、ガイドや学習コンテンツも提供しています。</p>
+
+                <h2>Cookieや解析ツールは使っていますか？</h2>
+                <p>サイト運営やアクセス状況の把握のため、Cookie、広告技術、解析ツールなどを利用する場合があります。詳しくは <a href="privacy-ja.html">プライバシーポリシー</a> をご確認ください。</p>
+
+                <h2>問い合わせはどこからできますか？</h2>
+                <p>不具合報告、プライバシーに関する相談、権利関連のお問い合わせは、<a href="contact-ja.html">お問い合わせページ</a> に記載のメールアドレスからご連絡ください。</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ & © Bandai Namco Entertainment Inc.</strong></p>
+            <p>このページでは、遊び方、動作環境、不具合時の確認方法、プライバシー、お問い合わせ先に関するよくある質問をまとめています。</p>
+            <div class="footer-links">
+                <a href="index-ja.html">ホーム</a>
+                <a href="game-ja.html">今すぐプレイ</a>
+                <a href="guide-ja.html">遊び方ガイド</a>
+                <a href="modes-ja.html">ゲームモード</a>
+                <a href="contact-ja.html">お問い合わせ</a>
+                <a href="privacy-ja.html">プライバシーポリシー</a>
+                <a href="terms-ja.html">利用規約</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3H5HVRCKP5');
+    </script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uic6makaek");
+    </script>
+
+    <title>Pac-Man Spielmodi</title>
+    <meta name="description" content="Entdecken Sie die verfügbaren Spielmodi wie Lernmodus, Übungsmodus und Turbo-Modus und erfahren Sie, welcher Modus sich für welches Ziel eignet.">
+    <link rel="canonical" href="https://pacmanonline.org/modes-de.html">
+
+    <link rel="alternate" hreflang="en" href="https://pacmanonline.org/modes.html">
+    <link rel="alternate" hreflang="de" href="https://pacmanonline.org/modes-de.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/modes.html">
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section,
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SPIELMODI</h1>
+            <a href="game-de.html" class="back-link">← Jetzt Spielen</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="highlight-box">
+                <h2>Wofür die Modi gedacht sind</h2>
+                <p>Auf dieser Website können Sie nicht nur ganz normal spielen. Es gibt auch Modi, mit denen sich Spielmechaniken besser verstehen, schwierige Situationen gezielt üben oder besonders schnelle Runden erleben lassen.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Klassisches Spiel</h2>
+                <p>Das ist die klassische und direkteste Art, Pac-Man zu spielen. Im Mittelpunkt stehen Routenwahl, Druck durch die Geister und das sichere Abräumen des Labyrinths.</p>
+                <p>Dieser Modus eignet sich ideal für alle, die zuerst das normale Spielgefühl kennenlernen möchten.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Lernmodus</h2>
+                <p>Der Lernmodus hilft dabei, besser zu verstehen, warum sich Geister in bestimmten Situationen auf eine bestimmte Weise verhalten. So lassen sich Muster, Abkürzungen und gefährliche Stellen leichter erkennen.</p>
+                <ul>
+                    <li>Ideal, um das Verhalten der Geister besser nachzuvollziehen</li>
+                    <li>Hilft zu verstehen, warum manche Wege gefährlicher sind als andere</li>
+                    <li>Gut geeignet, um vom reinen Reagieren zum bewussten Spielen zu kommen</li>
+                </ul>
+                <p>Wenn im normalen Spiel vieles chaotisch wirkt, ist dieser Modus oft der beste Einstieg, um Zusammenhänge klarer zu sehen.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Übungsmodus</h2>
+                <p>Der Übungsmodus richtet sich an alle, die bestimmte Situationen gezielt trainieren möchten, ohne nach jedem Fehler komplett von vorne zu beginnen. Das macht ihn besonders nützlich für echtes Training.</p>
+                <h3>Hilfreiche Funktionen</h3>
+                <ul>
+                    <li><strong>Zeitlupe:</strong> macht schnelle Entscheidungen leichter lesbar</li>
+                    <li><strong>Zurückspulen:</strong> bringt Sie direkt an den Punkt vor dem Fehler zurück</li>
+                    <li><strong>Unverwundbarkeit:</strong> erlaubt gefahrloses Testen von Routen</li>
+                    <li><strong>Zielanzeige der Geister:</strong> verbindet Übung mit besserem Spielverständnis</li>
+                </ul>
+                <p>Wer an denselben Stellen immer wieder scheitert oder Schlussphasen sicherer spielen möchte, profitiert von diesem Modus besonders stark.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Turbo-Modus</h2>
+                <p>Im Turbo-Modus bewegt sich Pac-Man deutlich schneller, wodurch das gesamte Spielgefühl intensiver und fordernder wird. Entscheidungen müssen schneller fallen, Fehler wirken sich unmittelbarer aus.</p>
+                <ul>
+                    <li>Empfohlen für Spielerinnen und Spieler mit sicherem Grundgefühl</li>
+                    <li>Sorgt für mehr Tempo und ein deutlich anspruchsvolleres Spielgefühl</li>
+                    <li>Belohnt präzise Wege, gutes Timing und klare Entscheidungen</li>
+                </ul>
+                <p>Während der normale Modus vor allem Kontrolle vermittelt, fordert der Turbo-Modus vor allem saubere Ausführung.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Welcher Modus passt am besten?</h2>
+                <ol>
+                    <li><strong>Wenn Sie neu anfangen:</strong> zuerst klassisch spielen und später in den Lernmodus wechseln</li>
+                    <li><strong>Wenn Sie gezielt besser werden möchten:</strong> den Übungsmodus für schwierige Stellen nutzen</li>
+                    <li><strong>Wenn Sie mehr Herausforderung suchen:</strong> den Turbo-Modus ausprobieren, sobald die normalen Routen sitzen</li>
+                </ol>
+            </div>
+
+            <div class="content-section">
+                <h2>Empfohlene Reihenfolge zum Lernen</h2>
+                <p>Eine gute Herangehensweise ist es, die Modi bewusst zu kombinieren:</p>
+                <ol>
+                    <li>Eine normale Runde spielen und problematische Stellen erkennen</li>
+                    <li>Im Lernmodus nachvollziehen, was die Geister dort getan haben</li>
+                    <li>Im Übungsmodus alternative Routen testen</li>
+                    <li>Zurück ins normale Spiel wechseln und das Gelernte anwenden</li>
+                    <li>Später mit dem Turbo-Modus an Tempo und Sicherheit arbeiten</li>
+                </ol>
+                <p>So wird die Website nicht nur zu einer Spieleseite, sondern auch zu einem sinnvollen Werkzeug zum Lernen und Verbessern.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ & © Bandai Namco Entertainment Inc.</strong></p>
+            <p>Diese Seite erklärt, wofür die einzelnen Modi gedacht sind und welcher Modus zu welchem Spielziel passt.</p>
+            <div class="footer-links">
+                <a href="index-de.html">Startseite</a>
+                <a href="game-de.html">Jetzt Spielen</a>
+                <a href="guide-de.html">Spielanleitung</a>
+                <a href="contact-de.html">Kontakt</a>
+                <a href="privacy-de.html">Datenschutzrichtlinie</a>
+                <a href="terms-de.html">Nutzungsbedingungen</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

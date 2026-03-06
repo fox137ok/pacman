@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3H5HVRCKP5');
+    </script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uic6makaek");
+    </script>
+
+    <title>小精靈怎麼玩 - 遊戲指南</title>
+    <meta name="description" content="透過這份實用指南了解小精靈的目標、操作、得分方式、幽靈行為以及進步技巧。">
+    <link rel="canonical" href="https://pacmanonline.org/guide-zh-tw.html">
+
+    <link rel="alternate" hreflang="en" href="https://pacmanonline.org/guide.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/guide-zh-tw.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/guide.html">
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section,
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>玩法指南</h1>
+            <a href="game-zh-tw.html" class="back-link">← 前往遊戲</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="highlight-box">
+                <h2>快速上手</h2>
+                <p>小精靈的目標很直接：吃掉迷宮中的全部豆子，同時避免被幽靈抓到。拿到能量豆後你可以暫時反擊，追逐受驚的幽靈來獲得額外分數，並盡量活到清空整張地圖。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>核心目標</h2>
+                <p>每一局開始時，Pac-Man 會出現在充滿小豆、四隻幽靈和四顆能量豆的迷宮中。你需要吃掉所有普通豆與能量豆才能過關。真正的難點在於如何高效走位、何時避險，以及何時把握機會反打與拿分。</p>
+                <p>這款遊戲規則看似簡單，但當你開始理解幽靈行為、路線規劃與節奏控制後，它就會變得非常有深度。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>操作方式</h2>
+                <ul>
+                    <li><strong>方向鍵：</strong> 控制 Pac-Man 上下左右移動</li>
+                    <li><strong>觸控 / 滑動：</strong> 在支援的行動裝置上控制方向</li>
+                    <li><strong>Esc：</strong> 開啟遊戲內選單</li>
+                    <li><strong>Shift：</strong> 在練習模式中回溯時間</li>
+                    <li><strong>1 / 2：</strong> 在練習模式中降低遊戲速度</li>
+                    <li><strong>O：</strong> 在練習模式中切換渦輪狀態</li>
+                    <li><strong>I：</strong> 在練習模式中切換無敵狀態</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>基礎得分方式</h2>
+                <ul>
+                    <li><strong>普通豆：</strong> 10 分</li>
+                    <li><strong>能量豆：</strong> 50 分</li>
+                    <li><strong>吃受驚幽靈：</strong> 在同一次能量豆期間連續吃得越多，獎勵越高</li>
+                    <li><strong>水果獎勵：</strong> 地圖中途會出現，可獲得額外分數</li>
+                </ul>
+                <p>如果你想打出更高分，重點不只是「活下來」，還要學會何時順手吃水果，以及何時在安全前提下利用能量豆追分。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>理解四隻幽靈</h2>
+                <p>幽靈並不是完全隨機的障礙物。它們之所以讓人緊張，是因為各自對迷宮施加壓力的方式不同。理解這一點，是提升實力最快的方法之一。</p>
+
+                <h3>Blinky</h3>
+                <p>紅色幽靈最直接，常常帶來持續追擊的壓力。在遊戲節奏變快後，它通常會成為最核心的威脅來源。</p>
+
+                <h3>Pinky</h3>
+                <p>粉色幽靈更偏向「搶前位」，它會讓轉角和常用路線顯得更危險，特別容易懲罰過於機械化的走法。</p>
+
+                <h3>Inky</h3>
+                <p>青色幽靈相對更難直覺判斷。它的威脅往往和 Pac-Man 與 Blinky 的相對位置有關，因此讀起來更複雜。</p>
+
+                <h3>Clyde</h3>
+                <p>橘色幽靈會在追擊與遊離之間切換，看起來沒那麼穩定，但也因此很多玩家容易低估它的危險性。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>新手最實用的策略</h2>
+                <ol>
+                    <li>保持移動，不要在轉角前猶豫。</li>
+                    <li>盡量一塊區域一塊區域地清理，不要毫無計畫地來回遊走。</li>
+                    <li>不要太早吃掉手邊的能量豆，把它留給真正危險的時刻。</li>
+                    <li>當幽靈聚在一起時，利用隧道與長路線重新拉開節奏。</li>
+                    <li>不要為了追受驚幽靈而把自己送進更糟的位置。</li>
+                </ol>
+            </div>
+
+            <div class="content-section">
+                <h2>常見失誤</h2>
+                <ul>
+                    <li><strong>過早消耗能量豆：</strong> 周圍並不危險時就用掉，會讓真正需要逃命時少一個關鍵工具</li>
+                    <li><strong>無計畫折返：</strong> 突然回頭往往會直接撞上另一隻幽靈</li>
+                    <li><strong>殘局清豆太亂：</strong> 把很多零散豆留到最後，會導致高風險回頭補線</li>
+                    <li><strong>過度追分：</strong> 水果和受驚幽靈很重要，但活下來永遠是第一位</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>如何更快進步</h2>
+                <p>如果你想更深入理解這款遊戲，可以搭配 <a href="modes-zh-tw.html">學習模式與練習模式</a>。學習模式幫助你觀察幽靈的目標邏輯，練習模式則適合減速、回溯，以及反覆測試同一個危險場景。</p>
+                <p>最快的提升方式，通常不是單純多玩，而是抓住一個失敗場景，弄清楚為什麼會失敗，再用更乾淨的路線重試。只要把幾個關鍵細節練明白，通關穩定性與分數都會明顯提升。</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ & © Bandai Namco Entertainment Inc.</strong></p>
+            <p>本頁提供繁體中文玩法說明，幫助玩家理解迷宮路線、幽靈行為與基礎得分思路。</p>
+            <div class="footer-links">
+                <a href="index-zh-tw.html">首頁</a>
+                <a href="game-zh-tw.html">開始遊戲</a>
+                <a href="modes-zh-tw.html">遊戲模式</a>
+                <a href="contact-zh-tw.html">聯絡我們</a>
+                <a href="privacy-zh-tw.html">隱私政策</a>
+                <a href="terms-zh-tw.html">服務條款</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3H5HVRCKP5');
+    </script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uic6makaek");
+    </script>
+
+    <title>小精靈遊戲模式說明</title>
+    <meta name="description" content="了解本站可使用的小精靈遊戲模式，包括學習模式、練習模式與渦輪模式。">
+    <link rel="canonical" href="https://pacmanonline.org/modes-zh-tw.html">
+
+    <link rel="alternate" hreflang="en" href="https://pacmanonline.org/modes.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://pacmanonline.org/modes-zh-tw.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/modes.html">
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section,
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>遊戲模式</h1>
+            <a href="game-zh-tw.html" class="back-link">← 開始遊戲</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="highlight-box">
+                <h2>為什麼要區分模式</h2>
+                <p>本站不只是單一的「直接開玩」。不同模式對應不同目標，有的適合純粹體驗經典節奏，有的適合理解機制、反覆練習，或挑戰更快更激進的玩法。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>經典玩法</h2>
+                <p>經典玩法最適合想體驗傳統小精靈節奏的玩家。它強調路線選擇、幽靈壓力判斷、時機掌握，以及在不斷加快的節奏中穩定清圖。</p>
+                <p>如果你希望感受更接近傳統街機廳的遊玩方式，這就是最自然的起點。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>學習模式</h2>
+                <p>學習模式更偏向「理解遊戲」，而不只是想辦法撐得更久。它會協助玩家觀察幽靈的目標邏輯與追擊意圖，讓你看懂一場追逐為什麼會變成那樣。</p>
+                <ul>
+                    <li>適合想研究幽靈行為的玩家</li>
+                    <li>能幫助理解為什麼某些路線特別危險</li>
+                    <li>適合從「靠感覺亂躲」過渡到「有意識地規劃走位」</li>
+                </ul>
+                <p>如果你覺得普通模式總是很混亂，學習模式往往能讓你意識到，這個遊戲背後其實是可以被觀察與理解的規則系統。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>練習模式</h2>
+                <p>練習模式是本站最靈活的訓練環境，適合那些想針對某個具體問題做提升的玩家，而不是每次失誤後都只能從頭開始。</p>
+                <h3>實用功能</h3>
+                <ul>
+                    <li><strong>減速：</strong> 把原本太快的危險場景拆開來看清楚</li>
+                    <li><strong>回溯：</strong> 出錯後立刻退回關鍵節點重新嘗試</li>
+                    <li><strong>無敵：</strong> 在沒有生存壓力的情況下觀察地圖與路線</li>
+                    <li><strong>幽靈目標可視化：</strong> 把練習和機制理解結合起來</li>
+                </ul>
+                <p>這個模式特別適合用來修正轉角處理、練習殘局路線，或專門研究某一段總是失誤的走法。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>渦輪模式</h2>
+                <p>渦輪模式會明顯提升整體節奏。Pac-Man 的移動更快，吃豆時也更能保持速度，因此整局遊戲會顯得更加激進，也更考驗執行力。</p>
+                <ul>
+                    <li>更適合已經熟悉迷宮節奏的玩家</li>
+                    <li>得分節奏更快，也更容易因為判斷失誤而瞬間翻車</li>
+                    <li>很考驗路線規劃、反應速度與走位果斷程度</li>
+                </ul>
+                <p>如果說普通模式練的是控制感，那麼渦輪模式更像是在考驗執行與穩定度。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>你適合先玩哪一種</h2>
+                <ol>
+                    <li><strong>剛接觸小精靈：</strong> 先從經典玩法開始，覺得幽靈邏輯難懂時再切到學習模式</li>
+                    <li><strong>想系統提升：</strong> 多用練習模式去複盤失敗場景並優化路線</li>
+                    <li><strong>想追求挑戰：</strong> 當你已經能穩定讀懂危險局面後，再進入渦輪模式</li>
+                </ol>
+            </div>
+
+            <div class="content-section">
+                <h2>推薦練習順序</h2>
+                <p>比較高效的成長方式，是有目的地在不同模式間切換：</p>
+                <ol>
+                    <li>先打一局正常模式，找出你最容易失控的位置</li>
+                    <li>切到學習模式，看清幽靈當時為什麼會包過來</li>
+                    <li>進入練習模式，針對那一段反覆測試更好的路線</li>
+                    <li>回到正常模式，把新路線真正用出來</li>
+                    <li>等普通路線足夠穩定後，再去挑戰渦輪模式</li>
+                </ol>
+                <p>如此一來，本站就不只是一個能玩的遊戲頁面，也會變成一個真正能幫助你進步的訓練工具。</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ & © Bandai Namco Entertainment Inc.</strong></p>
+            <p>本頁幫助玩家理解不同模式分別適合什麼目標、什麼程度，以及如何搭配使用。</p>
+            <div class="footer-links">
+                <a href="index-zh-tw.html">首頁</a>
+                <a href="game-zh-tw.html">開始遊戲</a>
+                <a href="guide-zh-tw.html">玩法指南</a>
+                <a href="contact-zh-tw.html">聯絡我們</a>
+                <a href="privacy-zh-tw.html">隱私政策</a>
+                <a href="terms-zh-tw.html">服務條款</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

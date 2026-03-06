@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3H5HVRCKP5');
+    </script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uic6makaek");
+    </script>
+
+    <title>Modos de Juego de Pac-Man</title>
+    <meta name="description" content="Descubre los distintos modos de juego disponibles en el sitio, incluyendo Modo de Aprendizaje, Modo de Práctica y Modo Turbo.">
+    <link rel="canonical" href="https://pacmanonline.org/modes-es.html">
+
+    <link rel="alternate" hreflang="en" href="https://pacmanonline.org/modes.html">
+    <link rel="alternate" hreflang="es" href="https://pacmanonline.org/modes-es.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/modes.html">
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section,
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MODOS DE JUEGO</h1>
+            <a href="game-es.html" class="back-link">← Jugar Ahora</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="highlight-box">
+                <h2>Para Qué Sirve Cada Modo</h2>
+                <p>En este sitio no solo puedes jugar una partida normal. También puedes usar modos pensados para aprender mejor cómo funciona el juego, practicar situaciones difíciles o disfrutar de una versión más rápida y exigente.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Juego Clásico</h2>
+                <p>Es la forma más directa y reconocible de jugar. Aquí la clave está en leer bien el laberinto, gestionar la presión de los fantasmas y encontrar una ruta segura para limpiar el mapa.</p>
+                <p>Es el mejor punto de partida si solo quieres jugar y familiarizarte con el ritmo normal de Pac-Man.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Modo de Aprendizaje</h2>
+                <p>Este modo está pensado para entender mejor por qué los fantasmas se mueven como lo hacen. Al visualizar mejor su comportamiento, resulta más fácil reconocer patrones y tomar decisiones con más sentido.</p>
+                <ul>
+                    <li>Ideal para quienes quieren comprender mejor la lógica del juego</li>
+                    <li>Ayuda a detectar por qué ciertas rutas son más peligrosas que otras</li>
+                    <li>Muy útil para pasar de jugar “por intuición” a jugar con intención</li>
+                </ul>
+                <p>Si en el modo normal todo te parece demasiado caótico, aquí es donde suele empezar a encajar mejor lo que está ocurriendo.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Modo de Práctica</h2>
+                <p>El Modo de Práctica está pensado para repetir situaciones difíciles sin tener que empezar desde cero cada vez. Es la mejor opción si quieres mejorar una parte concreta de tu juego.</p>
+                <h3>Funciones Útiles</h3>
+                <ul>
+                    <li><strong>Cámara lenta:</strong> para leer mejor decisiones que en velocidad normal pasan muy deprisa</li>
+                    <li><strong>Rebobinado:</strong> para volver justo antes del error e intentar otra opción</li>
+                    <li><strong>Invencibilidad:</strong> para estudiar rutas y presión sin perder vidas</li>
+                    <li><strong>Visualización de objetivos:</strong> para combinar práctica y comprensión del comportamiento de los fantasmas</li>
+                </ul>
+                <p>Es especialmente útil si siempre fallas en el mismo tramo, si quieres practicar finales de fase o si estás intentando pulir tus rutas.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Modo Turbo</h2>
+                <p>En el Modo Turbo, Pac-Man se mueve más rápido y el ritmo general cambia bastante. La partida se vuelve más intensa, más agresiva y más exigente en cuanto a reflejos y precisión.</p>
+                <ul>
+                    <li>Recomendado para jugadores que ya dominan el ritmo normal</li>
+                    <li>Ofrece una sensación más rápida y más desafiante</li>
+                    <li>Premia mucho la confianza al moverse y la claridad al elegir rutas</li>
+                </ul>
+                <p>Si el modo normal sirve para aprender control, el Turbo sirve para poner a prueba tu ejecución.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Qué Modo Elegir</h2>
+                <ol>
+                    <li><strong>Si estás empezando:</strong> juega primero en modo clásico y pasa luego al Modo de Aprendizaje si no entiendes bien la presión de los fantasmas</li>
+                    <li><strong>Si quieres mejorar:</strong> usa el Modo de Práctica para repetir errores y pulir decisiones</li>
+                    <li><strong>Si buscas más reto:</strong> prueba el Modo Turbo cuando ya te sientas cómodo con las rutas normales</li>
+                </ol>
+            </div>
+
+            <div class="content-section">
+                <h2>Forma Recomendada de Practicar</h2>
+                <p>Una buena forma de progresar es combinar los modos de manera intencional:</p>
+                <ol>
+                    <li>Juega una partida normal y detecta dónde sueles perder el control</li>
+                    <li>Pasa al Modo de Aprendizaje para entender mejor qué hizo cada fantasma</li>
+                    <li>Usa el Modo de Práctica para probar rutas mejores en esa misma situación</li>
+                    <li>Vuelve al juego normal y aplica lo aprendido</li>
+                    <li>Cuando todo eso ya te salga con soltura, prueba el Modo Turbo</li>
+                </ol>
+                <p>Así el sitio funciona no solo como juego, sino también como herramienta para aprender y mejorar.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ & © Bandai Namco Entertainment Inc.</strong></p>
+            <p>Esta página explica para qué sirve cada modo y cuál puede venirte mejor según tu nivel o tu objetivo al jugar.</p>
+            <div class="footer-links">
+                <a href="index-es.html">Inicio</a>
+                <a href="game-es.html">Jugar Ahora</a>
+                <a href="guide-es.html">Guía de Juego</a>
+                <a href="contact-es.html">Contacto</a>
+                <a href="privacy-es.html">Política de Privacidad</a>
+                <a href="terms-es.html">Términos de Servicio</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3H5HVRCKP5');
+    </script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uic6makaek");
+    </script>
+
+    <title>How to Play Pac-Man - Game Guide</title>
+    <meta name="description" content="Learn how to play Pac-Man, understand ghost behavior, improve your scoring, and survive longer with this practical game guide.">
+    <link rel="canonical" href="https://pacmanonline.org/guide.html">
+
+    <link rel="alternate" hreflang="en" href="https://pacmanonline.org/guide.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/guide.html">
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section,
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HOW TO PLAY</h1>
+            <a href="game.html" class="back-link">← Go to the Game</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="highlight-box">
+                <h2>Quick Start</h2>
+                <p>The goal of Pac-Man is simple: eat every dot in the maze without getting caught by the ghosts. Collect power pellets to turn the tables, chase frightened ghosts for bonus points, and survive long enough to clear the board.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Core Objective</h2>
+                <p>Each round begins with Pac-Man in a maze full of dots, four ghosts, and four large power pellets. To complete the stage, you must clear every regular dot and pellet. The challenge comes from learning how to move efficiently, escape danger, and pick the right time to switch from survival to scoring.</p>
+                <p>Pac-Man is easy to understand, but the game becomes much deeper as ghost speed, movement pressure, and route choices start to matter more.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Controls</h2>
+                <ul>
+                    <li><strong>Arrow Keys:</strong> Move Pac-Man up, down, left, and right</li>
+                    <li><strong>Touch / Swipe:</strong> Control movement on supported mobile devices</li>
+                    <li><strong>Esc:</strong> Open the in-game menu</li>
+                    <li><strong>Shift:</strong> Rewind in Practice Mode</li>
+                    <li><strong>1 / 2:</strong> Slow the game in Practice Mode</li>
+                    <li><strong>O:</strong> Toggle Turbo Mode in Practice Mode</li>
+                    <li><strong>I:</strong> Toggle invincibility in Practice Mode</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Scoring Basics</h2>
+                <ul>
+                    <li><strong>Regular dot:</strong> 10 points</li>
+                    <li><strong>Power pellet:</strong> 50 points</li>
+                    <li><strong>Ghosts after a power pellet:</strong> increasing bonus chain as you eat more frightened ghosts in one power-up window</li>
+                    <li><strong>Fruit bonuses:</strong> extra points that appear during the stage</li>
+                </ul>
+                <p>If you want better scores, focus on finishing safe routes efficiently, grabbing fruit when it appears, and saving power pellets for moments when they create both safety and scoring chances.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Understand the Ghosts</h2>
+                <p>The ghosts are not random obstacles. They feel dangerous because each one pressures the maze differently. Learning their patterns is one of the fastest ways to improve.</p>
+
+                <h3>Blinky</h3>
+                <p>The red ghost is the most direct pursuer. He puts constant pressure on your current path and often feels like the main threat when the board speeds up.</p>
+
+                <h3>Pinky</h3>
+                <p>The pink ghost tries to get ahead of your movement, making corners and planned routes feel tighter. Pinky often punishes predictable movement.</p>
+
+                <h3>Inky</h3>
+                <p>The cyan ghost is less intuitive. Inky can become dangerous when combined with the positions of Pac-Man and Blinky, which makes his approach feel less obvious and harder to read.</p>
+
+                <h3>Clyde</h3>
+                <p>The orange ghost alternates between chasing and wandering away. That unpredictability can make him surprisingly dangerous when you assume he is no longer a problem.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Best Beginner Strategy</h2>
+                <ol>
+                    <li>Stay calm and keep moving. Hesitation near corners causes many early deaths.</li>
+                    <li>Clear one section of the maze at a time rather than wandering without a route.</li>
+                    <li>Save nearby power pellets until you genuinely need an escape.</li>
+                    <li>Use tunnel routes to reset pressure when the ghosts bunch together.</li>
+                    <li>Do not chase frightened ghosts if it puts you deep in a bad position afterward.</li>
+                </ol>
+            </div>
+
+            <div class="content-section">
+                <h2>Common Mistakes</h2>
+                <ul>
+                    <li><strong>Burning power pellets too early:</strong> using a pellet when no threat is nearby wastes one of the safest tools in the maze</li>
+                    <li><strong>Doubling back without a plan:</strong> sudden reversals often send you directly into another ghost</li>
+                    <li><strong>Ignoring safe cleanup:</strong> leaving many isolated dots for the end of the round creates risky backtracking</li>
+                    <li><strong>Over-chasing bonuses:</strong> fruit and frightened ghosts are valuable, but survival always comes first</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>How to Improve Faster</h2>
+                <p>If you want to learn the game more deeply, use <a href="modes.html">Learn Mode and Practice Mode</a>. Learn Mode helps you understand ghost intentions, while Practice Mode makes it easier to slow the game down, rewind, and test decisions repeatedly.</p>
+                <p>The most efficient way to improve is to repeat one tricky situation, understand why it failed, and try a cleaner route. Small route improvements quickly turn into more consistent clears and higher scores.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ & © Bandai Namco Entertainment Inc.</strong></p>
+            <p>Gameplay guide for players who want to understand the maze, the ghosts, and the scoring flow.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="game.html">Play Game</a>
+                <a href="modes.html">Game Modes</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

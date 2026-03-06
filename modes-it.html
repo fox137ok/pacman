@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3H5HVRCKP5');
+    </script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uic6makaek");
+    </script>
+
+    <title>Modalita' di Gioco di Pac-Man</title>
+    <meta name="description" content="Scopri le modalita' di gioco disponibili, come Modalita' Apprendimento, Modalita' Pratica e Modalita' Turbo, e capisci quale fa piu' al caso tuo.">
+    <link rel="canonical" href="https://pacmanonline.org/modes-it.html">
+
+    <link rel="alternate" hreflang="en" href="https://pacmanonline.org/modes.html">
+    <link rel="alternate" hreflang="it" href="https://pacmanonline.org/modes-it.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/modes.html">
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section,
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MODALITA' DI GIOCO</h1>
+            <a href="game-it.html" class="back-link">← Gioca Ora</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="highlight-box">
+                <h2>A cosa servono le varie modalita'</h2>
+                <p>Nel sito non c'e' solo la partita classica. Puoi anche usare modalita' pensate per capire meglio il gioco, allenarti su situazioni difficili oppure provare una versione piu' veloce e impegnativa.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Partita classica</h2>
+                <p>E' il modo piu' immediato e tradizionale di giocare. Qui conta soprattutto leggere bene il labirinto, gestire la pressione dei fantasmi e scegliere il percorso giusto per ripulire la mappa.</p>
+                <p>E' il punto di partenza migliore per chi vuole prendere confidenza con il ritmo standard di Pac-Man.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Modalita' Apprendimento</h2>
+                <p>Questa modalita' e' utile per capire meglio perche' i fantasmi si muovono in un certo modo. Vedendo piu' chiaramente la loro logica, e' piu' facile leggere le situazioni e capire dove stai correndo dei rischi.</p>
+                <ul>
+                    <li>Ottima per chi vuole studiare il comportamento dei fantasmi</li>
+                    <li>Aiuta a capire perche' alcune rotte sono piu' pericolose di altre</li>
+                    <li>Perfetta per passare dal giocare "a intuito" al giocare con piu' consapevolezza</li>
+                </ul>
+                <p>Se nella partita normale ti sembra tutto troppo confuso, questa e' spesso la modalita' piu' utile per iniziare a mettere ordine.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Modalita' Pratica</h2>
+                <p>La Modalita' Pratica e' pensata per chi vuole migliorare in punti precisi del gioco senza dover ricominciare ogni volta da zero. E' il posto ideale per ripetere piu' volte le situazioni difficili.</p>
+                <h3>Funzioni utili</h3>
+                <ul>
+                    <li><strong>Rallentatore:</strong> rende piu' leggibili le decisioni che a velocita' normale passano troppo in fretta</li>
+                    <li><strong>Riavvolgimento:</strong> ti riporta subito prima dell'errore per provare un'altra scelta</li>
+                    <li><strong>Invincibilita':</strong> ti permette di osservare percorsi e pressione senza perdere vite</li>
+                    <li><strong>Visualizzazione degli obiettivi:</strong> unisce allenamento e comprensione del comportamento dei fantasmi</li>
+                </ul>
+                <p>E' particolarmente utile se sbagli sempre negli stessi punti o se vuoi rendere piu' solidi i finali di livello.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Modalita' Turbo</h2>
+                <p>Con la Modalita' Turbo Pac-Man si muove piu' velocemente e la partita cambia ritmo in modo evidente. Tutto diventa piu' rapido, piu' intenso e piu' severo nei confronti degli errori.</p>
+                <ul>
+                    <li>Consigliata a chi ha gia' una buona confidenza con il ritmo normale</li>
+                    <li>Offre una sensazione di gioco piu' veloce e piu' impegnativa</li>
+                    <li>Premia rotte precise, buon tempismo e decisioni chiare</li>
+                </ul>
+                <p>Se la modalita' normale aiuta a costruire controllo, quella Turbo mette alla prova soprattutto l'esecuzione.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Quale modalita' scegliere?</h2>
+                <ol>
+                    <li><strong>Se stai iniziando:</strong> parti con la partita classica e passa poi alla Modalita' Apprendimento</li>
+                    <li><strong>Se vuoi migliorare davvero:</strong> usa la Modalita' Pratica per ripetere gli errori e affinare le decisioni</li>
+                    <li><strong>Se cerchi piu' sfida:</strong> prova la Modalita' Turbo quando le rotte normali ti sembrano ormai naturali</li>
+                </ol>
+            </div>
+
+            <div class="content-section">
+                <h2>Ordine consigliato per allenarsi</h2>
+                <p>Un buon modo per crescere e' usare le modalita' in modo ragionato:</p>
+                <ol>
+                    <li>Gioca una partita normale e individua i punti in cui perdi il controllo</li>
+                    <li>Passa alla Modalita' Apprendimento per capire cosa hanno fatto i fantasmi</li>
+                    <li>Entra nella Modalita' Pratica per testare una rotta migliore</li>
+                    <li>Torna al gioco normale e prova ad applicare quello che hai imparato</li>
+                    <li>Quando tutto questo diventa piu' naturale, passa alla Modalita' Turbo</li>
+                </ol>
+                <p>In questo modo il sito non e' solo un posto dove giocare, ma anche uno strumento utile per imparare e migliorare sul serio.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ & © Bandai Namco Entertainment Inc.</strong></p>
+            <p>Questa pagina spiega a cosa servono le varie modalita' e quale puo' essere la piu' adatta in base al tuo obiettivo.</p>
+            <div class="footer-links">
+                <a href="index-it.html">Home</a>
+                <a href="game-it.html">Gioca Ora</a>
+                <a href="guide-it.html">Guida al Gioco</a>
+                <a href="contact-it.html">Contatti</a>
+                <a href="privacy-it.html">Informativa sulla Privacy</a>
+                <a href="terms-it.html">Termini di Servizio</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

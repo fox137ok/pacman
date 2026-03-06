@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3H5HVRCKP5');
+    </script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uic6makaek");
+    </script>
+
+    <title>パックマンのゲームモード解説</title>
+    <meta name="description" content="学習モード、練習モード、ターボモードなど、サイト内で使えるパックマンの各種モードをわかりやすく紹介します。">
+    <link rel="canonical" href="https://pacmanonline.org/modes-ja.html">
+
+    <link rel="alternate" hreflang="en" href="https://pacmanonline.org/modes.html">
+    <link rel="alternate" hreflang="ja" href="https://pacmanonline.org/modes-ja.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/modes.html">
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section,
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ゲームモード</h1>
+            <a href="game-ja.html" class="back-link">← 今すぐプレイ</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="highlight-box">
+                <h2>モードごとの楽しみ方</h2>
+                <p>このサイトでは、ただ遊ぶだけでなく、仕組みを理解したり、苦手な場面を練習したり、スピード感のあるプレイに挑戦したりと、目的に応じてモードを使い分けられます。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>通常プレイ</h2>
+                <p>もっともオーソドックスな遊び方です。クラシックなパックマンらしいテンポで、ルート取り、危険回避、得点チャンスの見極めが問われます。</p>
+                <p>まずは普通に遊んでみたい人、ゲームの流れをつかみたい人に向いています。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>学習モード</h2>
+                <p>学習モードは、「なぜそこで追い詰められたのか」を理解したい人に向いています。おばけの狙いが見えやすくなるため、動きのクセや危険なルートがつかみやすくなります。</p>
+                <ul>
+                    <li>おばけの行動パターンを把握したい人向け</li>
+                    <li>感覚ではなく、理由を理解しながら上達したい人におすすめ</li>
+                    <li>初心者が混乱しやすい場面を整理しやすい</li>
+                </ul>
+                <p>通常プレイだと「なんとなくやられた」と感じる場面も、学習モードなら原因を追いやすくなります。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>練習モード</h2>
+                <p>練習モードは、苦手な場面を集中的に練習したい人向けのモードです。失敗したあとに最初からやり直すのではなく、その場面を何度も試し直せるのが大きな特徴です。</p>
+                <h3>使える機能</h3>
+                <ul>
+                    <li><strong>スロー再生：</strong> 速すぎて見えない判断を落ち着いて確認できる</li>
+                    <li><strong>巻き戻し：</strong> ミスした直前に戻って別のルートを試せる</li>
+                    <li><strong>無敵：</strong> プレッシャーなしで迷路やルートを観察できる</li>
+                    <li><strong>おばけの目標表示：</strong> 学習と実践をセットで進められる</li>
+                </ul>
+                <p>「いつも同じ場所でやられる」「終盤の処理が安定しない」といった悩みがある人には特に便利です。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>ターボモード</h2>
+                <p>ターボモードでは、パックマンの動きがより速くなり、プレイ全体がかなりスピーディーになります。通常より勢いよく進める一方で、判断ミスも起きやすくなります。</p>
+                <ul>
+                    <li>通常プレイに慣れてから挑戦したいモード</li>
+                    <li>テンポの速いプレイが好きな人に向いている</li>
+                    <li>ルートの精度と反応の速さがより求められる</li>
+                </ul>
+                <p>短い判断の積み重ねがそのまま結果に出るので、慣れてくるとかなり気持ちよく遊べます。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>どのモードから始めるべき？</h2>
+                <ol>
+                    <li><strong>初めて遊ぶ人：</strong> まずは通常プレイで流れをつかむ</li>
+                    <li><strong>仕組みを理解したい人：</strong> 学習モードでおばけの動きを観察する</li>
+                    <li><strong>苦手を克服したい人：</strong> 練習モードで危険な場面を反復する</li>
+                    <li><strong>刺激のあるプレイを楽しみたい人：</strong> ターボモードでテンポアップに挑戦する</li>
+                </ol>
+            </div>
+
+            <div class="content-section">
+                <h2>おすすめの使い分け</h2>
+                <p>上達したいなら、モードを順番に使うのが効果的です。</p>
+                <ol>
+                    <li>通常プレイで自分が苦手な場面を見つける</li>
+                    <li>学習モードで、その場面で何が起きていたかを確認する</li>
+                    <li>練習モードで安全なルートを試し直す</li>
+                    <li>慣れてきたらターボモードで判断のスピードを鍛える</li>
+                </ol>
+                <p>この流れを繰り返すことで、ただ遊ぶだけでなく、理解しながら着実に上達しやすくなります。</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ & © Bandai Namco Entertainment Inc.</strong></p>
+            <p>このページでは、各モードの特徴と、どんな人に向いているかを日本語でわかりやすく紹介しています。</p>
+            <div class="footer-links">
+                <a href="index-ja.html">ホーム</a>
+                <a href="game-ja.html">今すぐプレイ</a>
+                <a href="guide-ja.html">遊び方ガイド</a>
+                <a href="contact-ja.html">お問い合わせ</a>
+                <a href="privacy-ja.html">プライバシーポリシー</a>
+                <a href="terms-ja.html">利用規約</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

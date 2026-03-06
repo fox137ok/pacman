@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3H5HVRCKP5');
+    </script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uic6makaek");
+    </script>
+
+    <title>パックマンの遊び方 - ゲームガイド</title>
+    <meta name="description" content="パックマンの基本ルール、操作方法、得点の仕組み、おばけの動き、上達のコツをわかりやすく解説します。">
+    <link rel="canonical" href="https://pacmanonline.org/guide-ja.html">
+
+    <link rel="alternate" hreflang="en" href="https://pacmanonline.org/guide.html">
+    <link rel="alternate" hreflang="ja" href="https://pacmanonline.org/guide-ja.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/guide.html">
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section,
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>遊び方ガイド</h1>
+            <a href="game-ja.html" class="back-link">← ゲームへ進む</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="highlight-box">
+                <h2>まずはここから</h2>
+                <p>パックマンの目的はとてもシンプルです。迷路の中にあるドットをすべて食べながら、おばけにつかまらないように進みます。パワーエサを取れば一時的に反撃でき、おばけを食べて得点を伸ばすこともできます。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>ゲームの基本ルール</h2>
+                <p>1ラウンドごとに、迷路の中には通常ドット、4つのパワーエサ、4体のおばけが配置されます。ステージをクリアするには、すべてのドットとパワーエサを食べ切る必要があります。</p>
+                <p>ただし実際には、ただ動くだけではなかなかうまくいきません。どこを先に片付けるか、どのタイミングで危険を避けるか、そしていつ得点チャンスを狙うかが重要になります。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>操作方法</h2>
+                <ul>
+                    <li><strong>方向キー：</strong> パックマンを上下左右に移動</li>
+                    <li><strong>タッチ / スワイプ：</strong> 対応端末ではタッチ操作でもプレイ可能</li>
+                    <li><strong>Esc：</strong> ゲーム内メニューを開く</li>
+                    <li><strong>Shift：</strong> 練習モードで巻き戻し</li>
+                    <li><strong>1 / 2：</strong> 練習モードでゲーム速度を下げる</li>
+                    <li><strong>O：</strong> 練習モードでターボ切り替え</li>
+                    <li><strong>I：</strong> 練習モードで無敵切り替え</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>得点のしくみ</h2>
+                <ul>
+                    <li><strong>通常ドット：</strong> 10点</li>
+                    <li><strong>パワーエサ：</strong> 50点</li>
+                    <li><strong>パワーエサ中におばけを食べる：</strong> 同じチャンス内で連続して食べるほど高得点</li>
+                    <li><strong>フルーツ：</strong> ステージ途中に現れ、取るとボーナス得点</li>
+                </ul>
+                <p>高得点を狙うなら、生き残ることに加えて、フルーツを取るタイミングや、パワーエサを守りにも攻めにも使う判断が大切です。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>おばけの特徴を知る</h2>
+                <p>おばけは完全なランダムではありません。それぞれに動きのクセがあり、そこを理解するとプレイの安定感がかなり変わってきます。</p>
+
+                <h3>ブリンキー</h3>
+                <p>赤いおばけはもっともわかりやすく、プレイヤーを強く追い詰めてきます。後半になるほど圧力を感じやすい相手です。</p>
+
+                <h3>ピンキー</h3>
+                <p>ピンクのおばけは先回りするような動きを見せるため、いつものルートや曲がり角が急に危険になります。</p>
+
+                <h3>インキー</h3>
+                <p>水色のおばけは動きが読みにくく、ブリンキーやパックマンの位置関係によって厄介さが増します。</p>
+
+                <h3>クライド</h3>
+                <p>オレンジのおばけは追ってきたり離れたりを繰り返すため、一見すると読みやすそうでいて、油断したときに事故を起こしやすい存在です。</p>
+            </div>
+
+            <div class="content-section">
+                <h2>初心者向けの立ち回り</h2>
+                <ol>
+                    <li>迷ったら止まらず動き続ける</li>
+                    <li>迷路を小さな区画ごとに片付ける意識を持つ</li>
+                    <li>パワーエサは危険な場面まで温存する</li>
+                    <li>おばけが固まったときはトンネルや長い通路を使って距離を取る</li>
+                    <li>無理におばけを追いすぎず、安全を優先する</li>
+                </ol>
+            </div>
+
+            <div class="content-section">
+                <h2>よくある失敗</h2>
+                <ul>
+                    <li><strong>パワーエサを早く使いすぎる：</strong> 本当に危ない場面で逃げ道がなくなる</li>
+                    <li><strong>行き当たりばったりで折り返す：</strong> 反対側から別のおばけが来て詰みやすい</li>
+                    <li><strong>端のドットを後回しにしすぎる：</strong> 終盤に危険な回収ルートが残りやすい</li>
+                    <li><strong>ボーナスを追いすぎる：</strong> フルーツやおばけを狙うあまり、基本の安全管理が崩れる</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>上達したい人へ</h2>
+                <p>もっと深く理解したいなら、<a href="modes-ja.html">学習モードと練習モード</a>を活用するのがおすすめです。学習モードではおばけの意図を見やすくなり、練習モードではスローや巻き戻しを使って危険な場面を何度でも検証できます。</p>
+                <p>上達の近道は、ただ回数をこなすことではなく、「なぜ失敗したのか」を一つずつ整理することです。危険な場面を理解して別のルートを試すだけでも、安定感はかなり変わってきます。</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ & © Bandai Namco Entertainment Inc.</strong></p>
+            <p>このページでは、ルール、操作、得点、おばけの動き、上達のコツを日本語でわかりやすくまとめています。</p>
+            <div class="footer-links">
+                <a href="index-ja.html">ホーム</a>
+                <a href="game-ja.html">今すぐプレイ</a>
+                <a href="modes-ja.html">ゲームモード</a>
+                <a href="contact-ja.html">お問い合わせ</a>
+                <a href="privacy-ja.html">プライバシーポリシー</a>
+                <a href="terms-ja.html">利用規約</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

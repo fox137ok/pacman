@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3H5HVRCKP5');
+    </script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uic6makaek");
+    </script>
+
+    <title>Comment Jouer à Pac-Man - Guide</title>
+    <meta name="description" content="Découvrez les règles de base de Pac-Man, les commandes, le score, le comportement des fantômes et les conseils les plus utiles pour progresser.">
+    <link rel="canonical" href="https://pacmanonline.org/guide-fr.html">
+
+    <link rel="alternate" hreflang="en" href="https://pacmanonline.org/guide.html">
+    <link rel="alternate" hreflang="fr" href="https://pacmanonline.org/guide-fr.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/guide.html">
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section,
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>GUIDE DU JEU</h1>
+            <a href="game-fr.html" class="back-link">← Aller au Jeu</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="highlight-box">
+                <h2>Les bases</h2>
+                <p>Le but de Pac-Man est simple : manger toutes les pac-gommes du labyrinthe sans se faire attraper par les fantômes. Les super pac-gommes permettent d'inverser la situation pendant quelques secondes et de marquer davantage de points.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Objectif de chaque partie</h2>
+                <p>Chaque niveau commence avec Pac-Man dans un labyrinthe rempli de pastilles, de quatre fantômes et de quatre super pac-gommes. Pour terminer le niveau, vous devez vider complètement la carte. La difficulté ne vient pas seulement de la règle elle-même, mais du bon moment pour prendre un risque, temporiser ou choisir un trajet plus sûr.</p>
+                <p>Après quelques parties, on se rend vite compte que Pac-Man ne repose pas uniquement sur les réflexes. Le timing, la lecture de la situation et le choix du parcours comptent tout autant.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Commandes</h2>
+                <ul>
+                    <li><strong>Flèches directionnelles :</strong> déplacent Pac-Man dans les quatre directions</li>
+                    <li><strong>Tactile ou glissement :</strong> contrôle sur écran tactile pour les appareils compatibles</li>
+                    <li><strong>Échap :</strong> ouvre le menu du jeu</li>
+                    <li><strong>Shift :</strong> rembobine en mode Entraînement</li>
+                    <li><strong>1 / 2 :</strong> ralentissent le jeu en mode Entraînement</li>
+                    <li><strong>O :</strong> active ou désactive le Turbo en mode Entraînement</li>
+                    <li><strong>I :</strong> active ou désactive l'invincibilité en mode Entraînement</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Système de score</h2>
+                <ul>
+                    <li><strong>Pac-gomme normale :</strong> 10 points</li>
+                    <li><strong>Super pac-gomme :</strong> 50 points</li>
+                    <li><strong>Fantômes vulnérables :</strong> plus vous en mangez à la suite, plus le bonus augmente</li>
+                    <li><strong>Fruit :</strong> apparaît pendant le niveau et rapporte des points supplémentaires</li>
+                </ul>
+                <p>Pour viser un bon score, il ne suffit pas de survivre. Il faut aussi savoir quand récupérer le fruit et quand utiliser une super pac-gomme pour se défendre ou attaquer.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Comment se déplacent les fantômes</h2>
+                <p>Les fantômes ne se déplacent pas de manière complètement aléatoire. Chacun met la pression différemment, et comprendre ces différences aide énormément à mieux lire le jeu.</p>
+
+                <h3>Blinky</h3>
+                <p>Le fantôme rouge est le plus direct. C'est souvent lui qui donne le plus fort sentiment de poursuite et il devient particulièrement dangereux quand le rythme accélère.</p>
+
+                <h3>Pinky</h3>
+                <p>Le fantôme rose cherche souvent à anticiper votre trajectoire. Il punit surtout les joueurs qui répètent toujours les mêmes chemins.</p>
+
+                <h3>Inky</h3>
+                <p>Le fantôme bleu clair est le plus difficile à lire au premier regard. Sa menace dépend beaucoup de la position de Pac-Man et de celle de Blinky.</p>
+
+                <h3>Clyde</h3>
+                <p>Le fantôme orange alterne entre poursuite et éloignement. C'est justement pour cela qu'il est souvent sous-estimé et qu'il provoque des erreurs évitables.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Conseils pour bien débuter</h2>
+                <ol>
+                    <li>Continuez à bouger et évitez d'hésiter trop longtemps aux intersections</li>
+                    <li>Nettoyez le labyrinthe par zones au lieu de tourner sans plan</li>
+                    <li>Gardez les super pac-gommes pour les situations vraiment dangereuses</li>
+                    <li>Utilisez les tunnels pour respirer quand les fantômes sont trop proches les uns des autres</li>
+                    <li>N'essayez pas de manger chaque fantôme vulnérable si cela vous laisse mal placé ensuite</li>
+                </ol>
+            </div>
+
+            <div class="content-section">
+                <h2>Erreurs fréquentes</h2>
+                <ul>
+                    <li><strong>Utiliser une super pac-gomme trop tôt :</strong> il n'y a plus d'issue de secours quand le vrai danger arrive</li>
+                    <li><strong>Changer de direction sans réfléchir :</strong> cela mène souvent directement vers un autre fantôme</li>
+                    <li><strong>Laisser trop de pastilles pour la fin :</strong> la fin de niveau devient alors bien plus risquée</li>
+                    <li><strong>Se focaliser sur les bonus :</strong> les fruits et les fantômes rapportent des points, mais survivre reste prioritaire</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Comment progresser plus vite</h2>
+                <p>Si vous voulez mieux comprendre le jeu, il est utile d'utiliser ensemble les <a href="modes-fr.html">Modes Apprentissage et Entraînement</a>. Le premier aide à mieux lire la logique des fantômes, le second permet de rejouer les situations difficiles avec davantage de contrôle.</p>
+                <p>La façon la plus rapide de progresser n'est pas de jouer sans fin sans analyser, mais de reconnaître une situation compliquée, comprendre pourquoi elle s'est mal passée et tester ensuite un meilleur trajet.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ & © Bandai Namco Entertainment Inc.</strong></p>
+            <p>Ce guide résume les règles, les commandes, le score et les conseils pratiques pour jouer avec plus de confiance et de régularité.</p>
+            <div class="footer-links">
+                <a href="index-fr.html">Accueil</a>
+                <a href="game-fr.html">Jouer Maintenant</a>
+                <a href="modes-fr.html">Modes de Jeu</a>
+                <a href="contact-fr.html">Contact</a>
+                <a href="privacy-fr.html">Politique de Confidentialité</a>
+                <a href="terms-fr.html">Conditions d'Utilisation</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H5HVRCKP5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3H5HVRCKP5');
+    </script>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uic6makaek");
+    </script>
+
+    <title>Pac-Man spielen - Anleitung</title>
+    <meta name="description" content="Lernen Sie die Grundregeln von Pac-Man, die Steuerung, das Punktesystem, das Verhalten der Geister und die wichtigsten Tipps zum Verbessern.">
+    <link rel="canonical" href="https://pacmanonline.org/guide-de.html">
+
+    <link rel="alternate" hreflang="en" href="https://pacmanonline.org/guide.html">
+    <link rel="alternate" hreflang="de" href="https://pacmanonline.org/guide-de.html">
+    <link rel="alternate" hreflang="x-default" href="https://pacmanonline.org/guide.html">
+
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section,
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SPIELANLEITUNG</h1>
+            <a href="game-de.html" class="back-link">← Zum Spiel</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="highlight-box">
+                <h2>Die Grundidee</h2>
+                <p>Das Ziel in Pac-Man ist einfach: Fressen Sie alle Punkte im Labyrinth, ohne von den Geistern erwischt zu werden. Mit einem Power-Pellet können Sie die Situation kurzzeitig umdrehen und zusätzliche Punkte sammeln.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Ziel jeder Runde</h2>
+                <p>Zu Beginn jeder Runde befindet sich Pac-Man in einem Labyrinth mit normalen Punkten, vier Geistern und vier Power-Pellets. Um die Runde abzuschließen, müssen alle Punkte eingesammelt werden. Schwierig wird es nicht wegen der Regeln, sondern wegen der richtigen Wege, des Timings und des Umgangs mit Drucksituationen.</p>
+                <p>Je mehr Sie spielen, desto deutlicher wird: Pac-Man ist nicht nur ein Reaktionsspiel. Gute Entscheidungen, saubere Routen und ruhiges Spiel machen einen großen Unterschied.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Steuerung</h2>
+                <ul>
+                    <li><strong>Pfeiltasten:</strong> Bewegen Pac-Man in alle vier Richtungen</li>
+                    <li><strong>Tippen oder Wischen:</strong> Touch-Steuerung auf unterstützten Geräten</li>
+                    <li><strong>Esc:</strong> Öffnet das Spielmenü</li>
+                    <li><strong>Shift:</strong> Rückspulen im Übungsmodus</li>
+                    <li><strong>1 / 2:</strong> Spieltempo im Übungsmodus verlangsamen</li>
+                    <li><strong>O:</strong> Turbo im Übungsmodus ein- oder ausschalten</li>
+                    <li><strong>I:</strong> Unverwundbarkeit im Übungsmodus ein- oder ausschalten</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Punktesystem</h2>
+                <ul>
+                    <li><strong>Normaler Punkt:</strong> 10 Punkte</li>
+                    <li><strong>Power-Pellet:</strong> 50 Punkte</li>
+                    <li><strong>Verängstigte Geister:</strong> Je mehr nacheinander gefressen werden, desto höher fällt die Belohnung aus</li>
+                    <li><strong>Früchte:</strong> Erscheinen während der Runde und bringen Bonuspunkte</li>
+                </ul>
+                <p>Wer hohe Punktzahlen erzielen will, sollte nicht nur überleben, sondern auch wissen, wann sich eine Frucht lohnt und wann ein Power-Pellet eher zur Rettung oder zum Punkten eingesetzt werden sollte.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>So verhalten sich die Geister</h2>
+                <p>Die Geister bewegen sich nicht völlig zufällig. Jeder von ihnen setzt Pac-Man auf eine andere Weise unter Druck. Genau das zu verstehen, hilft enorm beim Spielgefühl.</p>
+
+                <h3>Blinky</h3>
+                <p>Der rote Geist ist am direktesten. Er erzeugt meist den stärksten Verfolgungsdruck und wird besonders in schnelleren Phasen sehr gefährlich.</p>
+
+                <h3>Pinky</h3>
+                <p>Der pinke Geist versucht oft, Wege abzuschneiden. Dadurch werden gewohnte Routen und Ecken schneller riskant.</p>
+
+                <h3>Inky</h3>
+                <p>Der hellblaue Geist wirkt oft schwerer lesbar. Seine Bedrohung hängt stark davon ab, wo sich Pac-Man und Blinky gerade befinden.</p>
+
+                <h3>Clyde</h3>
+                <p>Der orange Geist wechselt zwischen Verfolgen und Abstandhalten. Gerade deshalb wird er häufig unterschätzt und sorgt dann für Fehler.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Tipps für den Einstieg</h2>
+                <ol>
+                    <li>Bleiben Sie in Bewegung und zögern Sie nicht unnötig an Ecken</li>
+                    <li>Räumen Sie das Labyrinth abschnittsweise auf, statt ohne Plan herumzufahren</li>
+                    <li>Heben Sie Power-Pellets für wirklich gefährliche Situationen auf</li>
+                    <li>Nutzen Sie Tunnel, um Abstand zu gewinnen, wenn Geister eng zusammenstehen</li>
+                    <li>Jagen Sie Geister nur dann, wenn Sie danach nicht in eine schlechte Position geraten</li>
+                </ol>
+            </div>
+
+            <div class="content-section">
+                <h2>Häufige Fehler</h2>
+                <ul>
+                    <li><strong>Power-Pellets zu früh einsetzen:</strong> Dann fehlt später eine sichere Notlösung</li>
+                    <li><strong>Unüberlegt umdrehen:</strong> Das führt oft direkt in den Weg eines anderen Geistes</li>
+                    <li><strong>Viele Restpunkte aufsparen:</strong> Das macht die Schlussphase unnötig gefährlich</li>
+                    <li><strong>Zu sehr auf Boni fixiert sein:</strong> Früchte und Geister sind wertvoll, aber Überleben bleibt wichtiger</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Schneller besser werden</h2>
+                <p>Wenn Sie das Spiel besser verstehen möchten, lohnt sich die Kombination aus <a href="modes-de.html">Lernmodus und Übungsmodus</a>. Der Lernmodus hilft beim Verständnis der Geisterlogik, während der Übungsmodus schwierige Situationen gezielt trainierbar macht.</p>
+                <p>Der schnellste Fortschritt entsteht meist nicht durch bloßes Wiederholen, sondern dadurch, eine problematische Situation zu erkennen, ihren Ablauf zu verstehen und dann eine bessere Route zu testen.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ & © Bandai Namco Entertainment Inc.</strong></p>
+            <p>Diese Anleitung fasst Regeln, Steuerung, Punkte und die wichtigsten Tipps für einen sicheren und besseren Einstieg zusammen.</p>
+            <div class="footer-links">
+                <a href="index-de.html">Startseite</a>
+                <a href="game-de.html">Jetzt Spielen</a>
+                <a href="modes-de.html">Spielmodi</a>
+                <a href="contact-de.html">Kontakt</a>
+                <a href="privacy-de.html">Datenschutzrichtlinie</a>
+                <a href="terms-de.html">Nutzungsbedingungen</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
