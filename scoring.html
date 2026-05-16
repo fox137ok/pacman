@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <title>Pac-Man Scoring Guide: Dots, Fruits, Ghost Chains, and High Score Strategy</title>
+    <meta name="description" content="Learn how Pac-Man scoring works, including dots, power pellets, fruit bonuses, ghost chains, risk management, and practical ways to raise your high score.">
+    <link rel="canonical" href="https://pacmanonline.org/scoring.html">
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "Pac-Man Scoring Guide: Dots, Fruits, Ghost Chains, and High Score Strategy",
+          "description": "Learn how Pac-Man scoring works, including dots, power pellets, fruit bonuses, ghost chains, risk management, and practical ways to raise your high score.",
+          "datePublished": "2026-05-16",
+          "dateModified": "2026-05-16",
+          "url": "https://pacmanonline.org/scoring.html",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Pac-Man Arcade",
+            "url": "https://pacmanonline.org"
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pacmanonline.org/scoring.html"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the maximum possible score in one game of Pac-Man?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In the original arcade game, the theoretical maximum score is 3,333,360 points, achieved by eating every dot, power pellet, fruit, and all four ghosts on every stage across all 256 boards. In practice this is an extraordinary feat. For browser play, the target is more about personal improvement than chasing the absolute ceiling."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do ghost chain points double indefinitely?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The chain tops out at 1,600 points for the fourth ghost eaten within one power pellet window. If you eat a second power pellet while still in frightened mode, the chain resets to 200 for the next ghost. The total for eating all four ghosts with one pellet is 3,000 points."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is eating all four ghosts with one power pellet a realistic goal?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "On early stages, yes, because frightened time is longer. The key is to eat the pellet only when three or four ghosts are already close together. On later stages, the frightened window shrinks significantly, making four-ghost chains much harder even with good positioning."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why does fruit appear only twice per stage?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Fruit appearance is tied to the number of dots remaining: the first fruit appears after roughly 70 dots are eaten, the second after around 170. Each fruit stays visible for about 9 to 10 seconds. Because fruit is tied to board progress rather than time, you cannot rush or delay its appearance."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the best power pellet strategy for beginners?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For beginners, use power pellets primarily as escape tools rather than scoring tools. Save them until a ghost is within two or three tiles of you. Once you are comfortable surviving, start using pellets offensively by eating them only when multiple ghosts are nearby so you can chain at least two ghost kills per pellet."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .scoring-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1rem;
+        }
+
+        .scoring-table th {
+            background: rgba(255, 204, 0, 0.2);
+            color: var(--primary-color);
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .scoring-table td {
+            padding: 9px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .scoring-table tr:hover td {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .pts {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .chain-diagram {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px;
+            margin: 24px 0;
+        }
+
+        .chain-trigger {
+            background: rgba(255, 204, 0, 0.15);
+            border: 2px solid var(--primary-color);
+            border-radius: 6px;
+            padding: 8px 14px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .chain-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(0, 191, 255, 0.1);
+            border: 1px solid var(--accent-color);
+            border-radius: 6px;
+            padding: 8px 14px;
+            min-width: 80px;
+        }
+
+        .chain-step .ghost-label {
+            font-size: 0.75rem;
+            color: #aaa;
+        }
+
+        .chain-step .ghost-pts {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .chain-arrow {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.4rem;
+        }
+
+        .chain-total {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .risk-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+
+        .risk-table th {
+            padding: 8px 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            font-size: 0.9rem;
+        }
+
+        .risk-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.95rem;
+        }
+
+        .tag-green { color: #4caf50; font-weight: bold; }
+        .tag-yellow { color: #FFCC00; font-weight: bold; }
+        .tag-red { color: #FF5555; font-weight: bold; }
+
+        .milestone-list {
+            counter-reset: milestone;
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .milestone-list li {
+            counter-increment: milestone;
+            padding: 10px 10px 10px 52px;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .milestone-list li::before {
+            content: counter(milestone);
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 34px;
+            height: 34px;
+            background: rgba(255, 204, 0, 0.15);
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .content-section, .highlight-box { padding: 20px; }
+            .chain-diagram { gap: 4px; }
+            .chain-step { min-width: 64px; padding: 6px 8px; }
+            .chain-trigger { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SCORING GUIDE</h1>
+            <a href="game.html" class="back-link">← Play the Game</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="highlight-box">
+                <h2>Scoring Is Route and Risk Management</h2>
+                <p><small>Last updated May 16, 2026</small></p>
+                <p>Pac-Man scoring looks straightforward: eat dots, avoid ghosts, earn points. But consistent high scores come from making disciplined decisions about <em>when</em> to eat power pellets, <em>whether</em> to chase frightened ghosts, and <em>how</em> to route through the maze without leaving dangerous isolated dots for the end of the stage. Every choice that raises your score also carries a risk cost. Understanding that trade-off is the foundation of high-score play.</p>
+                <p>This guide covers every scoring element — dot values, the ghost chain multiplier, fruit bonuses, and risk zones — and then translates that into concrete goals and drills. For the full rules of movement, ghost behavior, and controls, see the <a href="guide.html">How to Play guide</a>.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Point Values at a Glance</h2>
+                <p>The table below shows standard point values. Fruit values reflect the original arcade and are shown for reference — browser versions and special modes may adjust specific numbers slightly.</p>
+                <table class="scoring-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Points</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Regular dot</td><td class="pts">10</td><td>240 per board = 2,400 total</td></tr>
+                        <tr><td>Power pellet</td><td class="pts">50</td><td>4 per board = 200 total</td></tr>
+                        <tr><td>1st ghost (per pellet)</td><td class="pts">200</td><td>Chain starts fresh each pellet</td></tr>
+                        <tr><td>2nd ghost</td><td class="pts">400</td><td></td></tr>
+                        <tr><td>3rd ghost</td><td class="pts">800</td><td></td></tr>
+                        <tr><td>4th ghost</td><td class="pts">1,600</td><td>All 4: 3,000 total</td></tr>
+                        <tr><td>Cherry — Stage 1</td><td class="pts">100</td><td>Appears twice per stage</td></tr>
+                        <tr><td>Strawberry — Stage 2</td><td class="pts">300</td><td></td></tr>
+                        <tr><td>Orange — Stages 3–4</td><td class="pts">500</td><td></td></tr>
+                        <tr><td>Apple — Stages 5–6</td><td class="pts">700</td><td></td></tr>
+                        <tr><td>Melon — Stages 7–8</td><td class="pts">1,000</td><td></td></tr>
+                        <tr><td>Galaxian — Stages 9–10</td><td class="pts">2,000</td><td></td></tr>
+                        <tr><td>Bell — Stages 11–12</td><td class="pts">3,000</td><td></td></tr>
+                        <tr><td>Key — Stage 13+</td><td class="pts">5,000</td><td></td></tr>
+                    </tbody>
+                </table>
+                <p>A complete stage with all dots, four pellets, two fruits, and all ghosts eaten yields far more from ghost chains than from dots alone. This is why experienced players treat ghost chains as the primary scoring engine rather than an optional bonus.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Dots and Board Clearing</h2>
+                <p>A full board contains 240 regular dots worth 2,400 points. That sum is substantial, but dot routing matters for a reason beyond points: it shapes the pressure you face for the rest of the stage.</p>
+
+                <h3>The Late-Board Problem</h3>
+                <p>As the dot count drops below roughly 30, Blinky speeds up — a behavior sometimes called cruise elroy. This means leaving scattered dots spread across the whole board guarantees a difficult, high-pressure cleanup. The fix is to route through the riskier sections of the maze early, while you still have power pellets available and room to maneuver, then leave cleaner open sections for the final cleanup.</p>
+
+                <h3>Board Quadrant Strategy</h3>
+                <p>Mentally divide the maze into four sections. Aim to clear each section before moving to the next. When you need to cross into a dangerous section, time it during a scatter phase — ghosts briefly retreat to their corners, creating a predictable window of lower pressure. Scatter phases become shorter on later stages, so this window is more valuable early in the game.</p>
+
+                <h3>Avoid Isolated Dot Traps</h3>
+                <p>Two common traps: a single dot at the end of a dead-end corridor, and a cluster of dots in a section that requires passing through a ghost-heavy area to reach. Identify these traps early in each stage and clear them while you have power pellets remaining — ideally by combining the detour with a power pellet use that clears nearby ghosts at the same time.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Ghost Chains: The Scoring Engine</h2>
+                <p>When Pac-Man eats a power pellet, all four ghosts enter a frightened state and can be eaten for escalating points. The chain multiplier resets with each new power pellet.</p>
+
+                <div class="chain-diagram">
+                    <div class="chain-trigger">⚡ Power Pellet</div>
+                    <div class="chain-arrow">→</div>
+                    <div class="chain-step"><span class="ghost-label">1st Ghost</span><span class="ghost-pts">200</span></div>
+                    <div class="chain-arrow">→</div>
+                    <div class="chain-step"><span class="ghost-label">2nd Ghost</span><span class="ghost-pts">400</span></div>
+                    <div class="chain-arrow">→</div>
+                    <div class="chain-step"><span class="ghost-label">3rd Ghost</span><span class="ghost-pts">800</span></div>
+                    <div class="chain-arrow">→</div>
+                    <div class="chain-step"><span class="ghost-label">4th Ghost</span><span class="ghost-pts">1,600</span></div>
+                </div>
+                <p class="chain-total">Full chain (all 4 ghosts): <strong style="color: var(--primary-color);">3,000 points</strong> — roughly equal to clearing the entire dot board.</p>
+
+                <h3>When to Eat the Pellet</h3>
+                <p>Eating a power pellet when ghosts are scattered across the maze typically yields only one ghost kill before the frightened time runs out. To maximize the chain, wait until at least two or three ghosts are nearby before eating the pellet. This is harder than it sounds: it requires you to be actively reading ghost positions rather than reacting to immediate danger.</p>
+
+                <h3>When to Let Frightened Ghosts Go</h3>
+                <p>Chasing a third or fourth ghost is not always correct. If reaching the next ghost requires entering a dead-end corridor, the 800 or 1,600 point bonus may not offset the risk of getting trapped when chase mode resumes. The chain points are valuable — but surviving to the next power pellet and chain is worth more. See the <a href="ghosts.html">Ghost Behavior Guide</a> for details on when ghosts transition out of frightened mode and where they tend to be positioned.</p>
+
+                <h3>Later Stages: Shorter Windows</h3>
+                <p>On later boards, frightened time decreases significantly. By stage 5 and beyond, the window is often short enough that eating three or four ghosts requires them to already be adjacent when you eat the pellet. Adjust your expectations and prioritize two-ghost chains rather than forcing four-ghost attempts that leave you overextended.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Fruits and Bonus Timing</h2>
+                <p>A fruit bonus appears in the center of the maze twice per stage. The first appearance happens after roughly 70 dots have been eaten; the second after around 170. Each fruit stays visible for approximately 9 to 10 seconds before disappearing.</p>
+
+                <h3>The Center Exposure Problem</h3>
+                <p>Collecting fruit requires passing through or near the center of the maze, which is the most exposed position in the layout. Ghost pressure converges toward the center when you are in it. If multiple ghosts are already near the center when fruit appears, the detour cost is too high for the points returned.</p>
+
+                <h3>Integrate Collection into Your Route</h3>
+                <p>The most efficient fruit collection happens when your current routing already passes through or near the center as part of normal board clearing. Try to time your path so that you reach the center while fruit is present — without making a significant detour. If collecting the fruit would require reversing direction or entering a risky crossing, leave it and continue your current route.</p>
+
+                <h3>Fruit Scales With Stage</h3>
+                <p>Fruit value increases each stage, from 100 points on Stage 1 up to 5,000 points on Stage 13 and beyond. On higher stages, the risk calculation shifts: a 5,000-point fruit is worth a moderate detour that a 100-point cherry is not. Adjust how aggressively you route for fruit based on the stage and your current health margin.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Risk vs. Reward Framework</h2>
+                <p>High-score play is not about always going for maximum points. It is about accurately identifying which scoring opportunities justify the risk and consistently capturing those while passing on the ones that do not.</p>
+
+                <table class="risk-table">
+                    <thead>
+                        <tr>
+                            <th>Zone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="tag-green">Green</span></td>
+                            <td>Dot eating on open stretches; power pellet use with a clear escape route; fruit when already routing through center; two-ghost chain kills when ghosts are clustered nearby</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag-yellow">Yellow</span></td>
+                            <td>Chasing a third frightened ghost in semi-open corridors; slight detour to collect fruit; extending a route to clear an isolated dot cluster with one ghost nearby</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag-red">Red</span></td>
+                            <td>Entering a dead-end to eat the fourth frightened ghost; crossing the full center with two ghosts approaching; burning a power pellet with all ghosts scattered just to eat one</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>Most unnecessary deaths come from yellow-zone decisions made impulsively rather than deliberately. The goal is not to avoid yellow-zone plays — it is to make them consciously after confirming the position is actually manageable. Using <a href="modes.html">Practice Mode</a> to replay yellow-zone decisions in slow motion is one of the fastest ways to calibrate your risk tolerance.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Beginner Score Milestones</h2>
+                <p>Use these milestones to set realistic short-term goals instead of chasing a vague "get a high score" target.</p>
+                <ol class="milestone-list">
+                    <li><strong>Clear one complete board.</strong> Getting through a full stage without dying means you understand basic ghost avoidance and can route through the maze with some plan. Expect 3,000–5,000 points.</li>
+                    <li><strong>Eat two ghosts in one power pellet.</strong> This requires reading ghost positions before you eat the pellet, not during the frightened state. Achieving this consistently shows you are starting to think one step ahead.</li>
+                    <li><strong>Collect fruit without dying.</strong> Fruit collection requires routing discipline. When you can pick up fruit without panicking or over-extending, your route management has improved meaningfully.</li>
+                    <li><strong>Reduce panic movement.</strong> Sudden reversals, random turns, and freezing near corners are the most common causes of early deaths. The moment you notice yourself moving calmly under pressure, your score will begin to rise steadily.</li>
+                    <li><strong>Survive into Stage 2.</strong> Clearing a second board in a single game means you have internalized basic survival instincts. By Stage 2, aim for a cumulative score above 10,000 points.</li>
+                </ol>
+            </div>
+
+            <div class="content-section">
+                <h2>Practice Drills</h2>
+                <p>These drills isolate specific scoring skills. Use <a href="modes.html">Practice Mode</a> for the drills that require slowing down or rewinding.</p>
+                <ol>
+                    <li><strong>Power pellet discipline drill.</strong> Play a full stage and try to use power pellets only when a ghost is within three tiles. Count wasted pellets after each stage. Reducing waste from four to one per stage roughly doubles your ghost-chain points.</li>
+                    <li><strong>Ghost chain drill.</strong> Before eating each power pellet, pause mentally and count how many ghosts are within five tiles. If fewer than two are nearby, hold the pellet and keep routing. Only eat it once two or more are close enough to chain.</li>
+                    <li><strong>Board section drill.</strong> Commit to clearing the top half of the maze before touching the bottom half. Then reverse it. This exposes which ghost pressure patterns emerge and helps you develop an intuition for safe quadrant transitions.</li>
+                    <li><strong>Fruit routing drill.</strong> Do not change your current route to collect fruit. Only pick up fruit that appears while you are already passing through or near the center. This builds the habit of integrating fruit collection into your route rather than reacting to it.</li>
+                    <li><strong>Late-board slow-down drill.</strong> In Practice Mode, use the slow-down keys (1 or 2) when the dot count drops below 25. Study Blinky's increased speed and identify a clean cleanup path before returning to normal speed. Repeat until the cleanup feels predictable.</li>
+                </ol>
+                <p>For a deeper look at using <a href="glossary.html">game terminology</a> like ghost chain, frightened mode, and scatter phase in your analysis, the <a href="glossary.html">Pac-Man Glossary</a> covers all major terms in plain English.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <h3>What is the maximum possible score in one game?</h3>
+                <p>In the original arcade game, the theoretical maximum is 3,333,360 points — achieved by eating every dot, pellet, fruit, and all four ghosts on every board across all 256 stages. In practice this is an extraordinary feat. For browser play, personal improvement is a more useful target than the absolute ceiling.</p>
+
+                <h3>Do ghost chain points double indefinitely?</h3>
+                <p>No. The chain tops out at 1,600 for the fourth ghost. If you eat a second power pellet while still in frightened mode, the chain resets to 200 for the next ghost. All four ghosts in one pellet window sum to 3,000 points total.</p>
+
+                <h3>Is eating all four ghosts with one power pellet realistic?</h3>
+                <p>On early stages with longer frightened windows, yes. The requirement is that at least three or four ghosts are already clustered near you when you eat the pellet. On later stages the frightened window shortens significantly, so two-ghost chains become the practical target rather than four.</p>
+
+                <h3>Why does fruit appear only twice per stage?</h3>
+                <p>Fruit appearance is tied to dots eaten, not to time. The first fruit appears after roughly 70 dots are cleared; the second after around 170. This means you cannot rush or delay fruit spawning — it follows your pace through the board.</p>
+
+                <h3>What is the best power pellet strategy for beginners?</h3>
+                <p>Start by using pellets as escape tools. Once you are comfortable surviving, shift to using them offensively — eat only when two or more ghosts are close so you can chain at least two kills. That alone roughly doubles the scoring value of each pellet.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ &amp; © Bandai Namco Entertainment Inc.</strong></p>
+            <p>Unofficial browser adaptation — open-source, educational, GPL v3.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="game.html">Play Game</a>
+                <a href="guide.html">How to Play</a>
+                <a href="ghosts.html">Ghost Guide</a>
+                <a href="glossary.html">Glossary</a>
+                <a href="modes.html">Game Modes</a>
+                <a href="troubleshooting.html">Troubleshooting</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

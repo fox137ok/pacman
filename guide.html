@@ -218,6 +218,7 @@
                 <h2>Core Objective</h2>
                 <p>Each round begins with Pac-Man in a maze full of dots, four ghosts, and four large power pellets. To complete the stage, you must clear every regular dot and pellet. The challenge comes from learning how to move efficiently, escape danger, and pick the right time to switch from survival to scoring.</p>
                 <p>Pac-Man is easy to understand, but the game becomes much deeper as ghost speed, movement pressure, and route choices start to matter more.</p>
+                <p>The four scoring elements all interact: eating <strong>dots</strong> clears the board and controls fruit timing; <strong>power pellets</strong> create windows to eat frightened ghosts for bonus points; <strong>ghost chains</strong> double the value of each successive kill within one power-up window (200 → 400 → 800 → 1,600); and <strong>fruits</strong> appear twice per stage as a timed bonus. Balancing all four — while staying alive — is the real skill. For exact point values and strategies around each element, see the <a href="scoring.html">Scoring Guide</a>.</p>
             </div>
 
             <div class="content-section">
@@ -231,6 +232,9 @@
                     <li><strong>O:</strong> Toggle Turbo Mode in Practice Mode</li>
                     <li><strong>I:</strong> Toggle invincibility in Practice Mode</li>
                 </ul>
+                <h3>Turn Buffering and Input Timing</h3>
+                <p>You do not have to time turns with frame-perfect precision. The game uses <strong>turn buffering</strong>: if you press a direction key slightly before Pac-Man reaches an intersection, the input is queued and executed at the correct tile boundary. In practice, this means pressing a turn key early is fine — Pac-Man will wait for the right moment and execute cleanly. Pressing it too late, however, will miss the turn and continue straight into a wall or corridor.</p>
+                <p>The most common beginner mistake is releasing the key immediately after pressing it. Hold the direction you want until Pac-Man has committed to the turn. For unfamiliar terminology like turn buffering, ghost targeting, or scatter mode, the <a href="glossary.html">Pac-Man Glossary</a> has plain-English definitions for all major terms.</p>
             </div>
 
             <div class="content-section">
@@ -260,6 +264,8 @@
                 <h3>Clyde</h3>
                 <p>The orange ghost alternates between chasing and wandering away. That unpredictability can make him surprisingly dangerous when you assume he is no longer a problem.</p>
                 <p>For a detailed breakdown of how each ghost chooses its target, changes behavior between phases, and how to read the maze based on their positions, see the <a href="ghosts.html">Ghost Behavior Guide</a>.</p>
+                <h3>Read All Four Ghosts, Not Just the Nearest One</h3>
+                <p>A common beginner error is fixating on the ghost that is closest in the corridor ahead while ignoring the one approaching from a different angle. Because each ghost uses a different targeting rule, you can be clear of Blinky on your left while Pinky has already positioned itself at the turn ahead. Train yourself to check the positions of all four ghosts before committing to a route segment, not just the one that feels most immediately threatening. This takes conscious effort at first but becomes instinctive with practice.</p>
             </div>
 
             <div class="content-section">
@@ -287,6 +293,15 @@
                 <h2>How to Improve Faster</h2>
                 <p>If you want to learn the game more deeply, use <a href="modes.html">Learn Mode and Practice Mode</a>. Learn Mode helps you understand ghost intentions, while Practice Mode makes it easier to slow the game down, rewind, and test decisions repeatedly.</p>
                 <p>The most efficient way to improve is to repeat one tricky situation, understand why it failed, and try a cleaner route. Small route improvements quickly turn into more consistent clears and higher scores.</p>
+
+                <h3>Three Practical Drills</h3>
+                <p>These drills address the three most common failure points for new players:</p>
+                <ul>
+                    <li><strong>Survive 30 seconds without power pellets.</strong> Open Practice Mode and play without touching any power pellets for at least 30 seconds. This forces you to rely on routing and ghost reading rather than pellet escapes, which quickly reveals whether you understand scatter mode and safe corridors.</li>
+                    <li><strong>Clear one corner at a time.</strong> Pick one quadrant of the maze and commit to clearing every dot in it before moving to another section. Structured clearing reduces late-board chaos and builds the route-planning habit that separates consistent players from reactive ones.</li>
+                    <li><strong>Practice escaping through tunnels.</strong> When ghosts are converging, deliberately route toward the tunnel exits on the left and right edges of the maze. Ghosts slow down significantly in tunnels. Practicing this exit reliably — rather than panicking toward a dead end — turns the tunnels into a genuine escape tool rather than a last resort.</li>
+                </ul>
+                <p>For a deeper set of scoring-specific drills — power pellet discipline, ghost chain practice, and late-board slow-down work — see the <a href="scoring.html">Scoring Guide</a>.</p>
                 <p>If you run into technical problems while playing — the game not loading, sound not working, or keyboard input not responding — see the <a href="troubleshooting.html">Troubleshooting page</a> for step-by-step solutions.</p>
             </div>
         </div>
@@ -300,6 +315,8 @@
                 <a href="index.html">Home</a>
                 <a href="game.html">Play Game</a>
                 <a href="ghosts.html">Ghost Guide</a>
+                <a href="scoring.html">Scoring Guide</a>
+                <a href="glossary.html">Glossary</a>
                 <a href="modes.html">Game Modes</a>
                 <a href="troubleshooting.html">Troubleshooting</a>
                 <a href="faq.html">FAQ</a>

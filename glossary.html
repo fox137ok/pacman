@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <title>Pac-Man Glossary: Common Terms Explained in Plain English</title>
+    <meta name="description" content="A plain-English glossary of Pac-Man terms including pellets, power pellets, ghost house, chase mode, scatter mode, frightened mode, fruits, tunnels, patterns, and high scores.">
+    <link rel="canonical" href="https://pacmanonline.org/glossary.html">
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "Pac-Man Glossary: Common Terms Explained in Plain English",
+          "description": "A plain-English glossary of Pac-Man terms including pellets, power pellets, ghost house, chase mode, scatter mode, frightened mode, fruits, tunnels, patterns, and high scores.",
+          "datePublished": "2026-05-16",
+          "dateModified": "2026-05-16",
+          "url": "https://pacmanonline.org/glossary.html",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Pac-Man Arcade",
+            "url": "https://pacmanonline.org"
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pacmanonline.org/glossary.html"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the difference between a dot and a pellet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In casual usage, 'dot' and 'pellet' are often used interchangeably for the small white dots that fill the maze. Technically, 'pellet' can refer to any collectible, while 'power pellet' specifically refers to the four large dots that grant temporary ghost-eating ability. This glossary follows the common convention of using 'dot' for small collectibles and 'power pellet' for large ones."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What does 'scatter mode' mean?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Scatter mode is a periodic phase in which all four ghosts stop pursuing Pac-Man and instead move toward their assigned home corners of the maze. This creates brief windows of predictable, lower-pressure movement. Scatter phases alternate with chase phases throughout the game, becoming shorter and less frequent on higher stages."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is turn buffering?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Turn buffering is a control feature that queues your next directional input slightly before the character reaches a turn. In practice it means you can press the direction key a little early and Pac-Man will execute the turn at the correct tile boundary rather than missing it and continuing straight. This reduces the precision required for navigating the maze at speed."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the ghost house?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The ghost house is the rectangular enclosure near the center of the maze where ghosts start the game and where eaten ghosts return to regenerate. Ghosts exit the ghost house through the top opening at the start of each stage or after being eaten and reverting to eyes mode. Pac-Man cannot enter the ghost house."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .term-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .term-list li {
+            padding: 12px 0 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .term-list li:last-child {
+            border-bottom: none;
+        }
+
+        .term {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        .alpha-divider {
+            display: inline-block;
+            background: rgba(255, 204, 0, 0.15);
+            color: var(--primary-color);
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+            font-size: 1.1rem;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin: 20px 0 10px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .content-section, .highlight-box { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>GLOSSARY</h1>
+            <a href="guide.html" class="back-link">← How to Play</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="highlight-box">
+                <h2>Plain-English Definitions for Pac-Man Terms</h2>
+                <p><small>Last updated May 16, 2026</small></p>
+                <p>Pac-Man has a compact but specific vocabulary. Guides, forums, and strategy discussions use terms like "scatter mode," "ghost chain," and "turn buffering" without always stopping to explain them. This glossary defines all major terms in plain language so you can follow along and apply the concepts directly in play.</p>
+                <p>For terms in context, see the <a href="guide.html">How to Play guide</a>, the <a href="ghosts.html">Ghost Behavior Guide</a>, and the <a href="scoring.html">Scoring Guide</a>.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>A – B</h2>
+                <ul class="term-list">
+                    <li>
+                        <span class="term">Arcade maze game</span> — A genre of video game in which the player navigates a fixed maze, collects items, and avoids or defeats enemies. Pac-Man is the defining example of the genre. The maze is the entire play area and its layout does not change during a stage.
+                    </li>
+                    <li>
+                        <span class="term">Attract mode</span> — The idle demo that plays on an arcade cabinet when no one is actively playing. In the browser version, the start screen serves a similar function. It demonstrates basic gameplay without requiring a coin insert.
+                    </li>
+                    <li>
+                        <span class="term">Blinky</span> — The red ghost. Blinky directly pursues Pac-Man's current tile in chase mode, making him the most straightforward pursuer. On later stages and as dots decrease, Blinky accelerates beyond his standard speed in a behavior sometimes called "elroy." See the <a href="ghosts.html">Ghost Behavior Guide</a> for the full breakdown.
+                    </li>
+                    <li>
+                        <span class="term">Board</span> — One complete maze layout. A board is finished when all dots and power pellets are eaten. Clearing a board advances the game to the next stage, which uses the same maze layout but faster ghost speeds and shorter frightened windows.
+                    </li>
+                </ul>
+
+                <h2>C</h2>
+                <ul class="term-list">
+                    <li>
+                        <span class="term">Chase mode</span> — The phase in which each ghost actively pursues a target tile based on its individual targeting rule. Chase mode alternates with scatter mode throughout the game. Each ghost uses a different algorithm: Blinky targets Pac-Man directly, Pinky targets ahead of Pac-Man, Inky uses a combined calculation involving both Pac-Man and Blinky, and Clyde alternates between chasing and retreating.
+                    </li>
+                    <li>
+                        <span class="term">Clyde</span> — The orange ghost. Clyde switches between chasing Pac-Man directly and retreating to his scatter corner based on proximity. When he is more than roughly eight tiles from Pac-Man, he chases. When he closes that distance, he turns away. This alternating behavior makes him unpredictable to players who assume he has stopped being a threat.
+                    </li>
+                    <li>
+                        <span class="term">Cornering</span> — A movement technique that involves entering a turn slightly before reaching the intersection tile, allowing Pac-Man to carry speed through corners. Effective cornering reduces the time spent slowing down or waiting to navigate turns, which matters most when ghosts are in close pursuit.
+                    </li>
+                    <li>
+                        <span class="term">Cruise elroy</span> — An informal term for the behavior in which Blinky increases his movement speed as the remaining dot count decreases. This makes the end of each stage more dangerous, particularly when dots are scattered across the board. The threshold and speed increase vary by stage number.
+                    </li>
+                </ul>
+
+                <h2>D – E</h2>
+                <ul class="term-list">
+                    <li>
+                        <span class="term">Dead end</span> — A corridor that has only one entrance and exit point. Entering a dead end is high-risk because turning back may put you face-to-face with a pursuing ghost. Experienced players clear dead-end dots while ghosts are in scatter mode or while a power pellet is active.
+                    </li>
+                    <li>
+                        <span class="term">Dot</span> — The small white collectible that fills most of the maze. Each dot is worth 10 points. There are 240 dots per board, totaling 2,400 points. Clearing all dots completes the stage. The rate at which dots are consumed also controls fruit spawn timing and Blinky's late-stage acceleration. See the <a href="scoring.html">Scoring Guide</a> for more on dot strategy.
+                    </li>
+                    <li>
+                        <span class="term">Energizer</span> — An alternate name for the power pellet. Some early documentation and guides use "energizer" to describe the four large dots that grant temporary ghost-eating ability. The two terms refer to the same item.
+                    </li>
+                    <li>
+                        <span class="term">Eyes mode</span> — The state a ghost enters after being eaten. The ghost becomes a pair of eyes that travels back to the ghost house through walls. It poses no threat during this journey. Once inside the ghost house, it regenerates and re-enters the maze. Eyes mode is the only time ghosts pass through walls.
+                    </li>
+                </ul>
+
+                <h2>F – G</h2>
+                <ul class="term-list">
+                    <li>
+                        <span class="term">Frightened mode</span> — The state all four ghosts enter after Pac-Man eats a power pellet. Frightened ghosts turn blue, move randomly, and can be eaten for escalating points (200, 400, 800, 1,600). The duration decreases on later stages. Ghosts flash white as a warning before frightened mode ends. See <a href="ghosts.html">Ghost Behavior Guide</a>.
+                    </li>
+                    <li>
+                        <span class="term">Fruit</span> — A bonus collectible that appears in the center of the maze twice per stage. Fruit value increases each stage, from 100 points (cherry, Stage 1) up to 5,000 points (key, Stage 13+). Each fruit is visible for roughly 9–10 seconds. For fruit routing strategy, see the <a href="scoring.html">Scoring Guide</a>.
+                    </li>
+                    <li>
+                        <span class="term">Ghost</span> — One of the four enemy characters (Blinky, Pinky, Inky, Clyde) that pursue Pac-Man through the maze. Each ghost has a distinct targeting algorithm and color. Ghosts cycle between chase, scatter, frightened, and eyes states during play.
+                    </li>
+                    <li>
+                        <span class="term">Ghost chain</span> — Eating multiple frightened ghosts in quick succession during a single power pellet window. The point value doubles with each ghost: 200, 400, 800, 1,600. All four in one window yields 3,000 points total. Ghost chains are the primary scoring engine in high-score play. See the <a href="scoring.html">Scoring Guide</a>.
+                    </li>
+                    <li>
+                        <span class="term">Ghost house</span> — The rectangular enclosure in the center of the maze where ghosts start and where eaten ghosts return to regenerate. Ghosts exit through the top opening. Pac-Man cannot enter the ghost house.
+                    </li>
+                </ul>
+
+                <h2>H – I</h2>
+                <ul class="term-list">
+                    <li>
+                        <span class="term">High score</span> — The best score achieved in the current browser session. High scores are stored in browser local storage, meaning they persist across page reloads but are cleared if you use incognito mode or clear your browser data. There is no server-side account system.
+                    </li>
+                    <li>
+                        <span class="term">Inky</span> — The cyan ghost. Inky's target tile is calculated using a vector based on both Pac-Man's position and Blinky's position. This makes Inky's behavior less intuitive to read and can produce surprisingly aggressive flanking if Blinky is close behind you. He is often considered the hardest ghost to predict.
+                    </li>
+                    <li>
+                        <span class="term">Input focus</span> — Whether the game window is currently receiving keyboard input. If input focus is lost (for example, by clicking outside the game area), arrow key presses will not register and Pac-Man will stop responding. Clicking on the game area restores focus. This is one of the most common causes of sudden unresponsiveness. See the <a href="troubleshooting.html">Troubleshooting page</a> for fixes.
+                    </li>
+                    <li>
+                        <span class="term">Intermission</span> — A brief animated cutscene that appears after certain stages. Intermissions provide a short break between boards and have no gameplay function, but they are part of the original arcade experience and serve as stage markers.
+                    </li>
+                    <li>
+                        <span class="term">Invincibility (Practice Mode)</span> — A toggle available in Practice Mode that makes Pac-Man immune to ghost contact. Invincibility allows players to explore ghost behavior, test routes, and practice movement without the risk of dying. Press I to toggle it in Practice Mode. See <a href="modes.html">Game Modes</a>.
+                    </li>
+                </ul>
+
+                <h2>L – M</h2>
+                <ul class="term-list">
+                    <li>
+                        <span class="term">Learn Mode</span> — A game mode designed to make ghost intentions visible, helping players understand why ghosts move as they do. It is useful for studying ghost targeting and phase transitions without having to react in real time. See <a href="modes.html">Game Modes</a> for a full description.
+                    </li>
+                    <li>
+                        <span class="term">Level</span> — Used interchangeably with "stage" to describe one complete board. The game increases in difficulty with each level: ghosts move faster, frightened time shortens, and scatter phases become briefer.
+                    </li>
+                    <li>
+                        <span class="term">Local storage</span> — A browser feature that allows websites to save data on your device without a server. This game uses local storage to persist high scores. Local storage is cleared when you use incognito or private browsing mode, clear your browser data, or switch to a different browser or device. See <a href="faq.html">FAQ</a> for more on score persistence.
+                    </li>
+                    <li>
+                        <span class="term">Maze</span> — The fixed grid of corridors and walls in which gameplay takes place. The maze layout does not change between stages. Learning its structure — which corridors connect, where the tunnels are, and which sections have dead ends — is essential for routing efficiently.
+                    </li>
+                </ul>
+
+                <h2>P</h2>
+                <ul class="term-list">
+                    <li>
+                        <span class="term">Pac-Man</span> — The player character: a yellow, circular figure who navigates the maze eating dots and avoiding ghosts. When a power pellet is active, Pac-Man can eat the blue (frightened) ghosts. Pac-Man loses a life on contact with a ghost that is not in frightened or eyes mode.
+                    </li>
+                    <li>
+                        <span class="term">Pellet</span> — In casual usage, any collectible in the maze. More precisely, "pellet" refers to the small white dots (regular pellets) and is sometimes used as a shorthand for "power pellet." Context usually makes the distinction clear.
+                    </li>
+                    <li>
+                        <span class="term">Pinky</span> — The pink ghost. Pinky targets the tile four squares ahead of Pac-Man's current facing direction. This makes Pinky dangerous when Pac-Man is moving toward her, because she will try to cut off the path rather than chase from behind. Predictable routes are especially vulnerable to Pinky.
+                    </li>
+                    <li>
+                        <span class="term">Power pellet</span> — One of four large dots placed in the corners of the maze. Eating a power pellet triggers frightened mode in all four ghosts, allowing Pac-Man to eat them for bonus points. Worth 50 points on its own. Also called "energizer." See <a href="scoring.html">Scoring Guide</a> for power pellet strategy.
+                    </li>
+                    <li>
+                        <span class="term">Practice Mode</span> — A game mode that gives players additional controls for learning and improving: rewind (Shift), slow-down (1 or 2), turbo (O), and invincibility (I). Practice Mode is intended for studying difficult situations rather than competing for scores. See <a href="modes.html">Game Modes</a>.
+                    </li>
+                </ul>
+
+                <h2>R – S</h2>
+                <ul class="term-list">
+                    <li>
+                        <span class="term">Route planning</span> — The practice of deciding in advance which sections of the board to clear and in which order. Good route planning reduces dead-end backtracking, ensures power pellets are available when needed, and avoids leaving scattered dots for a dangerous late-board cleanup.
+                    </li>
+                    <li>
+                        <span class="term">Scatter mode</span> — The phase in which ghosts stop chasing and move toward their designated home corners of the maze. Scatter mode creates predictable, lower-pressure windows for clearing dots in dangerous sections. It alternates with chase mode throughout the game and becomes shorter and less frequent on higher stages.
+                    </li>
+                    <li>
+                        <span class="term">Score multiplier</span> — The doubling mechanism that applies to consecutive ghost kills within a single frightened window. The first ghost is worth 200, the second 400, the third 800, and the fourth 1,600. The multiplier resets with each new power pellet. There is no persistent score multiplier across stages.
+                    </li>
+                    <li>
+                        <span class="term">Sprite</span> — A 2D image used to represent a character or object in the game. Pac-Man and each ghost are rendered as animated sprites. The browser version uses sprite-based rendering similar to the original arcade, which is why the characters have a pixel-art appearance even on modern displays.
+                    </li>
+                    <li>
+                        <span class="term">Stage</span> — One complete board run. Stage 1 begins with all dots placed and ghosts at normal speed. Each successive stage increases ghost speed, reduces frightened mode duration, and shortens scatter phases. The maze layout is the same on every stage.
+                    </li>
+                </ul>
+
+                <h2>T – W</h2>
+                <ul class="term-list">
+                    <li>
+                        <span class="term">Tunnel</span> — The openings on the left and right edges of the maze that connect to each other. Entering one tunnel opening immediately exits from the other side of the maze. Ghosts slow down significantly when passing through tunnels, making tunnels a useful escape route when ghosts are in chase mode. See <a href="guide.html">How to Play</a> for tunnel strategy.
+                    </li>
+                    <li>
+                        <span class="term">Turbo Mode</span> — A Practice Mode toggle (key O) that increases movement speed beyond the normal pace. Turbo Mode is intended for players who want to practice at a higher tempo or test reaction limits. It is not suited for beginners. See <a href="modes.html">Game Modes</a>.
+                    </li>
+                    <li>
+                        <span class="term">Turn buffering</span> — A control feature that accepts a directional input slightly before the character reaches an intersection. Pac-Man will execute the turn at the correct tile boundary rather than missing it and continuing straight. This allows players to press the key a bit early without losing the turn. It reduces the precision required at higher speeds.
+                    </li>
+                    <li>
+                        <span class="term">Wall</span> — The solid boundaries that define the corridors of the maze. Pac-Man cannot pass through walls. Ghosts also cannot pass through walls, with the single exception of eyes mode, during which an eaten ghost returns to the ghost house through walls.
+                    </li>
+                    <li>
+                        <span class="term">Warp tunnel</span> — Another name for the tunnel openings on the left and right edges of the maze. "Warp" emphasizes that movement through one side instantly places the character on the opposite side. Ghosts slow in the tunnel, which is why tunnels are a reliable escape tool when pursued.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>How to Use This Glossary</h2>
+                <p>If you encounter an unfamiliar term while reading a guide or FAQ, look it up here to understand the concept before continuing. Most terms are interconnected: understanding scatter mode helps explain why power pellets are most valuable during chase mode; understanding turn buffering explains why early input works rather than feeling like a bug.</p>
+                <p>For gameplay context, the <a href="guide.html">How to Play guide</a> applies many of these concepts directly to beginner strategy and common mistakes. The <a href="ghosts.html">Ghost Behavior Guide</a> covers chase, scatter, frightened, and eyes modes in detail. The <a href="scoring.html">Scoring Guide</a> explains how ghost chains, power pellets, and fruit fit into a high-score strategy. If you are having technical trouble with the game itself, the <a href="troubleshooting.html">Troubleshooting page</a> covers loading, sound, control, and performance issues. Common questions about the site and game are answered in the <a href="faq.html">FAQ</a>.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <h3>What is the difference between a dot and a pellet?</h3>
+                <p>In casual use, the two words often mean the same thing. Technically, "dot" refers to the small white collectibles that fill the maze (240 per board, worth 10 points each), while "pellet" is used loosely for any collectible. "Power pellet" or "energizer" specifically refers to the four large dots that trigger frightened mode.</p>
+
+                <h3>What does scatter mode mean?</h3>
+                <p>Scatter mode is a recurring phase in which all four ghosts stop chasing and move toward fixed corner positions. It creates predictable, lower-pressure windows. Scatter alternates with chase mode and becomes shorter and less frequent on later stages.</p>
+
+                <h3>What is turn buffering?</h3>
+                <p>Turn buffering lets you press a directional key slightly before reaching an intersection, and the game will execute the turn at the correct tile edge rather than ignoring the early input. In practice it means you do not have to time turns frame-perfectly, which makes high-speed movement much more manageable.</p>
+
+                <h3>What is the ghost house?</h3>
+                <p>The ghost house is the central enclosure in the maze where ghosts begin each stage and where eaten ghosts return to regenerate. Ghosts exit through the top opening. Pac-Man cannot enter. It is the only area of the maze that acts as a respawn point rather than a corridor.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ &amp; © Bandai Namco Entertainment Inc.</strong></p>
+            <p>Unofficial browser adaptation — open-source, educational, GPL v3.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="game.html">Play Game</a>
+                <a href="guide.html">How to Play</a>
+                <a href="ghosts.html">Ghost Guide</a>
+                <a href="scoring.html">Scoring Guide</a>
+                <a href="modes.html">Game Modes</a>
+                <a href="troubleshooting.html">Troubleshooting</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
