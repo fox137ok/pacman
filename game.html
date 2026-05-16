@@ -133,6 +133,102 @@
                 font-size: 1.5rem;
             }
         }
+
+        .game-info-content {
+            width: min(700px, calc(100% - 40px));
+            margin-top: max(180px, calc(1075px - 100vh));
+            margin-right: auto;
+            margin-bottom: 80px;
+            margin-left: auto;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .game-info-content h2 {
+            font-family: 'ArcadeR', Arial, sans-serif;
+            font-size: 1.6rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        .game-info-content p {
+            margin-bottom: 14px;
+        }
+
+        .game-info-content strong {
+            color: #FFCC00;
+        }
+
+        .game-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 22px 0;
+        }
+
+        .game-info-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-left: 3px solid #FFCC00;
+            border-radius: 6px;
+            padding: 16px 18px;
+            font-size: 0.95rem;
+        }
+
+        .game-info-card h3 {
+            color: #FFCC00;
+            font-size: 1rem;
+            margin: 0 0 10px 0;
+        }
+
+        .game-info-card ul {
+            margin: 0 0 0 18px;
+            padding: 0;
+        }
+
+        .game-info-card li {
+            margin-bottom: 6px;
+        }
+
+        .game-info-links {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .game-info-links a {
+            color: #00BFFF;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 10px;
+            font-size: 0.95rem;
+        }
+
+        .game-info-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .game-info-content {
+                margin-top: 450px;
+                font-size: 0.92rem;
+            }
+
+            .game-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 340px) {
+            .game-info-content {
+                margin-top: 510px;
+            }
+        }
     </style>
 
 <script type="application/ld+json">
@@ -174,6 +270,68 @@
             <p>Experience the complete gameplay of the classic 1980 arcade game in your browser, with authentic sounds and maze rhythm.</p>
             <p>Use keyboard arrow keys or swipe on touchscreen to control Pac-Man, eat all dots and avoid ghosts.</p>
             <p>Press <kbd>Esc</kbd> to open the menu, switch modes or return to homepage to choose other games.</p>
+        </section>
+
+        <section class="game-info-content">
+            <h2>ABOUT THIS GAME</h2>
+            <p>This is a browser recreation of the classic 1980 Pac-Man arcade game. You navigate a maze, eat every dot, and avoid four ghosts - each with its own movement pattern. The game runs entirely in your browser using HTML5 Canvas, with no plugins or downloads required. It includes three playable versions: the original Pac-Man, Ms. Pac-Man, and Cookie-Man, each with a distinct maze layout and visual style.</p>
+
+            <p>The core objective is the same across all versions: clear every dot in the maze without being caught. <strong>Power pellets</strong> in the four corners temporarily make ghosts vulnerable - eat them for bonus points while the effect lasts. Two fruits appear per stage as timed bonuses. Completing the board advances you to the next stage with faster ghost movement.</p>
+
+            <div class="game-info-grid">
+                <div class="game-info-card">
+                    <h3>Keyboard Controls</h3>
+                    <ul>
+                        <li><strong>Arrow Keys</strong> - move Pac-Man</li>
+                        <li><strong>Esc</strong> - open in-game menu</li>
+                        <li><strong>Shift</strong> - rewind (Practice Mode)</li>
+                        <li><strong>1 / 2</strong> - slow game speed (Practice Mode)</li>
+                        <li><strong>O</strong> - toggle Turbo Mode (Practice Mode)</li>
+                        <li><strong>I</strong> - toggle invincibility (Practice Mode)</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>Touch Controls</h3>
+                    <ul>
+                        <li><strong>Swipe up / down / left / right</strong> - move Pac-Man</li>
+                        <li>Short swipes work - no need to hold</li>
+                        <li>Tap the <strong>BACK TO HOME</strong> button to return to the game selection screen</li>
+                        <li>Rotate to landscape on small phones for a larger play area</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>Learn Mode</h3>
+                    <ul>
+                        <li>Shows a colored overlay revealing each ghost's current <strong>target tile</strong></li>
+                        <li>Helps you understand why ghosts move the way they do</li>
+                        <li>Blinky, Pinky, Inky, and Clyde all use different targeting rules</li>
+                        <li>Useful for learning ghost behavior before attempting higher scores</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>Practice Mode</h3>
+                    <ul>
+                        <li><strong>Rewind</strong> up to 10 seconds with the Shift key</li>
+                        <li>Slow the game to half or quarter speed with <strong>1</strong> and <strong>2</strong></li>
+                        <li>Enable invincibility with <strong>I</strong> to explore routes safely</li>
+                        <li>Turbo Mode with <strong>O</strong> speeds up slow sections</li>
+                        <li>Ideal for learning escape routes and power pellet timing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>SCORING AND GHOSTS</h2>
+            <p>Regular dots are worth <strong>10 points</strong> each. Power pellets give <strong>50 points</strong> and open a window to eat frightened ghosts for bonus points. The ghost chain doubles with each kill in a single power-up window: 200, 400, 800, and 1,600 points. Eating all four ghosts in one window is worth 3,000 bonus points on top of the base chain. Fruits appear twice per stage and range from 100 to 5,000 points depending on the stage number.</p>
+
+            <p>Each of the four ghosts uses a different movement rule. <strong>Blinky</strong> (red) chases your current position directly. <strong>Pinky</strong> (pink) targets four tiles ahead of your current direction. <strong>Inky</strong> (cyan) uses a combined calculation based on both your position and Blinky's position, making his path harder to predict. <strong>Clyde</strong> (orange) chases you when far away but retreats to his corner when he gets close, which can make him surprisingly dangerous near the bottom-left of the maze. All ghosts alternate between chase and scatter phases - during scatter, each retreats to its own corner of the maze, creating brief windows of safety.</p>
+
+            <div class="game-info-links">
+                <a href="guide.html">Game Guide</a>
+                <a href="ghosts.html">Ghost Behavior</a>
+                <a href="scoring.html">Scoring Guide</a>
+                <a href="glossary.html">Glossary</a>
+                <a href="troubleshooting.html">Troubleshooting</a>
+            </div>
         </section>
 
         <a href="index.html" id="home-button">BACK TO HOME</a>
