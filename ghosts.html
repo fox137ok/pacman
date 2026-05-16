@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <title>The Four Pac-Man Ghosts Explained: Blinky, Pinky, Inky, and Clyde</title>
+    <meta name="description" content="Learn how each Pac-Man ghost behaves, why the maze feels unpredictable, and how to use chase, scatter, frightened, and recovery states to survive longer.">
+    <link rel="canonical" href="https://pacmanonline.org/ghosts.html">
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "The Four Pac-Man Ghosts Explained: Blinky, Pinky, Inky, and Clyde",
+          "description": "Learn how each Pac-Man ghost behaves, why the maze feels unpredictable, and how to use chase, scatter, frightened, and recovery states to survive longer.",
+          "datePublished": "2026-05-15",
+          "dateModified": "2026-05-15",
+          "url": "https://pacmanonline.org/ghosts.html",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Pac-Man Arcade",
+            "url": "https://pacmanonline.org"
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pacmanonline.org/ghosts.html"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Why do the ghosts feel so unpredictable?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Each ghost follows a different rule for choosing its target tile. Because four distinct targeting systems operate simultaneously, the combined pressure often feels random even though each ghost is behaving consistently. The unpredictability is an emergent property of four simple rules working together."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which ghost is the most dangerous?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Blinky is usually the most immediately dangerous because he always aims for your current position and speeds up as more dots are eaten. In the later stages of a round, avoiding Blinky requires constant awareness. That said, combinations of multiple ghosts converging are more dangerous than any single ghost alone."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is scatter mode?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Scatter mode is a periodic phase where all four ghosts stop chasing and instead head toward their designated home corners of the maze. This creates brief windows of safer movement useful for collecting dots in otherwise dangerous areas. Scatter periods become shorter in later stages."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why do ghosts flash white before they stop being frightened?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The white flashing is a visual warning that the frightened period is about to end. The timing varies by level — earlier levels have longer frightened windows, while later levels shorten or even eliminate the frightened state entirely. When you see the flash, avoid committing to a long chase if it puts you in a difficult position."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What happens after Pac-Man eats a ghost?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "After being eaten, a ghost becomes a pair of eyes that travel back to the ghost house in the center of the maze. Once inside, it regenerates and re-enters as a normal ghost. The eyes pass through walls and pose no threat while returning."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Clyde ever actually chase Pac-Man?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Clyde switches between two behaviors depending on distance. When far from Pac-Man he uses a direct-chase approach similar to Blinky. When he gets within roughly eight tiles, he switches to retreat mode and moves toward his scatter corner instead. This makes him unpredictable if you assume he has permanently left the area."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .last-updated {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            margin-top: 6px;
+            margin-bottom: 0;
+        }
+
+        /* Ghost comparison table */
+        .ghost-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        .ghost-table th {
+            background: rgba(255, 204, 0, 0.2);
+            color: var(--primary-color);
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .ghost-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            vertical-align: top;
+        }
+
+        .ghost-table tr:hover td {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .ghost-name { font-weight: bold; white-space: nowrap; }
+        .blinky { color: #FF5555; }
+        .pinky  { color: #FFB8FF; }
+        .inky   { color: #00FFFF; }
+        .clyde  { color: #FFB852; }
+
+        /* Four-ghost behavior diagram */
+        .behavior-diagram {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .ghost-card {
+            border-radius: 8px;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .ghost-card .ghost-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50% 50% 40% 40%;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+
+        .ghost-card.blinky-card { border: 2px solid #FF5555; background: rgba(255,85,85,0.08); }
+        .ghost-card.pinky-card  { border: 2px solid #FFB8FF; background: rgba(255,184,255,0.08); }
+        .ghost-card.inky-card   { border: 2px solid #00FFFF; background: rgba(0,255,255,0.08); }
+        .ghost-card.clyde-card  { border: 2px solid #FFB852; background: rgba(255,184,82,0.08); }
+
+        .blinky-bg { background: #FF5555; color: #000; }
+        .pinky-bg  { background: #FFB8FF; color: #000; }
+        .inky-bg   { background: #00FFFF; color: #000; }
+        .clyde-bg  { background: #FFB852; color: #000; }
+
+        .ghost-card h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        .ghost-card p {
+            font-size: 0.9rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* Phase badges */
+        .mode-phases {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 16px 0;
+        }
+
+        .phase-badge {
+            padding: 4px 14px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .phase-chase   { background: rgba(255,85,85,0.25);  border: 1px solid #FF5555; }
+        .phase-scatter { background: rgba(0,191,255,0.2);   border: 1px solid #00BFFF; }
+        .phase-fright  { background: rgba(80,80,220,0.3);   border: 1px solid #7777ff; }
+        .phase-eyes    { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .content-section, .highlight-box { padding: 20px; }
+            .behavior-diagram { grid-template-columns: 1fr; }
+            .ghost-table { font-size: 0.88rem; }
+            .ghost-table th, .ghost-table td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>GHOST GUIDE</h1>
+            <p style="color: #ccc; font-size: 1rem; margin: 10px 0 20px;">Blinky, Pinky, Inky &amp; Clyde — how each one hunts you</p>
+            <a href="guide.html" class="back-link">← How to Play</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="highlight-box">
+                <h2>Why the Maze Feels So Dangerous</h2>
+                <p>The ghosts in this Pac-Man-inspired project are not random. Each one follows a distinct targeting rule, and together they create a pressure system that feels chaotic even though every ghost is behaving predictably on its own. The reason the maze feels alive is that four completely different targeting styles are operating simultaneously, each pushing you toward a different part of the grid.</p>
+                <p>Understanding those four personalities will not make the game easy, but it gives you a framework for reading threats before they close in rather than simply reacting to them at the last moment. The guides below cover each ghost's individual behavior, the global phase system that governs all of them at once, and practical advice for using what you know to survive longer.</p>
+                <p class="last-updated">Last updated May 15, 2026</p>
+            </div>
+
+            <!-- Four-card behavior diagram -->
+            <div class="content-section">
+                <h2>Four Ghosts, Four Different Threats</h2>
+                <p>Each ghost has a distinct personality that contributes a different kind of pressure. None of them behaves like the others, which is why the maze feels unstable even in early rounds when the pace is relatively calm.</p>
+
+                <div class="behavior-diagram">
+                    <div class="ghost-card blinky-card">
+                        <div class="ghost-icon blinky-bg">B</div>
+                        <h4 class="blinky">Blinky</h4>
+                        <p>Always aims at your current tile. The most direct pursuer. Speeds up as the round progresses and fewer dots remain.</p>
+                    </div>
+                    <div class="ghost-card pinky-card">
+                        <div class="ghost-icon pinky-bg">P</div>
+                        <h4 class="pinky">Pinky</h4>
+                        <p>Aims several tiles ahead of your current direction. Tends to cut off corridors and punish predictable movement.</p>
+                    </div>
+                    <div class="ghost-card inky-card">
+                        <div class="ghost-icon inky-bg">I</div>
+                        <h4 class="inky">Inky</h4>
+                        <p>The least readable of the four. His target shifts based on both Pac-Man's direction and Blinky's position, making him appear in unexpected locations.</p>
+                    </div>
+                    <div class="ghost-card clyde-card">
+                        <div class="ghost-icon clyde-bg">C</div>
+                        <h4 class="clyde">Clyde</h4>
+                        <p>Chases when far, retreats when close. His alternating rhythm makes him easy to underestimate when you are already managing the others.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick comparison table -->
+            <div class="content-section">
+                <h2>Quick Comparison</h2>
+                <div style="overflow-x: auto;">
+                    <table class="ghost-table">
+                        <thead>
+                            <tr>
+                                <th>Ghost</th>
+                                <th>Chase Target</th>
+                                <th>Most Dangerous When</th>
+                                <th>Counter Approach</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="ghost-name blinky">Blinky</span></td>
+                                <td>Your current position</td>
+                                <td>Fewer dots remain; he accelerates and maintains tight pursuit</td>
+                                <td>Keep moving; use side tunnels to break sustained pressure; avoid dead ends</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ghost-name pinky">Pinky</span></td>
+                                <td>Several tiles ahead in your direction of travel</td>
+                                <td>You run in a straight line through a long corridor without varying direction</td>
+                                <td>Vary your direction frequently; cut back after corners to break the intercept path</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ghost-name inky">Inky</span></td>
+                                <td>A position derived from Blinky's location and your current direction</td>
+                                <td>Blinky is already behind you, amplifying Inky's targeting toward your escape route</td>
+                                <td>Focus on Blinky first; stay aware of peripheral exits; avoid committing to single-route escapes</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ghost-name clyde">Clyde</span></td>
+                                <td>Your position when far; his corner when close</td>
+                                <td>You assume his retreat means he has left the threat zone permanently</td>
+                                <td>Treat his retreats as temporary; keep distance management consistent</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Blinky -->
+            <div class="content-section">
+                <h2>Blinky — The Direct Pursuer</h2>
+                <p>Blinky is the red ghost and the most straightforward member of the group. In chase mode, his target is always the tile Pac-Man is currently standing on. There is no prediction, no offset, and no angle calculation involved. He simply aims at where you are right now and moves toward that position as directly as the maze corridors allow.</p>
+                <p>This makes Blinky highly readable but also relentlessly consistent. He will not suddenly appear from a corner you did not expect. He will not cut you off mid-corridor. What he will do is maintain steady pressure from the direction you came from, closing distance whenever you hesitate or take a slower path.</p>
+                <p>What distinguishes Blinky from the other ghosts is a speed increase that activates as the number of remaining dots on the board drops below a certain threshold. At the start of a round, his speed is similar to the other ghosts. As the board empties and you approach the final stretch, he gradually moves faster. By the time only a small number of dots remain, Blinky can move noticeably quicker than earlier in the same round, which compresses the time you have for decisions.</p>
+                <p>The clearest tactical sign that Blinky is dangerous is when he has been directly behind you for several seconds without the distance opening. That means you are traveling at similar speeds in the same direction, and any hesitation — a corner pause, a wrong direction input, a moment of indecision — will close the gap. The tunnel exits on the sides of the maze are one of the best tools for breaking this kind of sustained trailing pursuit, because ghost speed through tunnels is reduced relative to open maze speed.</p>
+                <p>Against Blinky, the best habit is to avoid long straight segments where he can gain tile after tile. Changing direction at intersections and using corners to briefly break his pursuit line are the two simplest adjustments that reduce his effectiveness as a threat.</p>
+            </div>
+
+            <!-- Pinky -->
+            <div class="content-section">
+                <h2>Pinky — The Ambusher</h2>
+                <p>Pinky's approach is fundamentally different from Blinky's. Rather than targeting your current position, she targets a spot several tiles ahead of the direction you are currently moving. The implication is that Pinky is attempting to intercept you at a future position rather than chase you from behind. She is positioning, not pursuing.</p>
+                <p>In practice, this means Pinky is most dangerous in long corridors and predictable routes. If you are running horizontally down a stretch, Pinky may already be in position at the end of it before you arrive. She is the ghost that makes routes feel narrower because she is anticipating the direction of travel rather than reacting to your current tile.</p>
+                <p>Pinky also applies particular pressure around corners. Because her targeting extends ahead of your movement, she tends to cover the area just past a corner before you round it. If you are moving with any consistency and Pinky has had time to reposition, changing course at the last second is sometimes the only clean option.</p>
+                <p>The clearest way to disrupt Pinky is to vary your direction more frequently rather than committing to one path for many tiles at a time. A short reversal after a corner forces Pinky to recalculate, and the brief window that creates is often enough to clear the section you were targeting. Fast, varied movement is generally much more effective against Pinky than fast, consistent movement in one direction.</p>
+            </div>
+
+            <!-- Inky -->
+            <div class="content-section">
+                <h2>Inky — The Least Predictable</h2>
+                <p>Inky is the cyan ghost, and he is consistently the hardest of the four to read. His targeting logic does not operate independently. Instead, it involves both Pac-Man's current position and direction and the current position of Blinky. The result is a targeting pattern that can place Inky in unexpected areas of the maze, particularly when Blinky is already nearby.</p>
+                <p>Rather than trying to anticipate Inky's exact position at every moment — which requires tracking two reference points simultaneously — the more practical approach is to understand his role in the overall pressure system. When Blinky is close behind you, Inky tends to appear at angles that cut off the escape routes ahead. When Blinky is far from you, Inky often takes less threatening positions in areas you are not actively moving toward. This means that in moments where one threat is already pressing, Inky is likely adding pressure from a different angle and making the situation harder to navigate cleanly.</p>
+                <p>The most useful practical adjustment for Inky is to maintain peripheral awareness of the entire maze rather than focusing entirely on a single pursuer. Players who track one threat closely and ignore their surroundings are most likely to be caught off guard by Inky arriving from an unexpected direction. Keeping multiple exits visible at intersections is more reliable than committing fully to one escape route without checking the sides.</p>
+                <p>If you want to understand Inky's behavior in detail, the <a href="modes.html">Learn Mode</a> in this project makes targeting visible with on-screen indicators. Spending time in that mode with attention on Inky specifically will build an intuition for why he tends to appear where he does, which is more useful than trying to memorize a static rule.</p>
+            </div>
+
+            <!-- Clyde -->
+            <div class="content-section">
+                <h2>Clyde — The Oscillator</h2>
+                <p>Clyde is the orange ghost and his behavior is the most rhythmic of the four. His movement alternates between two distinct approaches based on his distance to Pac-Man. When he is far enough away — roughly eight or more tiles — he moves directly toward Pac-Man using a chase approach similar to Blinky. When he gets within that threshold, he stops chasing entirely and heads toward his scatter corner in the lower portion of the maze.</p>
+                <p>This back-and-forth between chase and retreat creates a distinctive oscillating pattern. Clyde approaches, gets close, withdraws, moves away until the distance opens again, and then resumes chasing. Repeated across a full round, this can cover significant ground and bring Clyde into areas you might expect to be clear.</p>
+                <p>The danger with Clyde is that his retreats look like safety. When he turns away from Pac-Man and heads toward the corner, it is natural to treat that as a signal that the area is now unoccupied. But because his retreat phase is finite — he will cycle back into chase mode as soon as the distance opens — the area Clyde left a few seconds ago is not reliably safe for the period of time that the visual impression suggests.</p>
+                <p>In the early part of a round, Clyde often spends more time oscillating in the lower areas of the maze because the overall pace is calmer and his transition distances cover a smaller part of the board. As the round progresses and movement becomes more compressed, Clyde's cycles can affect a wider area of the maze. Treating his retreats as temporary rather than permanent is the most reliable way to avoid being caught by his return.</p>
+            </div>
+
+            <!-- Chase vs Scatter -->
+            <div class="content-section">
+                <h2>Chase Mode and Scatter Mode</h2>
+
+                <div class="mode-phases">
+                    <span class="phase-badge phase-chase">Chase</span>
+                    <span class="phase-badge phase-scatter">Scatter</span>
+                    <span class="phase-badge phase-fright">Frightened</span>
+                    <span class="phase-badge phase-eyes">Eyes</span>
+                </div>
+
+                <p>The ghosts do not spend the entire round in chase mode. The maze operates on a repeating phase cycle that alternates between <strong>chase mode</strong> and <strong>scatter mode</strong>. During chase mode, each ghost uses its own individual targeting logic. During scatter mode, all four ghosts stop pursuing Pac-Man and instead head toward fixed home corners of the maze.</p>
+                <p>In scatter mode the maze becomes noticeably safer. Blinky drifts toward the upper-right area, Pinky toward the upper-left, Inky toward the lower-right, and Clyde toward the lower-left. With all four ghosts moving away from the center, this is a useful window for clearing dots in sections of the maze that were previously too risky to approach. Learning to recognize when scatter mode has activated — by noticing that all the ghosts have simultaneously changed direction — is one of the more effective habits for improving dot-clearing efficiency.</p>
+                <p>The scatter phases are longer in the early rounds and become progressively shorter as play continues. In later levels, scatter periods may last only a few seconds before chase mode resumes. Eventually, in the most advanced stages, the ghosts spend nearly all of their time in chase mode.</p>
+                <p>One factor that complicates phase timing is that losing a life resets the phase counter. A new life begins the scatter-chase sequence from the start, which means the transition timing will be different from what it was before the death. If you are playing with the phase rhythm in mind, a death early in the round can shift the timing enough to catch you off guard when you return to play.</p>
+            </div>
+
+            <!-- Frightened mode -->
+            <div class="content-section">
+                <h2>Frightened Mode — When the Ghosts Turn Blue</h2>
+                <p>Eating a power pellet (the four larger dots in the corners of the maze) switches all four ghosts into frightened mode simultaneously. In this state the ghosts turn blue, move more slowly than usual, and can be eaten by Pac-Man for bonus points. The scoring chain for eating multiple ghosts within one frightened window increases with each ghost: the first is worth 200 points, the second 400, the third 800, and the fourth 1,600. Chaining all four in a single power pellet window is one of the highest-yield scoring opportunities in the game.</p>
+                <p>The most common mistake during frightened mode is rushing. Because the ghosts are temporarily vulnerable, the temptation is to chase all of them as aggressively as possible regardless of position. This often leads to committing to a long route across the maze that leaves you in a poor position when the frightened period ends and the ghosts resume their normal behavior.</p>
+                <p>A more effective approach is to prioritize ghosts that are close to your current position and accessible without deep commitment. If two ghosts are nearby and two are across the maze, chasing the nearby pair and returning to a neutral position near the center before the timer expires is generally a better outcome than attempting to collect all four and ending up deep in a corner when the frightened state ends.</p>
+                <p>The duration of frightened mode decreases as the game advances. In early stages the window is long enough to comfortably pursue multiple ghosts. In later stages the frightened period shortens significantly. The visual warning that the frightened state is about to end is the ghosts flashing between blue and white. When you see that flashing, treat it as a signal to stop committing to new chases and focus on positioning yourself safely for the transition back to chase mode.</p>
+            </div>
+
+            <!-- Eyes mode -->
+            <div class="content-section">
+                <h2>Eyes Mode — Returning to the Ghost House</h2>
+                <p>When a ghost is eaten by a powered-up Pac-Man, only its eyes remain. Those eyes travel back to the ghost house in the center of the maze, passing directly through walls rather than following maze corridors. Once inside the ghost house, the ghost regenerates and re-enters the maze after a short delay. The eyes move quickly and do not harm Pac-Man during the return journey.</p>
+                <p>For players, the practical significance of eyes mode is that it temporarily removes a threat from a section of the maze while that ghost travels back. If you eat Blinky in the upper part of the maze, for example, there is a brief window before he returns where his side of the board has reduced pressure. Some players use this window to quickly collect dots in areas that are normally under Blinky's constant surveillance.</p>
+                <p>That window is short. The ghost returns to normal behavior immediately after exiting the ghost house, and it resumes whichever phase the game is currently in — chase or scatter — without any grace period. If you are planning to use a ghost's absence to clear a dangerous section, move efficiently because the reprieve ends as soon as it re-enters the maze.</p>
+            </div>
+
+            <!-- Practical tips -->
+            <div class="content-section">
+                <h2>Practical Tips Based on Ghost Behavior</h2>
+                <ol>
+                    <li><strong>Watch all four ghosts, not just the nearest one.</strong> The most frequent cause of death is fixating on the closest ghost and being caught by one approaching from a peripheral direction. A regular habit of checking the full maze view — not just the immediate area — prevents most surprise deaths.</li>
+                    <li><strong>Use the tunnels to break sustained Blinky pressure.</strong> When Blinky has been behind you for several consecutive seconds without the gap widening, using a side tunnel resets the approach angle and slows the ghost while it passes through. This is often more reliable than trying to outrun him in the open maze.</li>
+                    <li><strong>Vary direction to disrupt Pinky.</strong> Consistent straight-line movement along corridors is exactly what Pinky is built to exploit. Cutting back, changing direction at intersections, and moving with less predictability makes her targeting less effective.</li>
+                    <li><strong>Save power pellets for multi-ghost opportunities.</strong> Using a power pellet when no ghost is within three or four tiles wastes the scoring potential of the frightened window. More effective use comes when at least two ghosts are nearby and accessible without a long detour.</li>
+                    <li><strong>Recognize scatter mode and use the window.</strong> When all four ghosts shift toward the corners of the maze simultaneously, that is scatter mode. The center of the maze and the previously dangerous corridors near ghost positions are briefly safer. Use this window to clear dots rather than staying in already-safe areas.</li>
+                    <li><strong>Treat Clyde's retreats as temporary, not permanent.</strong> When Clyde turns toward his corner, it is easy to treat that section as cleared. It is not. He will resume chasing once the distance reopens, sometimes sooner than the visual impression suggests.</li>
+                    <li><strong>Use Learn Mode to study Inky.</strong> Inky's targeting is the hardest to read without visualization. The <a href="modes.html">game modes</a> in this project include a Learn Mode that makes targeting visible with on-screen indicators. Spending time there is the fastest way to build an intuition for Inky's behavior.</li>
+                    <li><strong>Read the full <a href="guide.html">How to Play guide</a> for routing and scoring context.</strong> Ghost behavior is one part of the game. Understanding how to route efficiently, when to use power pellets, and how scoring chains work gives you the complete picture for improving consistently.</li>
+                </ol>
+            </div>
+
+            <!-- FAQ -->
+            <div class="content-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <h3>Why do the ghosts feel so unpredictable?</h3>
+                <p>Each ghost follows a different rule for choosing its target tile. Because four distinct targeting systems operate simultaneously, the combined pressure often feels random even though each ghost is behaving consistently. The unpredictability is an emergent quality of four simple rules working together rather than any randomness in the design. If you understand each rule individually, the maze becomes more readable over time.</p>
+
+                <h3>Which ghost is the most dangerous?</h3>
+                <p>Blinky is usually the most immediately threatening because he always aims for your current position and speeds up as more dots are eaten. In the later stages of a round, avoiding Blinky requires nearly constant awareness. That said, the most difficult situations in the game are not caused by any single ghost but by combinations of two or more ghosts converging from different angles at the same time.</p>
+
+                <h3>What is scatter mode?</h3>
+                <p>Scatter mode is a periodic phase where all four ghosts stop chasing and instead move toward their designated home corners of the maze. This creates brief windows of safer movement that are useful for clearing dots in normally dangerous sections. Scatter periods become shorter as the game advances, and later levels may have very brief scatter windows or none at all.</p>
+
+                <h3>Why do ghosts flash white before they stop being frightened?</h3>
+                <p>The white flashing is a visual warning that the frightened period is ending. The timing varies by stage — earlier rounds give a longer frightened window, while later rounds shorten it significantly. When you see the flash, avoid starting a new chase that would require a long route because you may not have time to complete it before chase mode resumes.</p>
+
+                <h3>What happens after Pac-Man eats a ghost?</h3>
+                <p>After being eaten, a ghost becomes a pair of eyes that travel back to the ghost house in the center of the maze. It passes through walls and poses no threat during the return. Once inside the ghost house, it regenerates and re-enters the maze. There is a short delay before the ghost is fully active again, but the window it creates is brief.</p>
+
+                <h3>Does Clyde ever actually chase Pac-Man?</h3>
+                <p>Yes. Clyde switches between chase and retreat based on his distance from Pac-Man. When far enough away, he pursues directly in a manner similar to Blinky. When he closes to within roughly eight tiles, he switches to retreat mode and moves toward his scatter corner. The cycle then repeats. This makes him unpredictable to players who interpret his retreat as permanent absence from the area.</p>
+            </div>
+
+            <div class="highlight-box">
+                <p>This guide reflects how ghosts behave in this unofficial, open-source browser adaptation. <strong>PAC-MAN™ &amp; © Bandai Namco Entertainment Inc.</strong> This project is not affiliated with or endorsed by Bandai Namco. It is maintained under the GPL v3 license for educational purposes.</p>
+                <p>Ready to apply what you learned? <a href="game.html">Play the game</a> — or review broader gameplay strategies in the <a href="guide.html">How to Play guide</a>. If you run into technical issues, the <a href="troubleshooting.html">Troubleshooting page</a> covers loading, sound, and control problems.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ &amp; © Bandai Namco Entertainment Inc.</strong></p>
+            <p>Unofficial browser adaptation — open-source, educational, GPL v3.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="game.html">Play Game</a>
+                <a href="guide.html">How to Play</a>
+                <a href="modes.html">Game Modes</a>
+                <a href="troubleshooting.html">Troubleshooting</a>
+                <a href="faq.html">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

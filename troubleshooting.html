@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-7912112964735452"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://analytics.1lai.net/js/pa-g2AISPrV7Tr1gZPh60gtA.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init();
+    </script>
+
+    <title>Pac-Man Online Troubleshooting: Loading, Sound, Controls, and Performance</title>
+    <meta name="description" content="Fix common Pac-Man Online issues including loading problems, keyboard controls, sound, mobile play, lag, browser storage, and saved scores.">
+    <link rel="canonical" href="https://pacmanonline.org/troubleshooting.html">
+    <link rel="icon" type="image/png" href="icon/favicon.png"/>
+    <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "Pac-Man Online Troubleshooting: Loading, Sound, Controls, and Performance",
+          "description": "Fix common Pac-Man Online issues including loading problems, keyboard controls, sound, mobile play, lag, browser storage, and saved scores.",
+          "datePublished": "2026-05-15",
+          "dateModified": "2026-05-15",
+          "url": "https://pacmanonline.org/troubleshooting.html",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Pac-Man Arcade",
+            "url": "https://pacmanonline.org"
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pacmanonline.org/troubleshooting.html"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Why does the game load slowly on my device?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The game assets — maze graphics, sprite sheets, and audio files — are loaded from the server on first visit. On a slower connection or less powerful device, this initial load may take several seconds. Subsequent visits are typically faster because the browser caches the assets locally. If loading remains slow across multiple visits, try clearing the browser cache and reloading, or test on a different network connection."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why are my keyboard controls not working?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The most common cause is that the game canvas does not have keyboard focus. Click directly on the game area before using the arrow keys. If another element on the page has focus — for example, if you used Tab to navigate or clicked outside the canvas — keyboard input will be directed to that element instead of the game. Also check that your browser is not intercepting the arrow keys for scrolling, which can happen on some pages."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why is there no sound in the game?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Modern browsers require user interaction before playing audio. If you opened the game page and the tab immediately loaded without any clicks or key presses, the browser may have blocked the initial audio. Click anywhere on the game area or press a key to trigger interaction, then start a new game. Also check that the browser tab is not muted and that your device system volume is turned up."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "The game runs slowly or choppy — what can I do?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Performance issues usually come from one of three sources: too many background browser tabs consuming CPU or GPU resources, a device power-saving mode reducing processing speed, or a browser with hardware acceleration disabled. Try closing other tabs, disabling battery saver mode, and checking that hardware acceleration is enabled in your browser settings. On mobile, keeping the screen on and playing in landscape orientation also helps."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why did my high score disappear?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "High scores and preferences are stored in browser local storage. This data is cleared when you use private or incognito mode, when you clear your browser data, or when the browser itself purges storage due to low disk space. Playing in a regular browser window and avoiding clearing site data will keep saved scores intact. Note that scores stored in one browser are not accessible from another browser or device."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @font-face {
+            font-family: 'ArcadeR';
+            src: url('font/ARCADE_R.TTF');
+        }
+
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #FF0000;
+            --accent-color: #00BFFF;
+            --background-color: #000000;
+            --text-color: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h1, h2 {
+            font-family: 'ArcadeR', 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0 var(--secondary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover,
+        .footer-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        main {
+            padding: 50px 0;
+        }
+
+        .content-section,
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .highlight-box {
+            border: 2px solid var(--primary-color);
+            background: rgba(255, 204, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            margin-top: 18px;
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--accent-color);
+        }
+
+        .last-updated {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            margin-top: 6px;
+            margin-bottom: 0;
+        }
+
+        /* Step-list for troubleshooting steps */
+        .step-list {
+            list-style: none;
+            margin-left: 0;
+            counter-reset: step-counter;
+        }
+
+        .step-list li {
+            counter-increment: step-counter;
+            padding: 10px 10px 10px 46px;
+            margin-bottom: 8px;
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 6px;
+        }
+
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            background: var(--primary-color);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Severity badge */
+        .issue-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: bold;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .tag-common  { background: rgba(255,165,0,0.2); border: 1px solid orange; color: orange; }
+        .tag-browser { background: rgba(0,191,255,0.15); border: 1px solid #00BFFF; color: #00BFFF; }
+        .tag-device  { background: rgba(255,255,255,0.1); border: 1px solid #aaa; color: #aaa; }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d7d7d7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            transition: all 0.3s ease;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 2px solid var(--primary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .content-section, .highlight-box { padding: 20px; }
+            .step-list li { padding-left: 40px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>TROUBLESHOOTING</h1>
+            <p style="color: #ccc; font-size: 1rem; margin: 10px 0 20px;">Loading, sound, controls, and performance fixes</p>
+            <a href="faq.html" class="back-link">← FAQ</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="highlight-box">
+                <h2>How This Guide Helps</h2>
+                <p>Most problems with browser games come from a small set of root causes: browser security policies that block audio or scripts, input focus being on the wrong element, local storage being cleared, or device performance limits being hit. This guide walks through each common issue type with specific steps to identify the cause and resolve it.</p>
+                <p>If a problem is not covered here, or if a fix does not work, the <a href="contact.html">Contact page</a> explains how to submit a bug report with the information needed to investigate.</p>
+                <p class="last-updated">Last updated May 15, 2026</p>
+            </div>
+
+            <!-- Game does not load -->
+            <div class="content-section">
+                <h2>Game Does Not Load <span class="issue-tag tag-common">Common</span></h2>
+                <p>The most common causes of a game that fails to appear or remains on a loading screen are a network interruption, an aggressive browser extension blocking resources, or a corrupted browser cache. Work through these steps in order:</p>
+                <ol class="step-list">
+                    <li>Hard-refresh the page: press <kbd>Ctrl+Shift+R</kbd> on Windows or <kbd>Cmd+Shift+R</kbd> on Mac. This forces the browser to reload all assets from the server and bypasses cached files that may be corrupted or outdated.</li>
+                    <li>Try a different browser. If the game loads correctly in Chrome but not in Firefox (or vice versa), the issue is specific to that browser's configuration rather than a network or server problem.</li>
+                    <li>Temporarily disable browser extensions — especially ad blockers, script blockers, and privacy-focused extensions — and then reload. These tools sometimes block game scripts or asset requests from domains they do not recognize.</li>
+                    <li>Check your network connection. The game assets load from the server on first visit. A weak or interrupted connection can cause the load sequence to stall partway through. If your connection is unstable, wait and try again from a stronger network.</li>
+                    <li>Clear the browser cache for this site. In most browsers: Settings → Privacy &amp; Security → Clear browsing data → select Cached images and files → clear. Then reload the page.</li>
+                    <li>Check that JavaScript is enabled. The game requires JavaScript to run. If JavaScript is disabled globally or blocked for this site in your browser settings, the game canvas will not initialize.</li>
+                </ol>
+                <p>If none of these steps resolves the problem, please use the <a href="contact.html">Contact page</a> to submit a report including your browser name and version, operating system, and a description of what happens when the page loads.</p>
+            </div>
+
+            <!-- Keyboard controls -->
+            <div class="content-section">
+                <h2>Keyboard Controls Do Not Respond <span class="issue-tag tag-browser">Browser</span></h2>
+                <p>Keyboard input requires the game canvas to have focus. If another element on the page holds focus — because you clicked outside the game area, used <kbd>Tab</kbd> to navigate, or used the browser's address bar — arrow key input will be captured by the browser or that element instead of the game.</p>
+
+                <h3>Steps to Restore Keyboard Control</h3>
+                <ol class="step-list">
+                    <li>Click directly on the game area to give it input focus. A single click on the canvas should be enough to redirect keyboard events to the game.</li>
+                    <li>If you are using a keyboard layout other than QWERTY (for example, AZERTY, QWERTZ, or Dvorak), check that the arrow keys are not remapped. The game uses hardware key codes rather than character codes, so most alternative layouts should work, but custom remapping software or OS-level key reassignments can interfere.</li>
+                    <li>Check for conflicting browser shortcuts. Some browsers use the arrow keys to scroll pages when the page itself has scroll content below the viewport. If the page scrolls when you press arrow keys instead of moving Pac-Man, click on the game canvas to refocus it. The game canvas should capture the input once focused.</li>
+                    <li>Check for browser extensions that remap keyboard shortcuts. Extensions that reassign key combinations system-wide or on specific pages can intercept arrow keys before the game receives them.</li>
+                    <li>On some laptop keyboards, function lock or gaming mode settings can remap directional keys. Check your laptop's keyboard utility software if the arrows appear to be doing nothing at all.</li>
+                </ol>
+                <p>See the <a href="guide.html">How to Play guide</a> for a full list of game controls including Practice Mode-specific keys.</p>
+            </div>
+
+            <!-- No sound -->
+            <div class="content-section">
+                <h2>No Sound <span class="issue-tag tag-browser">Browser</span></h2>
+                <p>Modern browsers enforce an autoplay policy that prevents audio from playing until the user has interacted with the page. This policy exists to prevent unexpected audio from pages loaded in background tabs. It is the most common cause of a silent game on first load.</p>
+
+                <h3>Steps to Restore Sound</h3>
+                <ol class="step-list">
+                    <li>Click anywhere on the game area or press a key while the game is in focus. This counts as user interaction and satisfies the browser's autoplay policy. Then start a new game.</li>
+                    <li>Check that the browser tab is not muted. In Chrome, Firefox, and Edge, you can right-click the tab and look for a mute or unmute option. A speaker icon with a line through it in the tab indicates the tab is muted.</li>
+                    <li>Check your system volume. If the OS volume is very low or muted, browser audio will be inaudible even when the browser is not blocking it.</li>
+                    <li>Check the browser's site-specific permissions. Some browsers remember that a user once blocked audio for a site. Go to your browser settings, find the permissions or site settings section, search for this site, and verify that sound is allowed rather than blocked.</li>
+                    <li>Try refreshing the page after clicking on it once. A hard refresh while the page has focus sometimes resolves cases where the audio context failed to initialize on the initial load.</li>
+                </ol>
+                <p>If you are on iOS, note that Safari requires an explicit user gesture — a tap, not just a page scroll — before audio can play. Tapping the game area and then starting a round typically resolves this.</p>
+            </div>
+
+            <!-- Lag / performance -->
+            <div class="content-section">
+                <h2>Lag and Low Frame Rate <span class="issue-tag tag-device">Device</span></h2>
+                <p>A game running at reduced frame rate or with noticeable input lag usually has one of three causes: CPU or GPU resources being shared with too many active browser tabs, a device running in a battery-saving or low-performance mode, or hardware acceleration being disabled in the browser.</p>
+
+                <h3>Steps to Improve Performance</h3>
+                <ol class="step-list">
+                    <li>Close unused browser tabs. Every active tab consumes memory and CPU cycles, and tabs running JavaScript or media can compete with the game for GPU resources. Reducing the number of open tabs to only what is necessary is the single most effective step for improving performance.</li>
+                    <li>Disable battery saver or power saver mode. On Windows, macOS, iOS, and Android, power-saving modes throttle the CPU and GPU to extend battery life. While the device is charging or while power saver is disabled, processing speed returns to normal.</li>
+                    <li>Check that hardware acceleration is enabled in your browser. In most browsers this is found under Settings → System or Settings → Advanced. Hardware acceleration offloads graphics rendering from the CPU to the GPU, which significantly improves canvas-based game performance.</li>
+                    <li>Try a different browser. Chrome, Firefox, and Edge have different JavaScript engine implementations and GPU layer compositing strategies. If performance is poor in one browser, testing another can reveal whether the issue is browser-specific.</li>
+                    <li>On older devices, use the standard or practice mode rather than demanding gameplay settings. The <a href="modes.html">game modes</a> include Practice Mode, which runs the same core game but with additional controls that can help manage the pace.</li>
+                    <li>Avoid playing while a large file is downloading or uploading in another tab. Network-heavy background activity can reduce the CPU headroom available to the game and cause frame rate drops unrelated to the GPU.</li>
+                </ol>
+            </div>
+
+            <!-- Mobile and touch -->
+            <div class="content-section">
+                <h2>Mobile and Touch Controls <span class="issue-tag tag-device">Device</span></h2>
+                <p>The game supports touch and swipe controls on mobile browsers. Most reported mobile issues fall into one of three categories: address bar overlap, swipe sensitivity, or audio blocked by the browser's interaction policy.</p>
+
+                <h3>Mobile-Specific Fixes</h3>
+                <ol class="step-list">
+                    <li>Switch to landscape orientation. In landscape mode, the game area is wider and the browser chrome (address bar and navigation buttons) takes up less relative space. This reduces accidental taps on browser UI elements and gives a larger usable play area.</li>
+                    <li>Scroll past the browser address bar before playing. On mobile Chrome and Safari, the address bar hides when you scroll down, giving the game more vertical space. Pull the page down once to trigger this before starting a round.</li>
+                    <li>Use a tap or swipe gesture to unlock audio if sound is missing. Mobile browsers block autoplay more aggressively than desktop browsers. A tap anywhere on the game canvas before starting will usually unlock audio.</li>
+                    <li>If swipe input feels delayed or unresponsive, check that no other touch-based app or accessibility feature is capturing swipe gestures. On some Android devices, edge swipe gestures used for navigation can interfere with horizontal swipes within the game area.</li>
+                    <li>On iOS, avoid using Safari's Reader Mode or Low Power Mode during gameplay. Reader Mode rewrites the page layout and may remove the game canvas entirely. Low Power Mode reduces screen brightness and CPU speed, both of which affect performance.</li>
+                    <li>If you are having consistent difficulty with mobile controls, use <a href="modes.html">Practice Mode</a>. It runs the same maze but includes features that make the pace more forgiving, which helps if touch input has occasional missed inputs on your device.</li>
+                </ol>
+            </div>
+
+            <!-- Scores disappeared -->
+            <div class="content-section">
+                <h2>Progress or Scores Disappeared <span class="issue-tag tag-browser">Browser</span></h2>
+                <p>This game stores high scores and preferences in browser local storage. Local storage is per-browser and per-device, and it is cleared in several situations.</p>
+
+                <h3>Why Scores May Disappear</h3>
+                <ul>
+                    <li><strong>Private or incognito mode:</strong> Local storage written during a private browsing session is cleared when that window is closed. If you play in incognito mode, scores will not persist between sessions.</li>
+                    <li><strong>Clearing browser data:</strong> Selecting "Clear site data," "Clear cookies and local storage," or similar options in browser settings removes all locally stored data for this site.</li>
+                    <li><strong>Browser storage limits:</strong> On devices with very limited storage, the browser may automatically clear local storage for sites that have not been visited recently. Visiting the site regularly reduces the chance of this happening.</li>
+                    <li><strong>Browser version update:</strong> In rare cases, a major browser update changes how local storage is handled or resets its contents. This is uncommon but possible.</li>
+                    <li><strong>Different browser or device:</strong> Local storage is not shared between browsers or devices. A score saved in Chrome is not accessible in Firefox, and a score saved on your phone is not accessible on your desktop.</li>
+                </ul>
+                <p>There is no server-side account system. All gameplay data is stored locally. If you want to preserve a high score, note it down manually before clearing any browser data.</p>
+            </div>
+
+            <!-- Privacy tools and blockers -->
+            <div class="content-section">
+                <h2>Privacy Tools and Browser Extensions</h2>
+                <p>Privacy-focused browser tools — including ad blockers, script blockers, tracker blockers, and DNS-based filtering services — work by intercepting network requests and blocking those that match known patterns. While these tools are valuable for privacy, some of them can block resources that the game depends on, including asset files, font files, or analytics scripts.</p>
+                <p>If the game loads partially, looks visually incomplete, or throws console errors when you inspect the browser developer tools, a blocking extension may be preventing some resources from loading. You do not need to disable privacy tools to use this site. The game is designed to be playable without third-party tracking. However, if you suspect a blocker is causing a specific visual or functional issue, temporarily disabling it for this page and reloading can confirm whether it is the cause.</p>
+                <p>If you use a DNS-based blocker (Pi-hole, NextDNS, or similar) at the network level, check that the site domain is not included in a blocklist. DNS blockers operate at a level where browser extension controls do not apply, and they can cause pages to load partially or not at all.</p>
+                <p>The site uses a single analytics service, Plausible Analytics, which is privacy-focused and does not use cookies or cross-site tracking. It is self-hosted on a custom domain (<code>analytics.1lai.net</code>). Blockers that target this domain will prevent analytics data from being collected, but will not affect the game itself.</p>
+            </div>
+
+            <!-- How to report -->
+            <div class="content-section">
+                <h2>How to Report a Bug</h2>
+                <p>If you encounter a problem that is not covered by this guide, or if you have tried the relevant steps and the issue persists, submitting a bug report helps the project team investigate and resolve it.</p>
+                <p>When reporting, the most useful information to include is:</p>
+                <ul>
+                    <li>The browser name and version (for example, Chrome 124, Firefox 126, Safari 17)</li>
+                    <li>The operating system and version (Windows 11, macOS Sequoia, Android 14, iOS 17)</li>
+                    <li>The specific page URL where the problem occurred</li>
+                    <li>A description of what happened and what you expected to happen instead</li>
+                    <li>Steps to reproduce the problem, if possible</li>
+                    <li>Any error messages visible on screen or in the browser console</li>
+                </ul>
+                <p>Visit the <a href="contact.html">Contact page</a> for the email address and preferred format for submissions. Screenshots or screen recordings are always helpful if the issue is visual or intermittent.</p>
+                <p>Before reporting, it is worth checking the <a href="faq.html">FAQ page</a> to see if the issue is a known behavior. Common questions about game behavior and design decisions are covered there and may explain something that appears to be a bug but is actually intended.</p>
+            </div>
+
+            <!-- FAQ -->
+            <div class="content-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <h3>Why does the game load slowly on my device?</h3>
+                <p>The game assets — maze graphics, sprite sheets, and audio files — are loaded from the server on first visit. On a slower connection or less powerful device, this initial load may take several seconds. Subsequent visits are typically faster because the browser caches the assets locally. If loading remains slow across multiple visits, try clearing the browser cache and reloading, or test on a different network connection.</p>
+
+                <h3>Why are my keyboard controls not working?</h3>
+                <p>The most common cause is that the game canvas does not have keyboard focus. Click directly on the game area before pressing the arrow keys. If another element on the page has focus — for example if you navigated with Tab or clicked outside the game — keyboard input will go to that element instead of the game. A single click on the canvas area is usually enough to restore focus.</p>
+
+                <h3>Why is there no sound in the game?</h3>
+                <p>Modern browsers require a user interaction before audio is allowed to play. If the game page loaded without any clicks or key presses first, the browser may have blocked the initial audio. Click on the game area or press a key while the game has focus, then start a new round. Also check that the browser tab is not muted and that your device volume is on.</p>
+
+                <h3>The game runs slowly or choppy — what can I do?</h3>
+                <p>Performance issues usually come from too many active background tabs, a device running in power-saving mode, or hardware acceleration being disabled in the browser. Try closing unused tabs, disabling battery saver mode, and verifying that hardware acceleration is enabled in your browser settings. On mobile, playing in landscape orientation and keeping the screen on at full brightness also helps.</p>
+
+                <h3>Why did my high score disappear?</h3>
+                <p>High scores are stored in browser local storage, which is cleared when you use incognito mode, clear your browser data, or switch to a different browser or device. Playing in a regular browser window and avoiding clearing site data will keep scores intact between sessions. There is no server-side account system — all data is stored locally.</p>
+            </div>
+
+            <div class="highlight-box">
+                <p>If this page did not solve your problem, the <a href="contact.html">Contact page</a> explains how to reach the project team. Include your browser, OS, and a description of the issue for the fastest response.</p>
+                <p>For gameplay questions — not technical ones — the <a href="guide.html">How to Play guide</a>, <a href="faq.html">FAQ</a>, and <a href="ghosts.html">Ghost Behavior Guide</a> cover the most common questions about the game itself.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>PAC-MAN™ &amp; © Bandai Namco Entertainment Inc.</strong></p>
+            <p>Unofficial browser adaptation — open-source, educational, GPL v3.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="game.html">Play Game</a>
+                <a href="guide.html">How to Play</a>
+                <a href="ghosts.html">Ghost Guide</a>
+                <a href="modes.html">Game Modes</a>
+                <a href="faq.html">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
