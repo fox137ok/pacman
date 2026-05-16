@@ -133,6 +133,106 @@
                 font-size: 1.5rem;
             }
         }
+
+        .game-info-content {
+            position: relative;
+            left: calc((100% - 100vw) / 2);
+            width: min(700px, calc(100% - 40px));
+            margin-top: max(180px, calc(1100px - 100vh));
+            margin-right: auto;
+            margin-bottom: 80px;
+            margin-left: auto;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            font-size: 1rem;
+            overflow-wrap: anywhere;
+        }
+
+        .game-info-content h2 {
+            font-family: 'ArcadeR', Arial, sans-serif;
+            font-size: 1.6rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        .game-info-content p {
+            margin-bottom: 14px;
+        }
+
+        .game-info-content strong {
+            color: #FFCC00;
+        }
+
+        .game-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 22px 0;
+        }
+
+        .game-info-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-left: 3px solid #FFCC00;
+            border-radius: 6px;
+            padding: 16px 18px;
+            font-size: 0.95rem;
+            min-width: 0;
+        }
+
+        .game-info-card h3 {
+            color: #FFCC00;
+            font-size: 1rem;
+            margin: 0 0 10px 0;
+        }
+
+        .game-info-card ul {
+            margin: 0 0 0 18px;
+            padding: 0;
+        }
+
+        .game-info-card li {
+            margin-bottom: 6px;
+        }
+
+        .game-info-links {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .game-info-links a {
+            color: #00BFFF;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 10px;
+            font-size: 0.95rem;
+        }
+
+        .game-info-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .game-info-content {
+                margin-top: 450px;
+                font-size: 0.92rem;
+            }
+
+            .game-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 340px) {
+            .game-info-content {
+                margin-top: 570px;
+            }
+        }
     </style>
 
 <script type="application/ld+json">
@@ -174,6 +274,69 @@
         <p>キーボードの矢印キーまたはタッチスクリーンでスワイプしてパックマンを操作し、すべてのドットを食べてお化けを避けましょう。</p>
         <p><kbd>Esc</kbd>キーを押すとメニューが開き、モードを切り替えたりホームページに戻って他のゲームを選択できます。</p>
     </section>
+
+        <section class="game-info-content">
+            <h2>このゲームについて</h2>
+            <p>これは1980年代のクラシックアーケードゲーム「パックマン」のブラウザ版リメイクです。迷路を進みながらすべてのドットを食べ、それぞれ異なる動きのパターンを持つ4体のゴーストを避けてください。ゲームはHTML5 Canvasを使って完全にブラウザ上で動作し、プラグインやダウンロードは不要です。オリジナルのパックマン、ミス・パックマン、クッキーマンの3種類が楽しめ、それぞれ独自の迷路レイアウトとビジュアルスタイルを持っています。</p>
+
+            <p>すべてのバージョンの基本目標は同じです：捕まらずに迷路のすべてのドットを食べること。迷路の四隅にある<strong>パワーエサ</strong>は一時的にゴーストを無力化します——効果が続く間に食べれば追加ポイントが獲得できます。各ステージでフルーツが2回出現し、時間限定のボーナスとなります。ステージをクリアすると次のステージへ進み、ゴーストの動きも速くなります。</p>
+
+            <div class="game-info-grid">
+                <div class="game-info-card">
+                    <h3>キーボード操作</h3>
+                    <ul>
+                        <li><strong>矢印キー</strong> — パックマンを移動</li>
+                        <li><strong>Esc</strong> — ゲーム内メニューを開く</li>
+                        <li><strong>Shift</strong> — 巻き戻し（練習モード）</li>
+                        <li><strong>1 / 2</strong> — ゲーム速度を下げる（練習モード）</li>
+                        <li><strong>O</strong> — ターボモードの切り替え（練習モード）</li>
+                        <li><strong>I</strong> — 無敵モードの切り替え（練習モード）</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>タッチ操作</h3>
+                    <ul>
+                        <li><strong>上/下/左/右スワイプ</strong> — パックマンを移動</li>
+                        <li>短いスワイプでOK、長押し不要</li>
+                        <li><strong>ホームに戻る</strong>ボタンでゲーム選択画面に戻る</li>
+                        <li>小さいスマホは横向きにすると広く遊べます</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>ラーンモード</h3>
+                    <ul>
+                        <li>各ゴーストの現在の<strong>ターゲットタイル</strong>を色付きオーバーレイで表示</li>
+                        <li>ゴーストがなぜそのように動くかを理解できます</li>
+                        <li>ブリンキー・ピンキー・インキー・クライドはそれぞれ異なる追跡ルールを持つ</li>
+                        <li>高得点を目指す前にゴーストの動きを学ぶのに最適</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>練習モード</h3>
+                    <ul>
+                        <li><strong>Shift</strong>キーで最大10秒巻き戻し可能</li>
+                        <li><strong>1</strong>と<strong>2</strong>で速度を半分または1/4に下げる</li>
+                        <li><strong>I</strong>で無敵モードを有効にして安全にルートを探索</li>
+                        <li><strong>O</strong>のターボモードで遅い場面を速める</li>
+                        <li>逃げルートとパワーエサのタイミングを学ぶのに最適</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>得点とゴースト</h2>
+            <p>通常のドットは1つ<strong>10点</strong>です。パワーエサは<strong>50点</strong>で、怖がったゴーストを食べるウィンドウが開きます。1回のパワーエサ中に連続して食べると得点が倍増：200、400、800、最大1,600点。1回のウィンドウで4体全部食べると3,000点のボーナスが加算されます。フルーツはステージごとに2回出現し、ステージ番号に応じて100点から5,000点まで変化します。</p>
+
+            <p>4体のゴーストはそれぞれ異なる移動ルールを持ちます。<strong>ブリンキー</strong>（赤）は現在位置を直接追います。<strong>ピンキー</strong>（ピンク）は進行方向前方4マスを狙います。<strong>インキー</strong>（水色）はあなたの位置とブリンキーの位置を組み合わせて計算するため、動きが予測しにくいです。<strong>クライド</strong>（オレンジ）は遠い時は追いかけますが、近づくと自分のコーナーに退き、迷路の左下付近で意外に危険です。全ゴーストは追いかけモードと散開モードを交互に切り替えます。</p>
+
+            <div class="game-info-links">
+                <a href="guide.html">ゲームガイド</a>
+                <a href="ghosts.html">ゴーストの動き</a>
+                <a href="scoring.html">得点ガイド</a>
+                <a href="glossary.html">用語集</a>
+                <a href="troubleshooting.html">トラブルシューティング</a>
+            </div>
+        </section>
+
 
     <a href="index-ja.html" id="home-button">ホームに戻る</a>
 

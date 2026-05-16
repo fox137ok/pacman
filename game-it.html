@@ -133,6 +133,106 @@
                 font-size: 1.5rem;
             }
         }
+
+        .game-info-content {
+            position: relative;
+            left: calc((100% - 100vw) / 2);
+            width: min(700px, calc(100% - 40px));
+            margin-top: max(180px, calc(1100px - 100vh));
+            margin-right: auto;
+            margin-bottom: 80px;
+            margin-left: auto;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            font-size: 1rem;
+            overflow-wrap: anywhere;
+        }
+
+        .game-info-content h2 {
+            font-family: 'ArcadeR', Arial, sans-serif;
+            font-size: 1.6rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        .game-info-content p {
+            margin-bottom: 14px;
+        }
+
+        .game-info-content strong {
+            color: #FFCC00;
+        }
+
+        .game-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 22px 0;
+        }
+
+        .game-info-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-left: 3px solid #FFCC00;
+            border-radius: 6px;
+            padding: 16px 18px;
+            font-size: 0.95rem;
+            min-width: 0;
+        }
+
+        .game-info-card h3 {
+            color: #FFCC00;
+            font-size: 1rem;
+            margin: 0 0 10px 0;
+        }
+
+        .game-info-card ul {
+            margin: 0 0 0 18px;
+            padding: 0;
+        }
+
+        .game-info-card li {
+            margin-bottom: 6px;
+        }
+
+        .game-info-links {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .game-info-links a {
+            color: #00BFFF;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 10px;
+            font-size: 0.95rem;
+        }
+
+        .game-info-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .game-info-content {
+                margin-top: 450px;
+                font-size: 0.92rem;
+            }
+
+            .game-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 340px) {
+            .game-info-content {
+                margin-top: 570px;
+            }
+        }
     </style>
 
 <script type="application/ld+json">
@@ -175,6 +275,69 @@
             <p>Usa le frecce della tastiera o gli swipe su touchscreen per guidare Pac-Man, mangiare tutti i puntini ed evitare i fantasmi.</p>
             <p>Premi <kbd>Esc</kbd> per aprire il menu, cambiare modalità o tornare alla home e scegliere altri giochi.</p>
         </section>
+
+        <section class="game-info-content">
+            <h2>INFORMAZIONI SUL GIOCO</h2>
+            <p>Questa è una ricreazione per browser del classico gioco arcade Pac-Man del 1980. Devi navigare in un labirinto, mangiare tutti i puntini ed evitare quattro fantasmi, ognuno con il proprio schema di movimento. Il gioco funziona interamente nel browser tramite HTML5 Canvas, senza plugin né download. Include tre versioni: il Pac-Man originale, Ms. Pac-Man e Cookie-Man, ciascuno con un layout di labirinto e uno stile visivo distinto.</p>
+
+            <p>L'obiettivo principale è lo stesso in tutte le versioni: ripulire tutti i puntini dal labirinto senza essere catturato. Le <strong>pastiglie di potere</strong> nei quattro angoli rendono temporaneamente vulnerabili i fantasmi — mangiali finché l'effetto dura per guadagnare punti bonus. Ogni livello include due frutti come bonus a tempo. Completare il tabellone fa avanzare al livello successivo con fantasmi più veloci.</p>
+
+            <div class="game-info-grid">
+                <div class="game-info-card">
+                    <h3>Controlli da tastiera</h3>
+                    <ul>
+                        <li><strong>Tasti freccia</strong> — muovere Pac-Man</li>
+                        <li><strong>Esc</strong> — aprire il menu di gioco</li>
+                        <li><strong>Shift</strong> — riavvolgere (Modalità Pratica)</li>
+                        <li><strong>1 / 2</strong> — ridurre la velocità (Modalità Pratica)</li>
+                        <li><strong>O</strong> — attivare la Modalità Turbo (Modalità Pratica)</li>
+                        <li><strong>I</strong> — attivare l'invincibilità (Modalità Pratica)</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>Controlli touch</h3>
+                    <ul>
+                        <li><strong>Scorri su / giù / sinistra / destra</strong> — muovere Pac-Man</li>
+                        <li>Scorrimenti brevi funzionano, non è necessario tenere premuto</li>
+                        <li>Tocca <strong>TORNA ALLA HOME</strong> per tornare alla selezione del gioco</li>
+                        <li>Orienta lo schermo orizzontalmente su telefoni piccoli per più spazio di gioco</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>Modalità Apprendimento</h3>
+                    <ul>
+                        <li>Mostra una sovrapposizione colorata che rivela la <strong>casella bersaglio</strong> di ogni fantasma</li>
+                        <li>Aiuta a capire perché i fantasmi si muovono nel modo in cui lo fanno</li>
+                        <li>Blinky, Pinky, Inky e Clyde usano regole di inseguimento diverse</li>
+                        <li>Utile per imparare il comportamento dei fantasmi prima di tentare punteggi più alti</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>Modalità Pratica</h3>
+                    <ul>
+                        <li><strong>Riavvolgi</strong> fino a 10 secondi con il tasto Shift</li>
+                        <li>Riduci la velocità alla metà o a un quarto con <strong>1</strong> e <strong>2</strong></li>
+                        <li>Attiva l'invincibilità con <strong>I</strong> per esplorare percorsi in sicurezza</li>
+                        <li>Modalità Turbo con <strong>O</strong> accelera le sezioni lente</li>
+                        <li>Ideale per imparare le vie di fuga e il tempismo delle pastiglie di potere</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>PUNTEGGIO E FANTASMI</h2>
+            <p>I puntini regolari valgono <strong>10 punti</strong> ciascuno. Le pastiglie di potere danno <strong>50 punti</strong> e aprono una finestra per mangiare i fantasmi spaventati. La catena di fantasmi raddoppia a ogni uccisione nella stessa finestra di potere: 200, 400, 800 e 1.600 punti. Mangiare tutti e quattro i fantasmi in una sola finestra aggiunge 3.000 punti bonus. I frutti appaiono due volte per livello e variano da 100 a 5.000 punti in base al numero del livello.</p>
+
+            <p>Ognuno dei quattro fantasmi utilizza una regola di movimento diversa. <strong>Blinky</strong> (rosso) insegue direttamente la tua posizione attuale. <strong>Pinky</strong> (rosa) mira quattro caselle avanti rispetto alla tua direzione. <strong>Inky</strong> (ciano) usa un calcolo combinato basato sulla tua posizione e quella di Blinky, rendendo il suo percorso difficile da prevedere. <strong>Clyde</strong> (arancione) ti insegue da lontano ma si ritira nel suo angolo quando si avvicina, risultando sorprendentemente pericoloso nella parte inferiore sinistra del labirinto. Tutti i fantasmi alternano tra fasi di inseguimento e di dispersione.</p>
+
+            <div class="game-info-links">
+                <a href="guide.html">Guida al gioco</a>
+                <a href="ghosts.html">Comportamento dei fantasmi</a>
+                <a href="scoring.html">Guida al punteggio</a>
+                <a href="glossary.html">Glossario</a>
+                <a href="troubleshooting.html">Risoluzione dei problemi</a>
+            </div>
+        </section>
+
 
         <a href="index-it.html" id="home-button">TORNA ALLA HOME</a>
 

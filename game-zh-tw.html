@@ -130,6 +130,106 @@
                 font-size: 1.5rem;
             }
         }
+
+        .game-info-content {
+            position: relative;
+            left: calc((100% - 100vw) / 2);
+            width: min(700px, calc(100% - 40px));
+            margin-top: max(180px, calc(1100px - 100vh));
+            margin-right: auto;
+            margin-bottom: 80px;
+            margin-left: auto;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            font-size: 1rem;
+            overflow-wrap: anywhere;
+        }
+
+        .game-info-content h2 {
+            font-family: 'ArcadeR', Arial, sans-serif;
+            font-size: 1.6rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        .game-info-content p {
+            margin-bottom: 14px;
+        }
+
+        .game-info-content strong {
+            color: #FFCC00;
+        }
+
+        .game-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 22px 0;
+        }
+
+        .game-info-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-left: 3px solid #FFCC00;
+            border-radius: 6px;
+            padding: 16px 18px;
+            font-size: 0.95rem;
+            min-width: 0;
+        }
+
+        .game-info-card h3 {
+            color: #FFCC00;
+            font-size: 1rem;
+            margin: 0 0 10px 0;
+        }
+
+        .game-info-card ul {
+            margin: 0 0 0 18px;
+            padding: 0;
+        }
+
+        .game-info-card li {
+            margin-bottom: 6px;
+        }
+
+        .game-info-links {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .game-info-links a {
+            color: #00BFFF;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 10px;
+            font-size: 0.95rem;
+        }
+
+        .game-info-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .game-info-content {
+                margin-top: 450px;
+                font-size: 0.92rem;
+            }
+
+            .game-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 340px) {
+            .game-info-content {
+                margin-top: 570px;
+            }
+        }
     </style>
 
     <script type="application/ld+json">
@@ -170,6 +270,69 @@
         <p>使用鍵盤方向鍵或在觸控螢幕上滑動即可操控小精靈吃掉全部豆子並躲避幽靈。</p>
         <p>按下 <kbd>Esc</kbd> 打開選單,可切換模式或返回主頁選擇其他遊戲。</p>
     </section>
+
+        <section class="game-info-content">
+            <h2>關於本遊戲</h2>
+            <p>這是經典1980年代街機遊戲《小精靈》的瀏覽器復刻版。你需要在迷宮中移動，吃掉所有豆子，同時躲避四隻各有不同行動規律的鬼魂。遊戲完全在瀏覽器中透過 HTML5 Canvas 運行，無需外掛程式或下載。遊戲包含三個可選版本：原版小精靈、女士小精靈以及 Cookie-Man，每個版本都有獨特的迷宮設計和視覺風格。</p>
+
+            <p>所有版本的核心目標相同：在不被捉到的情況下吃掉迷宮中的所有豆子。迷宮四個角落的<strong>能量豆</strong>可以暫時讓鬼魂變為脆弱狀態——在效果持續期間吃掉鬼魂可獲得額外積分。每關會出現兩次水果，作為限時獎勵。完成一關後進入下一關，鬼魂移動速度也會加快。</p>
+
+            <div class="game-info-grid">
+                <div class="game-info-card">
+                    <h3>鍵盤操控</h3>
+                    <ul>
+                        <li><strong>方向鍵</strong> — 移動小精靈</li>
+                        <li><strong>Esc</strong> — 開啟遊戲內選單</li>
+                        <li><strong>Shift</strong> — 倒退（練習模式）</li>
+                        <li><strong>1 / 2</strong> — 降低遊戲速度（練習模式）</li>
+                        <li><strong>O</strong> — 切換加速模式（練習模式）</li>
+                        <li><strong>I</strong> — 切換無敵模式（練習模式）</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>觸控操控</h3>
+                    <ul>
+                        <li><strong>上/下/左/右滑動</strong> — 移動小精靈</li>
+                        <li>短滑動即可，無需長按</li>
+                        <li>點擊<strong>返回首頁</strong>按鈕回到選遊戲畫面</li>
+                        <li>在小螢幕手機上橫向可獲得更大遊戲區域</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>學習模式</h3>
+                    <ul>
+                        <li>顯示彩色覆蓋層，揭示每隻鬼魂當前的<strong>目標格</strong></li>
+                        <li>幫助你理解鬼魂的移動邏輯</li>
+                        <li>紅鬼、粉鬼、藍鬼和橙鬼各有不同的追蹤規則</li>
+                        <li>在挑戰高分前，用於了解鬼魂行為非常有效</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>練習模式</h3>
+                    <ul>
+                        <li>按 <strong>Shift</strong> 鍵可倒退最多10秒</li>
+                        <li>按 <strong>1</strong> 和 <strong>2</strong> 可將速度降至一半或四分之一</li>
+                        <li>按 <strong>I</strong> 啟用無敵模式，安全探索路線</li>
+                        <li>按 <strong>O</strong> 開啟加速模式跳過緩慢部分</li>
+                        <li>是學習逃跑路線和能量豆時機的最佳工具</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>得分與鬼魂</h2>
+            <p>普通豆子每個<strong>10分</strong>。能量豆給<strong>50分</strong>，並開啟一個吃掉受驚鬼魂的窗口。連續消滅鬼魂的分數在單次能量豆窗口內倍增：200、400、800，最高 1600 分。在單次窗口內吃掉全部四隻鬼魂可額外獲得 3000 分獎勵。水果每關出現兩次，根據關卡編號從 100 分到 5000 分不等。</p>
+
+            <p>四隻鬼魂各有不同的移動規則。<strong>紅鬼</strong>（Blinky）直接追蹤你的當前位置。<strong>粉鬼</strong>（Pinky）瞄準你前進方向前方四格。<strong>藍鬼</strong>（Inky）根據你的位置和紅鬼的位置進行複合計算，路線難以預測。<strong>橙鬼</strong>（Clyde）距離遠時追蹤你，距離近時會退回自己的角落，在迷宮左下角附近出人意料地危險。所有鬼魂在追蹤模式和散步模式之間交替切換。</p>
+
+            <div class="game-info-links">
+                <a href="guide.html">遊戲攻略</a>
+                <a href="ghosts.html">鬼魂行為</a>
+                <a href="scoring.html">得分指南</a>
+                <a href="glossary.html">術語表</a>
+                <a href="troubleshooting.html">故障排除</a>
+            </div>
+        </section>
+
 
     <a href="index-zh-tw.html" id="home-button">返回首頁</a>
 

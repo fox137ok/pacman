@@ -139,6 +139,106 @@
         .game-info p {
             margin-bottom: 0.8rem;
         }
+
+        .game-info-content {
+            position: relative;
+            left: calc((100% - 100vw) / 2);
+            width: min(700px, calc(100% - 40px));
+            margin-top: max(180px, calc(1100px - 100vh));
+            margin-right: auto;
+            margin-bottom: 80px;
+            margin-left: auto;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            font-size: 1rem;
+            overflow-wrap: anywhere;
+        }
+
+        .game-info-content h2 {
+            font-family: 'ArcadeR', Arial, sans-serif;
+            font-size: 1.6rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        .game-info-content p {
+            margin-bottom: 14px;
+        }
+
+        .game-info-content strong {
+            color: #FFCC00;
+        }
+
+        .game-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 22px 0;
+        }
+
+        .game-info-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-left: 3px solid #FFCC00;
+            border-radius: 6px;
+            padding: 16px 18px;
+            font-size: 0.95rem;
+            min-width: 0;
+        }
+
+        .game-info-card h3 {
+            color: #FFCC00;
+            font-size: 1rem;
+            margin: 0 0 10px 0;
+        }
+
+        .game-info-card ul {
+            margin: 0 0 0 18px;
+            padding: 0;
+        }
+
+        .game-info-card li {
+            margin-bottom: 6px;
+        }
+
+        .game-info-links {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .game-info-links a {
+            color: #00BFFF;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 10px;
+            font-size: 0.95rem;
+        }
+
+        .game-info-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .game-info-content {
+                margin-top: 450px;
+                font-size: 0.92rem;
+            }
+
+            .game-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 340px) {
+            .game-info-content {
+                margin-top: 570px;
+            }
+        }
     </style>
 
     <script type="application/ld+json">
@@ -179,6 +279,69 @@
         <p>使用键盘方向键或在触屏上滑动即可操控吃豆人吃掉全部豆子并躲避幽灵。</p>
         <p>按下 <kbd>Esc</kbd> 打开菜单，可切换模式或返回主页选择其他游戏。</p>
     </section>
+
+        <section class="game-info-content">
+            <h2>关于本游戏</h2>
+            <p>这是经典1980年代街机游戏《吃豆人》的浏览器复刻版。你需要在迷宫中移动，吃掉所有豆子，同时躲避四只各有不同行动规律的幽灵。游戏完全在浏览器中通过 HTML5 Canvas 运行，无需插件或下载。游戏包含三个可选版本：原版吃豆人、女士吃豆人以及 Cookie-Man，每个版本都有独特的迷宫布局和视觉风格。</p>
+
+            <p>所有版本的核心目标相同：在不被捕捉的情况下吃掉迷宫中的所有豆子。迷宫四个角落的<strong>能量豆</strong>可以暂时让幽灵变为脆弱状态——在效果持续期间吃掉幽灵可获得额外积分。每关会出现两次水果，作为限时奖励。完成一关后进入下一关，幽灵移动速度也会加快。</p>
+
+            <div class="game-info-grid">
+                <div class="game-info-card">
+                    <h3>键盘操控</h3>
+                    <ul>
+                        <li><strong>方向键</strong> — 移动吃豆人</li>
+                        <li><strong>Esc</strong> — 打开游戏内菜单</li>
+                        <li><strong>Shift</strong> — 倒退（练习模式）</li>
+                        <li><strong>1 / 2</strong> — 降低游戏速度（练习模式）</li>
+                        <li><strong>O</strong> — 切换加速模式（练习模式）</li>
+                        <li><strong>I</strong> — 切换无敌模式（练习模式）</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>触屏操控</h3>
+                    <ul>
+                        <li><strong>上/下/左/右滑动</strong> — 移动吃豆人</li>
+                        <li>短滑动即可，无需长按</li>
+                        <li>点击<strong>返回首页</strong>按钮回到选游戏界面</li>
+                        <li>在小屏手机上横屏可获得更大游戏区域</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>学习模式</h3>
+                    <ul>
+                        <li>显示彩色覆盖层，揭示每只幽灵当前的<strong>目标格</strong></li>
+                        <li>帮助你理解幽灵的移动逻辑</li>
+                        <li>布林奇、平奇、因奇和克莱德各有不同的追踪规则</li>
+                        <li>在挑战高分前，用于了解幽灵行为非常有效</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>练习模式</h3>
+                    <ul>
+                        <li>按 <strong>Shift</strong> 键可倒退最多10秒</li>
+                        <li>按 <strong>1</strong> 和 <strong>2</strong> 可将速度降至一半或四分之一</li>
+                        <li>按 <strong>I</strong> 启用无敌模式，安全探索路线</li>
+                        <li>按 <strong>O</strong> 开启加速模式跳过缓慢部分</li>
+                        <li>是学习逃跑路线和能量豆时机的最佳工具</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>得分与幽灵</h2>
+            <p>普通豆子每个<strong>10分</strong>。能量豆给<strong>50分</strong>，并开启一个吃掉受惊幽灵的窗口。连续消灭幽灵的分数在单次能量豆窗口内倍增：200、400、800，最高 1600 分。在单次窗口内吃掉全部四只幽灵可额外获得 3000 分奖励。水果每关出现两次，根据关卡编号从 100 分到 5000 分不等。</p>
+
+            <p>四只幽灵各有不同的移动规则。<strong>布林奇</strong>（红色）直接追踪你的当前位置。<strong>平奇</strong>（粉色）瞄准你前进方向前方四格。<strong>因奇</strong>（青色）根据你的位置和布林奇的位置进行复合计算，路线难以预测。<strong>克莱德</strong>（橙色）距离远时追踪你，距离近时会退回自己的角落，在迷宫左下角附近出人意料地危险。所有幽灵在追踪模式和散步模式之间交替切换。</p>
+
+            <div class="game-info-links">
+                <a href="guide.html">游戏攻略</a>
+                <a href="ghosts.html">幽灵行为</a>
+                <a href="scoring.html">得分指南</a>
+                <a href="glossary.html">术语表</a>
+                <a href="troubleshooting.html">故障排除</a>
+            </div>
+        </section>
+
 
     <a href="index-zh.html" id="home-button">返回首页</a>
 

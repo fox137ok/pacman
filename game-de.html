@@ -136,6 +136,106 @@
                 font-size: 1.5rem;
             }
         }
+
+        .game-info-content {
+            position: relative;
+            left: calc((100% - 100vw) / 2);
+            width: min(700px, calc(100% - 40px));
+            margin-top: max(180px, calc(1100px - 100vh));
+            margin-right: auto;
+            margin-bottom: 80px;
+            margin-left: auto;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            font-size: 1rem;
+            overflow-wrap: anywhere;
+        }
+
+        .game-info-content h2 {
+            font-family: 'ArcadeR', Arial, sans-serif;
+            font-size: 1.6rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        .game-info-content p {
+            margin-bottom: 14px;
+        }
+
+        .game-info-content strong {
+            color: #FFCC00;
+        }
+
+        .game-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin: 22px 0;
+        }
+
+        .game-info-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-left: 3px solid #FFCC00;
+            border-radius: 6px;
+            padding: 16px 18px;
+            font-size: 0.95rem;
+            min-width: 0;
+        }
+
+        .game-info-card h3 {
+            color: #FFCC00;
+            font-size: 1rem;
+            margin: 0 0 10px 0;
+        }
+
+        .game-info-card ul {
+            margin: 0 0 0 18px;
+            padding: 0;
+        }
+
+        .game-info-card li {
+            margin-bottom: 6px;
+        }
+
+        .game-info-links {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .game-info-links a {
+            color: #00BFFF;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 10px;
+            font-size: 0.95rem;
+        }
+
+        .game-info-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .game-info-content {
+                margin-top: 450px;
+                font-size: 0.92rem;
+            }
+
+            .game-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 340px) {
+            .game-info-content {
+                margin-top: 570px;
+            }
+        }
     </style>
 
 <script type="application/ld+json">
@@ -178,6 +278,69 @@
         <p>Verwenden Sie die Pfeiltasten der Tastatur oder wischen Sie auf dem Touchscreen, um Pac-Man zu steuern, alle Punkte zu essen und Geistern auszuweichen.</p>
         <p>Drücken Sie <kbd>Esc</kbd>, um das Menü zu öffnen, den Modus zu wechseln oder zur Startseite zurückzukehren, um andere Spiele auszuwählen.</p>
     </section>
+
+        <section class="game-info-content">
+            <h2>ÜBER DIESES SPIEL</h2>
+            <p>Dies ist eine Browser-Neuauflage des klassischen Pac-Man-Arcade-Spiels von 1980. Du navigierst durch ein Labyrinth, frisst alle Punkte und weichst vier Geistern aus, die jeweils ein eigenes Bewegungsmuster haben. Das Spiel läuft vollständig im Browser per HTML5 Canvas, ohne Plugins oder Downloads. Es enthält drei spielbare Versionen: das originale Pac-Man, Ms. Pac-Man und Cookie-Man, jede mit eigenem Labyrinthdesign und visuellem Stil.</p>
+
+            <p>Das Hauptziel ist in allen Versionen gleich: alle Punkte im Labyrinth fressen, ohne gefangen zu werden. <strong>Kraftpillen</strong> in den vier Ecken machen Geister vorübergehend verwundbar — friss sie während des Effekts für Bonuspunkte. Pro Level erscheinen zwei Früchte als Zeitbonus. Nach dem Abräumen eines Levels geht es mit schnelleren Geistern weiter.</p>
+
+            <div class="game-info-grid">
+                <div class="game-info-card">
+                    <h3>Tastatursteuerung</h3>
+                    <ul>
+                        <li><strong>Pfeiltasten</strong> — Pac-Man bewegen</li>
+                        <li><strong>Esc</strong> — Spielmenü öffnen</li>
+                        <li><strong>Shift</strong> — Zurückspulen (Übungsmodus)</li>
+                        <li><strong>1 / 2</strong> — Spielgeschwindigkeit verringern (Übungsmodus)</li>
+                        <li><strong>O</strong> — Turbomodus umschalten (Übungsmodus)</li>
+                        <li><strong>I</strong> — Unverwundbarkeit umschalten (Übungsmodus)</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>Touch-Steuerung</h3>
+                    <ul>
+                        <li><strong>Wischen oben / unten / links / rechts</strong> — Pac-Man bewegen</li>
+                        <li>Kurze Wischgesten reichen, kein Halten nötig</li>
+                        <li>Tippe auf <strong>ZURÜCK ZUR STARTSEITE</strong> um zur Spielauswahl zurückzukehren</li>
+                        <li>Querformat auf kleinen Handys für größeren Spielbereich</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>Lernmodus</h3>
+                    <ul>
+                        <li>Zeigt eine farbige Überlagerung mit dem aktuellen <strong>Zielfeld</strong> jedes Geistes</li>
+                        <li>Hilft zu verstehen, warum Geister sich so bewegen, wie sie es tun</li>
+                        <li>Blinky, Pinky, Inky und Clyde nutzen jeweils unterschiedliche Verfolgungsregeln</li>
+                        <li>Ideal, um das Geisterverhalten vor dem Versuch hoher Punktzahlen zu lernen</li>
+                    </ul>
+                </div>
+                <div class="game-info-card">
+                    <h3>Übungsmodus</h3>
+                    <ul>
+                        <li>Mit <strong>Shift</strong> bis zu 10 Sekunden zurückspulen</li>
+                        <li>Mit <strong>1</strong> und <strong>2</strong> Geschwindigkeit auf die Hälfte oder ein Viertel reduzieren</li>
+                        <li>Mit <strong>I</strong> Unverwundbarkeit aktivieren, um Routen sicher zu erkunden</li>
+                        <li>Turbomodus mit <strong>O</strong> beschleunigt langsame Abschnitte</li>
+                        <li>Ideal für das Erlernen von Fluchtrouten und Kraftpillen-Timing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>PUNKTE UND GEISTER</h2>
+            <p>Normale Punkte sind je <strong>10 Punkte</strong> wert. Kraftpillen geben <strong>50 Punkte</strong> und öffnen ein Fenster, um erschreckte Geister zu fressen. Die Geisterkette verdoppelt sich mit jedem Abschuss in einem einzelnen Kraftpillen-Fenster: 200, 400, 800 und 1.600 Punkte. Alle vier Geister in einem Fenster zu fressen bringt zusätzlich 3.000 Bonuspunkte. Früchte erscheinen zweimal pro Level und geben je nach Levelnummer zwischen 100 und 5.000 Punkte.</p>
+
+            <p>Jeder der vier Geister nutzt eine andere Bewegungsregel. <strong>Blinky</strong> (rot) verfolgt direkt deine aktuelle Position. <strong>Pinky</strong> (pink) zielt vier Felder vor deiner aktuellen Richtung. <strong>Inky</strong> (cyan) berechnet seinen Weg anhand deiner Position und Blinkys Position, was ihn schwer vorhersehbar macht. <strong>Clyde</strong> (orange) verfolgt dich aus der Ferne, zieht sich aber in seine Ecke zurück, wenn er nah herankommt — das macht ihn in der unteren linken Ecke des Labyrinths überraschend gefährlich. Alle Geister wechseln zwischen Verfolgungs- und Streuphase.</p>
+
+            <div class="game-info-links">
+                <a href="guide.html">Spielanleitung</a>
+                <a href="ghosts.html">Geisterverhalten</a>
+                <a href="scoring.html">Punkteführer</a>
+                <a href="glossary.html">Glossar</a>
+                <a href="troubleshooting.html">Fehlerbehebung</a>
+            </div>
+        </section>
+
 
     <a href="index-de.html" id="home-button">ZURÜCK ZUR STARTSEITE</a>
 
