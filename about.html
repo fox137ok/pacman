@@ -13,8 +13,8 @@
       plausible.init();
     </script>
 
-    <title>About Pac-Man Arcade</title>
-    <meta name="description" content="Learn what Pac-Man Arcade is, why this project exists, what players can do here, and how to contact the site.">
+    <title>About This Project — Pac-Man Arcade Online</title>
+    <meta name="description" content="Pac-Man Arcade is an unofficial, open-source browser project for classic maze gameplay, ghost behavior guides, scoring strategy, and practical learning tools. Not affiliated with Bandai Namco.">
     <link rel="canonical" href="https://pacmanonline.org/about.html">
     <link rel="alternate" hreflang="en" href="https://pacmanonline.org/about.html">
     <link rel="alternate" hreflang="zh-CN" href="https://pacmanonline.org/about-zh.html">
@@ -30,6 +30,26 @@
     <link rel="apple-touch-icon-precomposed" href="icon/ios_icon.png"/>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "headline": "About This Project — Pac-Man Arcade Online",
+      "description": "Pac-Man Arcade is an unofficial, open-source browser project for classic maze gameplay, ghost behavior guides, scoring strategy, and practical learning tools. Not affiliated with Bandai Namco.",
+      "dateModified": "2026-05-16",
+      "url": "https://pacmanonline.org/about.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pac-Man Arcade",
+        "url": "https://pacmanonline.org"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://pacmanonline.org/about.html"
+      }
+    }
+    </script>
 
     <style>
         @font-face {
@@ -208,42 +228,64 @@
 
     <main>
         <div class="container">
+
             <div class="highlight-box">
                 <h2>What This Site Is</h2>
-                <p>Pac-Man Arcade is an unofficial browser-based project built for players who want quick access to classic maze gameplay, practical guides, and simple learning tools in one place.</p>
+                <p><small>Last updated May 16, 2026</small></p>
+                <p>Pac-Man Arcade is an unofficial, open-source browser project that gives players quick access to classic maze gameplay alongside a set of practical learning resources. It is <strong>not affiliated with or endorsed by Bandai Namco Entertainment Inc.</strong>, the holder of the PAC-MAN trademark. This project is maintained for educational purposes under the GPL v3 open-source license.</p>
             </div>
 
             <div class="content-section">
                 <h2>Why This Project Exists</h2>
-                <p>The goal of this site is not only to let people launch a game quickly in the browser, but also to make the experience easier to understand. Classic arcade games can look simple at first, yet they become much more interesting once you start noticing movement patterns, route choices, timing, and scoring decisions.</p>
+                <p>The goal is not just to provide a quick browser game launch — it is to make the game genuinely understandable. Pac-Man looks deceptively simple from the outside, but the original 1980 arcade design is dense with interacting systems: four ghosts each following a different targeting algorithm, a maze that rewards deliberate route planning, a scoring structure where ghost chains are worth as much as clearing an entire board, and a difficulty curve that silently changes the rules as the stage count rises.</p>
+                <p>Most players never experience that depth because the original arcade provided no explanation — just coins and a coin slot. This project tries to lower the barrier. Players who want to play quickly and casually can do that. Players who want to understand what they are actually doing will find guides, learning modes, and plain-language explanations built into the same site.</p>
             </div>
 
             <div class="content-section">
                 <h2>What You Can Find Here</h2>
                 <ul>
-                    <li><strong>Playable browser game pages:</strong> quick access without requiring a separate app download</li>
-                    <li><strong>How-to-play guides:</strong> practical explanations of rules, controls, scoring, and ghost behavior</li>
-                    <li><strong>Game mode pages:</strong> descriptions of normal play, learning features, practice tools, and faster challenge modes</li>
-                    <li><strong>Support pages:</strong> FAQ, privacy, terms, and contact information for common questions</li>
-                    <li><strong>Multilingual access:</strong> content prepared for players reading different languages</li>
+                    <li><strong><a href="game.html">The game:</a></strong> playable directly in the browser, no download or account required</li>
+                    <li><strong><a href="guide.html">How to Play:</a></strong> controls, scoring basics, power pellet strategy, common mistakes, and beginner drills</li>
+                    <li><strong><a href="ghosts.html">Ghost Behavior Guide:</a></strong> how Blinky, Pinky, Inky, and Clyde each target differently across chase, scatter, frightened, and eyes modes</li>
+                    <li><strong><a href="scoring.html">Scoring Guide:</a></strong> exact point values, ghost chain mechanics, fruit timing, risk zones, and score milestones</li>
+                    <li><strong><a href="glossary.html">Glossary:</a></strong> plain-English definitions for 35+ Pac-Man terms including scatter mode, turn buffering, and ghost chain</li>
+                    <li><strong><a href="modes.html">Game Modes:</a></strong> descriptions of normal play, Learn Mode, Practice Mode, and Turbo Mode</li>
+                    <li><strong><a href="troubleshooting.html">Troubleshooting:</a></strong> step-by-step fixes for loading, sound, keyboard, performance, and mobile issues</li>
+                    <li><strong>Support pages:</strong> FAQ, Privacy Policy, Terms of Service, and Contact for common questions and concerns</li>
                 </ul>
             </div>
 
             <div class="content-section">
+                <h2>Learning Tools Built Into the Game</h2>
+                <p>Two modes are designed specifically for understanding the game rather than competing at it.</p>
+                <p><strong>Learn Mode</strong> overlays information about ghost intentions while you play. Instead of having to deduce from ghost positions what each one is about to do, you can see their targeting in real time. This is particularly useful for players who want to understand why Blinky keeps catching them even when they feel like they are routing away from him, or why Inky seems to appear from unexpected angles.</p>
+                <p><strong>Practice Mode</strong> gives you hands-on tools for deliberate improvement: slow the game down (keys 1 or 2), rewind after a mistake (Shift), toggle invincibility to explore the maze freely (I), and activate Turbo Mode when you want a faster challenge (O). The rewind feature is especially useful — being able to replay the exact moment you died, slow it down, and try a different choice compresses what would otherwise take many frustrating restarts into a focused learning loop.</p>
+                <p>Both modes are described fully on the <a href="modes.html">Game Modes page</a>.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Scores and Privacy</h2>
+                <p>High scores are saved locally in your browser using a standard web feature called localStorage. Scores persist between sessions on the same browser and device, but are not synced to a server, not tied to an account, and will be lost if you clear your browser data or play in a private or incognito window. There is no account registration, no login, and no personal data stored on any server by this site.</p>
+                <p>For analytics, this site uses <strong>Plausible Analytics</strong> only — a privacy-friendly service that does not set advertising cookies, does not track individual users across sites, and does not build behavioral profiles. No data is sent to Google Analytics or Microsoft Clarity. The site is not currently serving Google AdSense ads. If advertising is enabled in the future, Google AdSense may use cookies as described in Google's own policies. For full details on data collection and handling, see the <a href="privacy.html">Privacy Policy</a>.</p>
+            </div>
+
+            <div class="content-section">
                 <h2>Who This Site Is For</h2>
-                <p>This site is mainly for casual players, retro game fans, and people who want a simple browser-first way to explore maze chase gameplay. It is also useful for players who enjoy understanding how classic game systems work instead of only playing by instinct.</p>
+                <p>Primarily: casual players who want quick browser access to a classic maze game, retro gaming fans, and players who are curious about how arcade game systems actually work under the surface. Secondarily: players who have never played Pac-Man before and want a low-stakes introduction with guides immediately available, and players who have played for years but never understood the ghost targeting logic, the scoring math, or why the game gets harder in specific ways on later stages.</p>
+                <p>The learning guides are written to be practically useful rather than encyclopedic. They explain the minimum you need to know to actually improve — not every technical edge case in every version ever released.</p>
             </div>
 
             <div class="content-section">
                 <h2>Unofficial Project Note</h2>
-                <p>Pac-Man Arcade is presented as an unofficial fan and educational project. It is not described as an official Bandai Namco website or official Pac-Man support channel.</p>
-                <p>If you need official support, licensing information, or brand-related assistance from the rights holder, you should use the official channels of the original company.</p>
+                <p><strong>PAC-MAN™ &amp; © Bandai Namco Entertainment Inc.</strong> This project does not claim any ownership of the PAC-MAN trademark or any related Bandai Namco intellectual property. Pac-Man Arcade is an unofficial fan and educational project — it is not an official Bandai Namco product, licensed game, or support channel. The browser implementation is an open-source adaptation maintained under the GPL v3 license.</p>
+                <p>If you need official Pac-Man products, licensing information, brand assets, or official support, contact Bandai Namco Entertainment directly through their official channels.</p>
             </div>
 
             <div class="content-section">
-                <h2>How to Reach the Site</h2>
-                <p>If you want to report an issue, ask a privacy question, suggest an improvement, or raise a rights-related concern, please visit the <a href="contact.html">Contact page</a>. For common user questions, the <a href="faq.html">FAQ page</a> is usually the fastest place to start.</p>
+                <h2>How to Reach the Project</h2>
+                <p>If you want to report a bug, ask a privacy question, suggest an improvement, or raise a rights-related concern, visit the <a href="contact.html">Contact page</a>. For answers to common questions — about gameplay, controls, loading problems, or how scores work — the <a href="faq.html">FAQ</a> covers the most frequently asked topics and is usually the fastest place to start.</p>
             </div>
+
         </div>
     </main>
 
@@ -254,8 +296,13 @@
             <div class="footer-links">
                 <a href="index.html">Home</a>
                 <a href="game.html">Play Game</a>
-                <a href="guide.html">Game Guide</a>
+                <a href="guide.html">How to Play</a>
+                <a href="ghosts.html">Ghost Guide</a>
+                <a href="scoring.html">Scoring Guide</a>
+                <a href="glossary.html">Glossary</a>
                 <a href="modes.html">Game Modes</a>
+                <a href="troubleshooting.html">Troubleshooting</a>
+                <a href="faq.html">FAQ</a>
                 <a href="contact.html">Contact</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>

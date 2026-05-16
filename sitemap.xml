@@ -654,7 +654,7 @@
   <!-- About Pages -->
   <url>
     <loc>https://pacmanonline.org/about.html</loc>
-    <lastmod>2025-12-23</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/about.html"/>
@@ -1270,7 +1270,7 @@
   <!-- FAQ Pages -->
   <url>
     <loc>https://pacmanonline.org/faq.html</loc>
-    <lastmod>2025-12-23</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pacmanonline.org/faq.html"/>
